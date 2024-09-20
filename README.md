@@ -34,7 +34,7 @@ export default defineNuxtConfig({
 
 ### Development
 The components output using `Veaury` are client components.   
-React components should be placed in the `react_app` directory by default. If `JSX` exists in the file, the file suffix should be `.jsx` or `tsx`.
+React components should be placed in the `react_app` directory by default. If `JSX` exists in the file, the file suffix should be `.jsx` or `.tsx`.
 
 ## Setup
 
