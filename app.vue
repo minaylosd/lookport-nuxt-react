@@ -3,7 +3,11 @@
     <AppHeader />
     <main class="flex flex-col items-center w-full">
       <Hero />
-      <div class="w-full h-svh"><ThreeLogoSection class="w-full h-svh" /></div>
+      <ClientOnly>
+        <div class="w-full h-svh">
+          <ThreeLogoSection class="w-full h-svh" />
+        </div>
+      </ClientOnly>
       <AISection />
       <FeaturesSection />
       <NotificationSection />
