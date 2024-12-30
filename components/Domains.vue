@@ -21,7 +21,7 @@
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
   <div class="w-full max-h-[100svh] overflow-hidden relative">
-    <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] -top-96 -right-96" alt="">
+    <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56" alt="">
     <section
       class="relative z-30 flex flex-col items-center justify-center w-full max-w-screen-lg px-6 py-40 mx-auto md:px-10 xl:max-w-screen-xl">
       <h1

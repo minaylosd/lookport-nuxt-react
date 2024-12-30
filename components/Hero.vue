@@ -5,11 +5,11 @@
       <div class="flex flex-col gap-6">
         <Badge value="Unlock the power of AI" />
         <h1
-          class="text-5xl font-normal leading-none text-white uppercase md:text-8xl font-ag">
+          class="text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           AI-driven Event ticketing platform
         </h1>
         <p
-          class="relative z-10 md:text-2xl text-lg leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with artificial intelligence
         </p>
         <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">

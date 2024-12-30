@@ -131,18 +131,20 @@
     </section>
   </div>
 
-  <div class="w-full">
+  <div class="relative w-full">
+    <img
+      class="md:absolute md:left-0 object-cover md:w-6/12 h-auto md:min-w-[600px] max-w-screen-lg md:-translate-y-1/2 top-1/2 md:block hidden"
+      src="/images/seats.png" />
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-10 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl xl:gap-20">
       <div
         class="relative flex flex-col items-center order-2 gap-5 basis-5/12 xl:basis-1/2 md:order-none">
         <img
-          class="object-cover w-full h-auto max-w-screen-xl"
-          src="/images/seats-nogradient.png" />
-      </div>
+          class="block object-cover w-full h-auto max-w-screen-xl md:hidden"
+          src="/images/seats-nogradient.png" /></div>
 
       <div
-        class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12 xl:basis-1/2">
+        class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12 xl:basis-1/2">
         <h1
           class="md:text-8xl text-5xl leading-[110%] font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
           Seated or standing
