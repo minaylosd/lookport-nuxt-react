@@ -1,33 +1,22 @@
-<!-- <template>
-  <div class="w-full">
-    <section
-      class="flex flex-col items-center justify-center w-full max-w-screen-lg px-6 py-48 mx-auto md:px-10 xl:max-w-screen-xl">
-      <h1
-        class="flex flex-col md:px-20 w-full xl:text-[134px] md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white text-center font-ag uppercase mb-7 text-grad">
-        <span class="self-start">800+ Events</span>
-        <span class="self-end">1000000+ Tickets Sold</span>
-      </h1>
-    </section>
-  </div>
-</template> -->
 <template>
-  <div class="w-full overflow-hidden">
-    <section class="relative flex flex-col items-center justify-center w-full mx-auto">
-      <video src="https://cdn-static.lookport.live/Sequence_02_3.mp4" autoplay muted loop>
-
-      </video>
+  <div class="w-full overflow-hidden max-h-[778px] py-10">
+    <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[778px]">
+      <video class="object-cover w-full h-auto" src="/Sequence_02_3.mp4" autoplay muted loop></video>
       <svg>
         <mask id="mask">
-          <rect fill="white" width="100%" height="100%"></rect>
-          <text id="mask-heading" dominant-baseline="central" x="50%" y="50%" text-anchor="middle">3 100 000</text>
-
+          <rect fill="white" width="100%" height="110%"></rect>
+          <text id="mask-heading" dominant-baseline="central" x="50%" y="40%" text-anchor="middle">3 100 000</text>
         </mask>
-
         <rect width="100%" height="110%" id="mask-bg"></rect>
-
       </svg>
-      <p class="font-ag absolute bottom-[250px] text-white text-center w-full text-[110px] leading-none z-30">Tickets
-        sold</p>
+
+      <div class="h-full absolute z-30 bottom-0 left-0 w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.3)_40%,_rgba(10,10,10,0.9)_60%,_rgba(10,10,10,1)_100%)]"></div>
+      
+      <p
+        class="font-ag absolute bottom-[90px] text-grad text-center w-full text-[60px] sm:text-[70px] lg:text-[80px] xl:text-[110px] leading-none z-40">
+        Tickets
+        sold
+      </p>
     </section>
   </div>
 </template>
@@ -46,35 +35,13 @@ svg {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 110vh;
+  height: 130%;
   width: 110%;
-}
-
-
-#mask-heading {
-  font-family: var(--font-ag);
-  font-size: 550px;
-  color: white;
-  text-transform: uppercase;
-}
-
-#mask-paragraph {
-  font-family: var(--font-ag);
-  font-size: 110px;
-  color: white;
-  text-transform: uppercase;
-  position: relative;
   z-index: 30;
 }
 
 
-
-#mask-bg {
-  mask: url('#mask');
-}
-
-@media (max-width:640px) {
-  #mask-heading {
+#mask-heading {
   font-family: var(--font-ag);
   font-size: 150px;
   color: white;
@@ -83,11 +50,64 @@ svg {
 
 #mask-paragraph {
   font-family: var(--font-ag);
-  font-size: 70px;
+  font-size: 30px;
   color: white;
   text-transform: uppercase;
   position: relative;
   z-index: 30;
 }
+
+#mask-bg {
+  mask: url('#mask');
+}
+
+.text-grad {
+  background-image: linear-gradient(105deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.4) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width:640px) {
+  #mask-heading {
+    font-size: 250px;
+  }
+
+  #mask-paragraph {
+    font-size: 70px;
+  }
+}
+
+@media (min-width:860px) {
+  #mask-heading {
+    font-size: 350px;
+  }
+
+  #mask-paragraph {
+    font-size: 70px;
+  }
+}
+
+@media (min-width:1280px) {
+  #mask-heading {
+    font-size: 450px;
+  }
+
+  #mask-paragraph {
+    font-size: 70px;
+  }
+}
+
+@media (min-width:1536px) {
+  #mask-heading {
+    font-size: 550px;
+  }
+
+  #mask-paragraph {
+    font-size: 100px;
+  }
 }
 </style>
