@@ -6,7 +6,7 @@ export default function () {
   const width = window.innerWidth;
   const height = window.innerHeight;
   return (
-    <Fragment className="w-full h-full">
+    <Fragment>
       <div className="relative" style={{ width: width, height: height }}>
         <Canvas style={{ background: "transparent" }}>
           <Model />
