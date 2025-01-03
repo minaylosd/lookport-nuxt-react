@@ -13,7 +13,7 @@
 <template>
   <div class="w-full overflow-hidden">
     <section class="relative flex flex-col items-center justify-center w-full mx-auto">
-      <video src="/Sequence_02_3.mp4" autoplay muted loop>
+      <video src="https://cdn-static.lookport.live/Sequence_02_3.mp4" autoplay muted loop>
 
       </video>
       <svg>
@@ -71,5 +71,23 @@ svg {
 
 #mask-bg {
   mask: url('#mask');
+}
+
+@media (max-width:640px) {
+  #mask-heading {
+  font-family: var(--font-ag);
+  font-size: 150px;
+  color: white;
+  text-transform: uppercase;
+}
+
+#mask-paragraph {
+  font-family: var(--font-ag);
+  font-size: 70px;
+  color: white;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 30;
+}
 }
 </style>
