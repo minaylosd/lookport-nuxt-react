@@ -74,7 +74,7 @@
           class="md:text-8xl text-5xl flex flex-wrap items-center leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase">
           <span class="inline-block"
             >Instant access to your funds with
-            <div class="inline-flex w-56">
+            <div class="inline-flex w-24 md:w-56">
               <StripeHeading /></div
           ></span>
         </div>
