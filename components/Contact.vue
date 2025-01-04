@@ -2,7 +2,7 @@
   <div class="w-full">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 py-64 mx-auto md:px-10 md:gap-24 md:flex-row xl:max-w-screen-xl">
-      <div class="flex flex-col gap-6 md:basis-5/12">
+      <div class="flex flex-col w-full gap-6 md:basis-5/12">
         <Badge value="Contact Us" />
         <h1
           class="xl:text-[134px] md:text-8xl text-5xl leading-none font-normal text-white font-ag uppercase">
