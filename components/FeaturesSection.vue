@@ -327,7 +327,7 @@ li::before {
   margin: 0;
   padding: 0;
   background: #0a0a0a; /* Чёрный фон */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100vh;
   cursor: pointer;
 }
