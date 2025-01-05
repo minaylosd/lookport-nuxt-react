@@ -52,7 +52,6 @@
 import { ref, onMounted } from 'vue';
 import Badge from "./Badge.vue";
 
-const image = ref(null);
 const section = ref(null);
 
 const upperWrapper = ref(null);
@@ -98,31 +97,7 @@ const updateAnimation = () => {
   requestAnimationFrame(updateAnimation);
 };
 
-
-
 onMounted(() => {
-  // Добавляем обработчик события для движения мыши
-  section.value.addEventListener('mousemove', (event) => {
-    const { clientX, clientY } = event; // Получаем координаты мыши
-    const { innerWidth, innerHeight } = window; // Получаем размеры окна
-
-    // Вычисляем смещение
-    const offsetX = (clientX / innerWidth - 0.5) * 40; // Двигаем по горизонтали
-    const offsetY = (clientY / innerHeight - 0.5) * 40; // Двигаем по вертикали
-
-    // Применяем трансформацию к изображению
-    image.value.style.transform = `translate(calc(250% + ${offsetX}px), calc(30% + ${offsetY}px))`;
-  });
-  section.value.addEventListener('mousemove', (event) => {
-    const { clientX, clientY } = event;
-    const { innerWidth, innerHeight } = window;
-
-    const offsetX = (clientX / innerWidth - 0.5) * 50;
-    const offsetY = (clientY / innerHeight - 0.5) * 50;
-
-    image.value.style.transform = `translate(calc(250% + ${offsetX}px), calc(30% + ${offsetY}px)) scale(1.05)`;
-  });
-
   section.value.addEventListener('mousemove', (e) => {
     const followX = (window.innerWidth / 2 - e.clientX) / 20;
     const followY = (window.innerHeight / 2 - e.clientY) / 20;
