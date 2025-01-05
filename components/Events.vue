@@ -13,7 +13,7 @@
       <div class="h-full absolute z-30 bottom-0 left-0 w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.3)_40%,_rgba(10,10,10,0.9)_60%,_rgba(10,10,10,1)_100%)]"></div>
       
       <p
-        class="font-ag absolute bottom-[90px] text-grad text-center w-full text-[60px] sm:text-[70px] lg:text-[80px] xl:text-[110px] leading-none z-40">
+        class="font-ag absolute bottom-[90px] text-grad text-center w-full text-[45px] sm:text-[60px] lg:text-[80px] xl:text-[110px] leading-none z-40">
         Tickets
         sold
       </p>

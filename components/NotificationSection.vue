@@ -1,7 +1,14 @@
 <template>
-  <div class="relative w-full">
+  <div class="relative flex items-center w-full h-screen">
+    <div class="absolute inset-0 z-20">
+      <div class="body">
+        <div class="pulse-background">
+        </div>
+      </div>
+    </div>
+
     <img src="/images/notifications-glass.png"
-      class="absolute -bottom-24 -left-[260px] z-10 w-full max-w-[500px] h-auto object-cover" alt="" />
+      class="absolute -bottom-24 -left-[260px] z-50 w-full max-w-[500px] h-auto object-cover" alt="" />
 
     <section
       class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 pt-10 pb-10 mx-auto md:px-10 md:pt-20 md:pb-32 md:flex-row xl:max-w-screen-xl">
@@ -125,3 +132,51 @@
 <script setup>
 import Badge from "./Badge.vue";
 </script>
+
+<style scoped>
+.body {
+  margin: 0;
+  padding: 0;
+  background: #0a0a0a;
+  /* Чёрный фон */
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+
+/* Стили для контейнера с фоном */
+.pulse-background {
+  position: absolute;
+  left: 45%;
+  width: 100vw;
+  /* Ширина контейнера */
+  height: 100vh;
+  /* Высота контейнера */
+  background-image: url('/images/phone.png');
+  /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat;
+  /* Отключаем повторение фона */
+  background-size: 50% 100%;
+  /* Начальный размер фона */
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
+
+/* Анимация искажения правого края */
+@keyframes skewAnimation {
+  0% {
+    background-size: 50% 100%;
+    /* Начальный размер фона */
+  }
+
+  50% {
+    background-size: 60% 90%;
+    /* Конечный размер фона */
+  }
+
+  100% {
+    background-size: 50% 110%;
+    /* Конечный размер фона */
+  }
+}
+</style>
