@@ -44,8 +44,8 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   padding: 0;
   background: #0a0a0a;
   /* Чёрный фон */
-  /* overflow: hidden; */
-  height: 100%;
+  overflow: hidden;
+  height: 100vh;
   cursor: pointer;
 }
 
@@ -53,7 +53,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
 .pulse-background {
   position: absolute;
   left: 40%;
-  top: -0%;
+  top: 20%;
   width: 110vw;
   /* Ширина контейнера */
   height: 140vh;
