@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full md:h-screen">
+  <div class="relative flex items-center w-full md:h-screen section">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -8,24 +8,24 @@
     </div>
 
     <img src="/images/notifications-glass.png"
-      class="absolute -bottom-24 -left-[260px] z-50 w-full max-w-[500px] h-auto object-cover" alt="" />
+      class="anim-up absolute -bottom-24 -left-[260px] z-50 w-full max-w-[500px] h-auto object-cover" alt="" />
 
     <section
       class="relative z-[60] flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 pt-10 pb-10 mx-auto md:px-10 md:pt-20 md:pb-32 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col w-full gap-6 xl:basis-7/12 md:basis-1/2">
         <Badge value="Get Notified instantly via WhatsApp & Telegram" />
         <h1
-          class="md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase whitespace-nowrap">
+          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase whitespace-nowrap">
           Real-Time Sales Alerts
         </h1>
         <p
-          class="relative z-10 md:text-2xl text-lg leading-[140%] font-normal tracking-tighter font-geometria text-[#bbbbbb]">
+          class="anim-up relative z-10 md:text-2xl text-lg leading-[140%] font-normal tracking-tighter font-geometria text-[#bbbbbb]">
           Get real-time notifications for every ticket sold and a daily summary
           with sales analytics directly in our chat bot in WhatsApp or Telegram
         </p>
         <div class="flex flex-col md:items-center md:flex-row xl:mt-6 gap-7">
           <div
-            class="flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
+            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Whatsapp.svg" alt="WhatsApp icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
               <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div
-            class="flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
+            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Telegram.svg" alt="Telegram icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
               <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
@@ -54,9 +54,9 @@
       <div class="flex justify-center w-full">
         <div class="relative w-full max-w-[275px]">
           <img src="/images/iphone-frame.png" class="object-cover w-full max-[275px] h-auto" alt="">
-          <div class="absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
-            <h5 class=" font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
-            <div class="flex items-end mb-2">
+          <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
+            <h5 class="anim-up font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
+            <div class="flex items-end mb-2 anim-up">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>
@@ -72,7 +72,7 @@
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:00</p>
             </div>
 
-            <div class="flex items-end mb-2">
+            <div class="flex items-end mb-2 anim-up">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>
@@ -89,7 +89,7 @@
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:16</p>
             </div>
 
-            <div class="flex items-end justify-end w-full gap-1 mb-2">
+            <div class="flex items-end justify-end w-full gap-1 mb-2 anim-up">
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
 
               <div class="backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
@@ -97,7 +97,7 @@
               </div>
             </div>
 
-            <div class="flex items-end mb-2.5">
+            <div class="anim-up flex items-end mb-2.5">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>

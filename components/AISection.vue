@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full">
+  <section class="relative w-full section">
     <div class="absolute inset-0 w-full h-full">
 
       <div class="hidden md:block body">
@@ -9,28 +9,28 @@
     </div>
     <!-- <img src="/images/ai-form.png" class="absolute max-w-[730px] w-full h-auto object-cover top-1/2 -left-[290px] -translate-y-1/2" alt=""> -->
     <div
-      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-10 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
-      <div class="relative flex flex-col gap-6 pt-[18px] basis-1/2">
-        <h1 class="md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-[#eeeeee] font-ag uppercase">
+      class="relative flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-10 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
+      <div class="relative z-30 flex flex-col gap-6 pt-[18px] basis-1/2">
+        <h1 class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-[#eeeeee] font-ag uppercase">
           Feel the full potential of AI
         </h1>
         <p
-          class="relative z-10 md:text-2xl text-lg leading-[130%] font-normal tracking-[-0.04em] font-geometria text-white">
+          class="anim-up relative z-10 md:text-2xl text-lg leading-[130%] font-normal tracking-[-0.04em] font-geometria text-white">
           Harness the power of AI to maximize event revenue, streamline
           analytics, and enhance marketing campaigns. Your ultimate ticket sales
           assistant, always focused on your profits!
         </p>
         <ul class="flex flex-col gap-4 xl:pt-4">
           <li v-for="(item, index) in listItems" :key="index"
-            class="flex items-center gap-4 md:text-lg text-base leading-none font-normal tracking-[-0.04em] font-geometria text-[#dddddd]">
+            class="anim-up flex items-center gap-4 md:text-lg text-base leading-none font-normal tracking-[-0.04em] font-geometria text-[#dddddd]">
             {{ item }}
           </li>
         </ul>
       </div>
 
       <div class="flex flex-col items-end gap-5 basis-1/2">
-        <img class="xl:max-w-[330px] max-w-72 h-auto object-cover" src="/images/icons/OpenAI.svg" alt="" />
-        <img class="object-cover xl:w-[110%] w-full max-w-[732px] h-auto xl:-mr-[172px] -mr-20 mix-blend-lighten"
+        <img class="anim-up xl:max-w-[330px] max-w-72 h-auto object-cover" src="/images/icons/OpenAI.svg" alt="" />
+        <img class="anim-up object-cover xl:w-[110%] w-full max-w-[732px] h-auto xl:-mr-[172px] -mr-20 mix-blend-lighten"
           src="/images/crystall.png" />
       </div>
     </div>

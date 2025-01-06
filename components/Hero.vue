@@ -10,22 +10,22 @@
     <div
       class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pb-10 mx-auto pt-28 md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col gap-6">
-        <Badge value="Unlock the power of AI" />
-        <h1 class="text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
+        <Badge class="anim-up" value="Unlock the power of AI" />
+        <h1 class="anim-up text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           AI-driven Event ticketing platform
         </h1>
         <p
-          class="relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="anim-up relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with artificial intelligence
         </p>
         <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">
           <button
-            class="relative px-[30px] py-[15px] overflow-hidden rounded-full text-lg font-normal leading-[13px] tracking-tighter text-black font-geometria border border-[#808080]">
+            class="anim-up relative px-[30px] py-[15px] overflow-hidden rounded-full text-lg font-normal leading-[13px] tracking-tighter text-black font-geometria border border-[#808080]">
             <img src="/images/icons/btn-grad.png" class="absolute inset-0 object-cover w-full h-full" alt="" />
             <span class="relative z-10">Get Started</span>
           </button>
           <NuxtLink
-            class="text-lg font-normal leading-[13px] px-[15px] py-3 tracking-tighter text-[#eeeeee] font-geometria text-arrow">
+            class="anim-up text-lg font-normal leading-[13px] px-[15px] py-3 tracking-tighter text-[#eeeeee] font-geometria text-arrow">
             Learn More</NuxtLink>
         </div>
       </div>
@@ -33,12 +33,12 @@
       <div class="relative h-full w-full xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper" class="wrapper wrapper-upper">
+          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper">
             <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
           <!-- Нижняя картинка -->
-          <div ref="lowerWrapper" class="wrapper wrapper-lower">
+          <div ref="lowerWrapper" class="anim-up wrapper wrapper-lower">
             <img ref="lowerImage" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
             <div ref="lowerGlare" class="glare"></div>
           </div>
@@ -51,6 +51,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import Badge from "./Badge.vue";
+import gsap from 'gsap';
 
 const section = ref(null);
 
@@ -98,15 +99,23 @@ const updateAnimation = () => {
 };
 
 onMounted(() => {
-  section.value.addEventListener('mousemove', (e) => {
-    const followX = (window.innerWidth / 2 - e.clientX) / 20;
-    const followY = (window.innerHeight / 2 - e.clientY) / 20;
+  const animate = section.value.querySelectorAll('.anim-up');
+  gsap.fromTo(animate, {
+    opacity: 0, y: 100
+  }, {
+    opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+      section.value.addEventListener('mousemove', (e) => {
+        const followX = (window.innerWidth / 2 - e.clientX) / 20;
+        const followY = (window.innerHeight / 2 - e.clientY) / 20;
 
-    targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-    targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+        targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+        targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+      });
+
+      updateAnimation();
+    })
   });
 
-  updateAnimation();
 })
 </script>
 
@@ -247,22 +256,22 @@ onMounted(() => {
 
 @media (min-width: 640px) {
   .wrapper-lower {
-  z-index: 1;
-  /* Нижняя картинка находится под верхней */
-  right: -140px;
-  transform: translateZ(300px);
-}
+    z-index: 1;
+    /* Нижняя картинка находится под верхней */
+    right: -140px;
+    transform: translateZ(300px);
+  }
 
   .interactive-image {
-  width: 300px;
-  /* Размер обеих картинок одинаковый */
-  height: auto;
-  border-radius: 10px;
-  object-fit: cover;
-  pointer-events: none;
-  overflow: hidden;
-  position: relative;
-  filter: brightness(77%);
-}
+    width: 300px;
+    /* Размер обеих картинок одинаковый */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    pointer-events: none;
+    overflow: hidden;
+    position: relative;
+    filter: brightness(77%);
+  }
 }
 </style>
