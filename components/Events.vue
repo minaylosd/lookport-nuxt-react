@@ -43,7 +43,7 @@ svg {
 
 #mask-heading {
   font-family: var(--font-ag);
-  font-size: 150px;
+  font-size: 120px;
   color: white;
   text-transform: uppercase;
 }
