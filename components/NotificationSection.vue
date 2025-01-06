@@ -157,9 +157,9 @@ import Badge from "./Badge.vue";
   /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
   /* Отключаем повторение фона */
-  background-size: 50% 100%;
+  background-size: auto 100%;
   /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  animation: skewAnimationMob 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
 /* Анимация искажения правого края */
@@ -178,5 +178,40 @@ import Badge from "./Badge.vue";
     background-size: 50% 110%;
     /* Конечный размер фона */
   }
+}
+
+@keyframes skewAnimationMob {
+  0% {
+    background-size: 100% 100%;
+    /* Начальный размер фона */
+  }
+
+  50% {
+    background-size: 110% 90%;
+    /* Конечный размер фона */
+  }
+
+  100% {
+    background-size: 100% 110%;
+    /* Конечный размер фона */
+  }
+}
+
+@media (min-width: 640px) {
+  .pulse-background {
+  position: absolute;
+  left: 45%;
+  width: 100vw;
+  /* Ширина контейнера */
+  height: 100vh;
+  /* Высота контейнера */
+  background-image: url('/images/phone.png');
+  /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat;
+  /* Отключаем повторение фона */
+  background-size: 50% 100%;
+  /* Начальный размер фона */
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
 }
 </style>
