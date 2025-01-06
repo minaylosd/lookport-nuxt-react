@@ -27,6 +27,10 @@
     --font-ag: "AG Letterica";
 }
 
+.anim-up {
+  opacity: 0;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
