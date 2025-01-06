@@ -22,6 +22,7 @@
 </template>
 
 <script setup>
+import { ref, onMounted, nextTick } from 'vue';
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import Hero from "./components/Hero.vue";
@@ -35,6 +36,51 @@ import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
 import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
+import gsap from 'gsap';
 
 const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
+
+const sections = ref([]);
+
+const registerObserver = () => {
+  const observerOptions = {
+    root: null,
+    threshold: 0.5
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const elements = entry.target.querySelectorAll('.anim-up');
+
+        gsap.fromTo(elements, {
+          opacity: 0, y: 100
+        }, {
+          opacity: 1, y: 0, stagger: 0.05,
+        });
+
+        observer.unobserve(entry.target);
+      }
+    })
+  }, observerOptions)
+
+  nextTick(() => {
+    if (sections.value.length > 0) {
+      sections.value.forEach((section) => {
+        if (section) {
+          observer.observe(section);
+        }
+      })
+    }
+
+  })
+
+};
+
+onMounted(() => {
+  sections.value = document.querySelectorAll('.section');
+  console.log(sections.value);
+  registerObserver();
+})
+
 </script>
