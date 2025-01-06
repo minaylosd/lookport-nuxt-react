@@ -2,7 +2,7 @@
   <div>
     <header
       :class="[
-        'fixed z-[40] top-0 flex justify-center w-full transition-colors duration-500 py-2',
+        'fixed z-[100] top-0 flex justify-center w-full transition-colors duration-500 py-2',
         isScrolled ? 'bg-[rgb(138_153_241_/_0.1)] backdrop-blur-lg' : '',
         isMenuOpened? 'bg-transparent backdrop-blur-none': ''
       ]">
