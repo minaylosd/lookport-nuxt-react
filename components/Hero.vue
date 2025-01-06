@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center w-full h-screen">
+  <section ref="section" class="relative flex items-center w-full md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -8,7 +8,7 @@
     </div>
 
     <div
-      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pt-20 pb-10 mx-auto md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
+      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pb-10 mx-auto pt-28 md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col gap-6">
         <Badge value="Unlock the power of AI" />
         <h1 class="text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
@@ -31,7 +31,7 @@
       </div>
 
       <div class="relative h-full w-full xl:max-w-[371px] max-w-[340px]">
-        <div class="tickets">
+        <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
           <div ref="upperWrapper" class="wrapper wrapper-upper">
             <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
@@ -138,7 +138,7 @@ onMounted(() => {
   padding: 0;
   height: 100%;
   /* overflow: hidden; */
-  background-color: #0a0a0a;
+  /* background-color: #0a0a0a; */
   /* Базовый фон */
   position: relative;
   z-index: -11;
@@ -148,6 +148,7 @@ onMounted(() => {
   z-index: -10;
   background-image: url('/screen-1-background/img/back.png');
   background-position: center;
+  object-fit: cover;
   background-repeat: no-repeat;
   background-size: 100% 100%;
   width: 100%;
@@ -205,18 +206,19 @@ onMounted(() => {
 
 .wrapper-upper {
   z-index: 2;
+  left: -15px;
   /* Верхняя картинка всегда сверху */
 }
 
 .wrapper-lower {
   z-index: 1;
   /* Нижняя картинка находится под верхней */
-  right: -140px;
+  right: -15px;
   transform: translateZ(300px);
 }
 
 .interactive-image {
-  width: 300px;
+  width: 230px;
   /* Размер обеих картинок одинаковый */
   height: auto;
   border-radius: 10px;
@@ -229,7 +231,7 @@ onMounted(() => {
 
 .glare {
   position: absolute;
-  width: 250px;
+  width: 200px;
   /* Размер блика */
   height: 100px;
   /* Размер блика */
@@ -241,5 +243,26 @@ onMounted(() => {
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 640px) {
+  .wrapper-lower {
+  z-index: 1;
+  /* Нижняя картинка находится под верхней */
+  right: -140px;
+  transform: translateZ(300px);
+}
+
+  .interactive-image {
+  width: 300px;
+  /* Размер обеих картинок одинаковый */
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  pointer-events: none;
+  overflow: hidden;
+  position: relative;
+  filter: brightness(77%);
+}
 }
 </style>

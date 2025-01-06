@@ -1,5 +1,5 @@
 <template>
-  <div ref="stripeSection" class="relative flex items-center w-full h-screen">
+  <div ref="stripeSection" class="relative flex items-center w-full md:h-screen">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div ref='stripePulse' class="pulse-background"></div>
@@ -83,7 +83,7 @@
     </section>
   </div>
 
-  <div class="relative w-full h-screen">
+  <div class="relative flex items-center w-full md:h-screen">
     <section
       class="flex flex-col items-end justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
@@ -113,14 +113,14 @@
       <div class="relative flex flex-col items-end gap-5 basis-1/2">
         <div class="relative w-full">
           <img src="/images/features-glass.png" class="w-full h-auto max-w-[450px]" alt="" />
-          <img class="object-cover absolute w-8/12 max-w-[449px] left-24 -bottom-24 h-auto mix-blend-lighten"
+          <img class="object-cover absolute w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
             src="/images/percent.png" />
         </div>
       </div>
     </section>
   </div>
 
-  <div class="relative w-full h-screen">
+  <div class="relative w-full md:h-screen">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>
@@ -254,7 +254,7 @@ li::before {
 .body {
   margin: 0;
   padding: 0;
-  background: #0a0a0a;
+  /* background: #0a0a0a; */
   overflow: hidden;
   height: 100%;
   cursor: pointer;
@@ -269,7 +269,8 @@ li::before {
   background-image: url('/images/Neon.png');
   /* Градиентное изображение */
   background-repeat: no-repeat;
-  background-size: 30% 100%;
+  background-size: auto 100%;
+  object-fit: cover;
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
   filter: blur(30px) brightness(1.2) contrast(1.1);
   z-index: 1;
@@ -326,7 +327,7 @@ li::before {
 .body-pricing {
   margin: 0;
   padding: 0;
-  background: #0a0a0a; /* Чёрный фон */
+  /* background: #0a0a0a; Чёрный фон */
   /* overflow: hidden; */
   height: 100vh;
   cursor: pointer;
@@ -339,7 +340,8 @@ li::before {
   height: 100vh; /* Высота контейнера */
   background-image: url('/images/Neonright.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: 30% 100%; /* Начальный размер фона */
+  background-size: auto 100%; /* Начальный размер фона */
+  object-fit: cover;
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
   transition: background-size 0.2s ease-out; /* Плавный переход */
   filter: blur(25px) brightness(1.6) contrast(1.1);
@@ -384,4 +386,13 @@ li::before {
   }
 }
 
+@media (min-width:640px) {
+  .pulse-background {
+  background-size: 30% 100%;
+}
+
+.pulse-background-pricing {
+  background-size: 30% 100%; /* Начальный размер фона */
+}
+}
 </style>
