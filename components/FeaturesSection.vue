@@ -120,7 +120,7 @@
     </section>
   </div>
 
-  <div class="relative w-full md:h-screen section">
+  <div class="relative flex items-center w-full md:h-screen section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>
@@ -128,7 +128,7 @@
       </div>
     </div>
     <img
-      class="anim-up md:absolute md:left-0 object-cover md:w-6/12 h-auto md:min-w-[600px] max-w-screen-lg md:-translate-y-1/2 top-1/2 md:block hidden"
+      class="anim-up md:absolute md:left-0 object-cover md:w-6/12 h-auto md:min-w-[600px] max-w-screen-lg md:block hidden"
       src="/images/seats.png" />
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-10 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl xl:gap-20">
