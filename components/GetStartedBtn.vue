@@ -1,7 +1,7 @@
 <template>
   <button
-    class="relative px-[30px] py-4 overflow-hidden rounded-full">
-    <p class="relative z-10 text-lg font-normal leading-[13px] tracking-tighter text-white font-geometria">Get Started</p>
+    class="relative px-[31px] py-[15px] overflow-hidden rounded-full">
+    <p class="relative z-10 text-lg font-normal leading-[13px] -tracking-[0.04em] text-white font-geometria">Get Started</p>
   </button>
 </template>
 

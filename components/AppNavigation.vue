@@ -29,7 +29,7 @@ const menuItems = [
       v-for="(item, index) in menuItems"
       :key="index"
       :to="item.link"
-      class="px-6 text-lg font-normal leading-none tracking-tighter text-[#b6b6b6] py-2 font-geometria">
+      class="px-6 text-[1.05rem] font-normal leading-none tracking-tighter text-[#b6b6b6] pt-[1.4rem] pb-[1.0em] font-geometria">
       {{ item.name }}
     </NuxtLink>
   </nav>
