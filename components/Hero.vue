@@ -20,7 +20,7 @@
           Empowering promoters with artificial intelligence
         </p>
         <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">
-          <GetStartedBtn :big="true" />
+          <GetStartedBtn class="anim-up" :big="true" />
           <NuxtLink
             class="anim-up text-lg font-normal leading-[13px] px-[15px] py-3 tracking-tighter text-[#eeeeee] font-geometria text-arrow">
             Learn More</NuxtLink>
