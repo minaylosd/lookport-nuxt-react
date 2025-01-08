@@ -21,8 +21,8 @@
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
   <div class="relative w-full h-screen section">
-    <img src="/images/notifications-glass.png"
-      class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt="">
+    <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt="">
+    <!-- <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt=""> -->
     <div class="relative w-full h-full overflow-hidden">
 
       <!-- <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56" alt=""> -->
@@ -42,7 +42,7 @@
         </p>
 
         <div
-          class="anim-up w-full bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-[41px] border-[1.7px] md:pt-8 pt-4 border-[#1E1D20]/80 h-[1100px] shadow-lg backdrop-blur-lg">
+          class="anim-up w-full 2xl:w-[1320px]  bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] rounded-[41px] border-[1.7px] md:pt-8 pt-4 border-[#1E1D20]/80 h-[1100px] shadow-[0_2.56px_32px_rgba(0,0,0,0.5)] backdrop-blur-2xl">
           <div class="flex gap-4 md:px-11 px-8 md:mb-[27px] mb-4">
             <div
               class="rounded-full bg-[radial-gradient(circle,_rgba(196,_196,_196,_1)_0%,_rgba(196,_196,_196,_0.52)_100%)] md:h-[22px] md:w-[22px] h-4 w-4 opacity-30">
