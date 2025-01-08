@@ -9,9 +9,10 @@
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-10 pt-10 mx-auto md:pt-40 md:pb-16 md:flex-row xl:max-w-screen-xl">
       <div class="relative flex flex-col order-2 basis-5/12 md:-order-none">
-        <img class="anim-up absolute left-1/2 object-cover -translate-y-1/2 -translate-x-1/2 top-1/2 max-w-[340px]"
-          src="/images/redshift glass 16 1.png" alt="" />
+        
         <div class="relative z-10 flex flex-col items-center w-fit gap-7">
+          <img class="anim-up absolute left-1/2 object-cover -translate-x-1/2 -bottom-1/3 max-w-[430px]"
+          src="/images/stripe-glass.png" alt="" />
           <div
             class="anim-up w-[245px] flex items-center gap-3 p-2 rounded-xl border border-white/10 bg-[#333131]/100 backdrop-blur-3xl shadow-md">
             <img src="/images/icons/stripe-logo.svg" class="overflow-hidden w-11 h-11" />
