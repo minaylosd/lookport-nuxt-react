@@ -13,7 +13,7 @@
       <div class="h-full absolute z-30 bottom-0 left-0 w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.3)_40%,_rgba(10,10,10,0.9)_60%,_rgba(10,10,10,1)_100%)]"></div>
       
       <p
-        class="font-ag absolute bottom-[90px] text-grad text-center w-full text-[45px] sm:text-[60px] lg:text-[80px] xl:text-[110px] leading-none z-40">
+        class="font-ag uppercase absolute bottom-[90px] text-grad text-center w-full text-[45px] sm:text-[60px] lg:text-[80px] xl:text-[110px] leading-none z-40">
         Tickets
         sold
       </p>
@@ -62,10 +62,12 @@ svg {
 }
 
 .text-grad {
-  background-image: linear-gradient(105deg,
+  background-image: linear-gradient(165deg,
       rgba(255, 255, 255, 0.4) 0%,
       rgba(255, 255, 255, 1) 50%,
       rgba(255, 255, 255, 0.4) 100%);
+      background-size: 700px 150px;
+      background-position: -115% -400%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
