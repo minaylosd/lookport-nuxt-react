@@ -32,7 +32,7 @@
       <section
         class="relative z-30 flex flex-col items-center justify-center w-full max-w-screen-lg px-6 py-40 mx-auto md:px-10 xl:max-w-screen-xl">
         <h1
-          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-center text-white font-ag uppercase mb-6">
+          class="anim-up md:text-8xl text-5xl leading-none font-semibold tracking-[-0.01em] text-center text-white font-ag uppercase mb-6">
           Custom domain for your events
         </h1>
         <p

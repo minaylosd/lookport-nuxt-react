@@ -15,7 +15,7 @@
       <div class="flex flex-col w-full gap-6 xl:basis-7/12 md:basis-1/2">
         <Badge value="Get Notified instantly via WhatsApp & Telegram" />
         <h1
-          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase whitespace-nowrap">
+          class="anim-up md:text-8xl text-5xl leading-none font-semibold tracking-[-0.01em] text-white font-ag uppercase whitespace-nowrap">
           Real-Time Sales Alerts
         </h1>
         <p
@@ -139,7 +139,7 @@ import Badge from "./Badge.vue";
   padding: 0;
   /* background: #0a0a0a; */
   /* Чёрный фон */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
   width: 100%;
   cursor: pointer;

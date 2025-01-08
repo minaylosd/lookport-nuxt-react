@@ -66,7 +66,7 @@
       </div>
       <div class="flex relative z-30 flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12">
         <div
-          class="md:text-8xl text-5xl flex flex-wrap items-center leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase">
+          class="md:text-8xl text-5xl flex flex-wrap items-center leading-none font-semibold tracking-[-0.01em] text-white font-ag uppercase">
           <span class="inline-block anim-up">Instant access to your funds with
             <div class="inline-flex w-24 md:w-56">
               <StripeHeading />
@@ -88,7 +88,7 @@
       class="flex flex-col items-end justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
         <h1
-          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
+          class="anim-up md:text-8xl text-5xl leading-none font-semibold tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
           Transparent Pricing
         </h1>
         <p
@@ -138,7 +138,7 @@
 
       <div class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12 xl:basis-1/2">
         <h1
-          class="anim-up md:text-8xl text-5xl leading-[110%] font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
+          class="anim-up md:text-8xl text-5xl leading-[110%] font-semibold tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
           Seated or standing
         </h1>
         <p
@@ -255,7 +255,7 @@ li::before {
   margin: 0;
   padding: 0;
   /* background: #0a0a0a; */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }

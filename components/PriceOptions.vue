@@ -4,7 +4,7 @@
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-40 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col gap-6 basis-5/12">
         <h1
-          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase">
+          class="anim-up md:text-8xl text-5xl leading-none font-semibold tracking-[-0.01em] text-white font-ag uppercase">
           Dynamic Prices and Donations
         </h1>
         <p

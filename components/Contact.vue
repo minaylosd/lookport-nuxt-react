@@ -6,7 +6,7 @@
       <div class="flex flex-col w-full gap-6 md:basis-5/12">
         <Badge value="Contact Us" />
         <h1
-          class="xl:text-[134px] md:text-8xl text-5xl leading-none font-normal text-white font-ag uppercase">
+          class="xl:text-[134px] md:text-8xl text-5xl leading-none font-semibold text-white font-ag uppercase">
           Get Started with a First Event Now
         </h1>
       </div>

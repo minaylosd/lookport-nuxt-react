@@ -4,14 +4,14 @@
 
       <div class="hidden md:block body">
         <div class="pulse-background"></div>
-        <!-- <div class="circle"></div> -->
+        <div class="circle"></div>
       </div>
     </div>
     <!-- <img src="/images/ai-form.png" class="absolute max-w-[730px] w-full h-auto object-cover top-1/2 -left-[290px] -translate-y-1/2" alt=""> -->
     <div
-      class="relative flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-10 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
+      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-10 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
       <div class="relative z-30 flex flex-col gap-6 pt-[18px] basis-1/2">
-        <h1 class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-[#eeeeee] font-ag uppercase">
+        <h1 class="anim-up md:text-8xl text-5xl leading-none font-semibold tracking-[-0.01em] text-[#eeeeee] font-ag uppercase">
           Feel the full potential of AI
         </h1>
         <p

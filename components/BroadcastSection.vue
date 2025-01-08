@@ -21,7 +21,7 @@
       </div>
 
       <div class="relative z-30 flex flex-col gap-6 basis-7/12">
-        <h1 class="text-5xl font-normal leading-none text-white uppercase anim-up md:text-8xl font-ag">
+        <h1 class="text-5xl font-semibold leading-none text-white uppercase anim-up md:text-8xl font-ag">
           Broadcast your events online
         </h1>
         <p
@@ -47,7 +47,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   padding: 0;
   background: #0a0a0a;
   /* Чёрный фон */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100vh;
   cursor: pointer;
 }
@@ -59,7 +59,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   top: 20%;
   width: 110vw;
   /* Ширина контейнера */
-  height: 140vh;
+  height: 100vh;
   /* Высота контейнера */
   background-image: url('./img/new.png');
   /* Устанавливаем картинку как фон */

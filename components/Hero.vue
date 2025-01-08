@@ -12,7 +12,7 @@
       <div class="flex flex-col">
         <Badge class="mb-6 anim-up md:mb-10" value="Unlock the power of AI" />
         <h1
-          class="anim-up md:mb-[35px] mb-6 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
+          class="anim-up md:mb-[35px] mb-6 text-5xl font-semibold leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           AI-driven Event ticketing platform
         </h1>
         <p
