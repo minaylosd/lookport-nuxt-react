@@ -84,9 +84,9 @@
     </section>
   </div>
 
-  <div class="relative flex items-center w-full md:h-screen section">
+  <div class="relative flex items-center w-full md:h-screen section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)]">
     <section
-      class="flex flex-col items-end justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
+      class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
         <h1
           class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
@@ -113,8 +113,8 @@
 
       <div class="relative flex flex-col items-end gap-5 basis-1/2">
         <div class="relative w-full">
-          <img src="/images/features-glass.png" class="anim-up w-full h-auto max-w-[450px]" alt="" />
-          <img class="anim-up object-cover absolute w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
+          <img src="/images/features-circle.png" class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="" />
+          <img class="anim-up object-cover relative w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
             src="/images/percent.png" />
         </div>
       </div>
