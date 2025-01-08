@@ -15,13 +15,12 @@
 
       <div class="w-full md:basis-5/12">
         <div class="relative flex flex-col justify-center gap-6 max-w-96">
-          <div class="anim-up">
+          <div class="anim-up absolute z-10 -bottom-[140px] -right-56 w-full max-w-[450px] h-auto ">
              <img
             src="/images/prices-glass.png"
-            class="absolute z-10 -bottom-[140px] -right-56 w-full max-w-[450px] h-auto object-cover"
+            class="w-full max-w-[450px] h-auto object-cover"
             alt="" />
           </div>
-         
 
           <div
             class="anim-up flex flex-col justify-center md:w-full md:h-32 h-28 p-9 rounded-2xl font-geometria font-normal tracking-tighter text-white md:text-2xl text-lg border border-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-lg">
