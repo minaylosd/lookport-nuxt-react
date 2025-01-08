@@ -1,5 +1,6 @@
 <template>
-  <div class="w-full">
+  <div class="w-full relative bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)]">
+    <img class="absolute left-1/2 -bottom-2/3 -translate-x-1/2 w-full max-w-[1054px] h-auto object-cover" src="/images/contact-neon.png" alt="">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 py-64 mx-auto md:px-10 md:gap-24 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col w-full gap-6 md:basis-5/12">
