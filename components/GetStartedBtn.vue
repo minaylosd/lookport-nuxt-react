@@ -1,6 +1,6 @@
 <template>
-  <button v-if="props.big" class="relative px-[49px] py-[25.5px] overflow-hidden rounded-full btn-xl">
-    <p class="relative z-10 text-[26px] font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria">Get
+  <button v-if="props.big" class="relative px-[49px] py-[25.5px] overflow-hidden rounded-full btn-xl transition-colors duration-300 delay-100 ease-in-out">
+    <p class="relative z-10 text-[26px] font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-300 delay-100 ease-in-out">Get
       Started</p>
   </button>
   <button v-else class="relative px-[31px] py-[15px] overflow-hidden rounded-full btn-sm">
@@ -26,6 +26,15 @@
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
+}
+
+.btn-xl:hover::before {
+  -webkit-mask: none;
+  mask: none;
+}
+
+.btn-xl:hover p {
+  color: #373737;
 }
 
 .btn-sm::before {
