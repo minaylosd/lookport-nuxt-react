@@ -128,13 +128,14 @@
         <div class="gradient-overlay-pricing"></div>
       </div>
     </div>
-    <img
+    <!-- <img
       class="anim-up md:absolute md:left-0 object-cover md:w-6/12 h-auto md:min-w-[600px] max-w-screen-lg md:block hidden"
-      src="/images/seats.png" />
+      src="/images/seats.png" /> -->
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-10 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl xl:gap-20">
       <div class="relative flex flex-col items-center order-2 gap-5 basis-5/12 xl:basis-1/2 md:order-none">
-        <img class="block object-cover w-full h-auto max-w-screen-xl anim-up md:hidden" src="/images/seats-nogradient.png" />
+        <img class="absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%] min-w-[200%] object-cover" src="/images/seats-gradient.png" alt="">
+        <img class="block object-cover w-full max-w-[520px] h-auto anim-up" src="/images/seats-nogradient.png" />
       </div>
 
       <div class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12 xl:basis-1/2">
