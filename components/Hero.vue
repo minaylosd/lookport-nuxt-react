@@ -10,9 +10,9 @@
     <div
       class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pb-10 mx-auto pt-28 md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col">
-        <Badge class="mb-6 anim-up md:mb-10" value="Unlock the power of AI" />
+        <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
-          class="anim-up md:mb-[35px] mb-6 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
+          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           AI-driven Event ticketing platform
         </h1>
         <p
@@ -22,7 +22,7 @@
         <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">
           <GetStartedBtn class="anim-up" :big="true" />
           <NuxtLink
-            class="anim-up text-lg font-normal leading-[13px] px-[15px] py-3 tracking-tighter text-[#eeeeee] font-geometria text-arrow">
+            class="anim-up text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
             Learn More</NuxtLink>
         </div>
       </div>
