@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full md:h-screen section">
+  <div class="relative flex items-center w-full mb-20 md:h-screen section">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -13,7 +13,7 @@
     <section
       class="relative z-[60] flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 pt-10 pb-10 mx-auto md:px-10 md:pt-20 md:pb-32 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col w-full gap-6 xl:basis-7/12 md:basis-1/2">
-        <Badge value="Get Notified instantly via WhatsApp & Telegram" />
+        <Badge class="anim-up" value="Get Notified instantly via WhatsApp & Telegram" />
         <h1
           class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase whitespace-nowrap">
           Real-Time Sales Alerts
@@ -52,7 +52,7 @@
       </div>
 
       <div class="flex justify-center w-full">
-        <div class="relative w-full max-w-[275px]">
+        <div class="relative w-[275px]">
           <img src="/images/iphone-frame.png" class="object-cover w-full max-[275px] h-auto" alt="">
           <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
             <h5 class="anim-up font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>

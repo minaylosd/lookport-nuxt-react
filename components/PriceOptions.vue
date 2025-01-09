@@ -1,5 +1,5 @@
 <template>
-  <div class="relative w-full section bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)]">
+  <div class="relative w-full section bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <img class="absolute inset-0 object-cover w-full h-full" src="/images/prices-bg.png" alt="">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-40 md:flex-row xl:max-w-screen-xl">

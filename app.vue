@@ -4,7 +4,7 @@
     <main class="flex flex-col items-center w-full">
       <Hero />
       <ClientOnly>
-        <div class="w-full h-svh">
+        <div class="w-full mb-20 h-svh">
           <ThreeLogoSection class="w-full h-svh" />
         </div>
       </ClientOnly>

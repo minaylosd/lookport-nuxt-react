@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center w-full md:h-screen">
+  <section ref="section" class="relative flex items-center w-full mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -19,8 +19,8 @@
           class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with artificial intelligence
         </p>
-        <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">
-          <GetStartedBtn class="anim-up" :big="true" />
+        <div class="flex items-center gap-4 md:flex-row">
+          <GetStartedBtn :big="true" />
           <NuxtLink
             class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
             Learn More</NuxtLink>

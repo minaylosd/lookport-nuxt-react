@@ -1,5 +1,5 @@
 <template>
-  <section class="relative w-full section">
+  <section class="relative w-full mb-20 section">
     <div class="absolute inset-0 w-full h-full">
 
       <div class="hidden md:block body">

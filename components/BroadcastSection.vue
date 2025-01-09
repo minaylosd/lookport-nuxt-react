@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-40 flex items-center w-full md:h-screen section">
+  <div class="relative z-40 flex items-center w-full mb-20 md:h-screen section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
@@ -48,7 +48,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   background: #0a0a0a;
   /* Чёрный фон */
   overflow: hidden;
-  height: 100vh;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -59,7 +59,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   top: 20%;
   width: 110vw;
   /* Ширина контейнера */
-  height: 140vh;
+  height: 100%;
   /* Высота контейнера */
   background-image: url('./img/new.png');
   /* Устанавливаем картинку как фон */
@@ -105,7 +105,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
