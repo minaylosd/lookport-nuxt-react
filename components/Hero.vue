@@ -22,7 +22,7 @@
         <div class="flex flex-col items-start gap-4 md:items-center md:flex-row">
           <GetStartedBtn class="anim-up" :big="true" />
           <NuxtLink
-            class="anim-up text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
+            class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
             Learn More</NuxtLink>
         </div>
       </div>
