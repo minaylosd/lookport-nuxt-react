@@ -17,10 +17,11 @@
             <AppNavigation />
           </div>
         </div>
-        <div class="items-center hidden md:flex">
+        <div class="items-center hidden gap-2 md:flex">
           <button
-            class="py-[15px] text-lg font-normal leading-none tracking-tighter text-[#eeeeee] px-[30px] font-geometria">
+            class="group relative pt-[21.2px] pb-[1.05rem] text-lg font-normal leading-none tracking-tighter text-[#b6b6b6] hover:text-white transition-colors duration-500 ease-out px-6 font-geometria">
             Login
+            <div class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out"></div>
           </button>
           <GetStartedBtn />
         </div>

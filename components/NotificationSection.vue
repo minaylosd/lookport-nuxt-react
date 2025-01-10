@@ -148,7 +148,8 @@ import Badge from "./Badge.vue";
 /* Стили для контейнера с фоном */
 .pulse-background {
   position: absolute;
-  left: 45%;
+  /* left: 45%; */
+  top: 12%;
   width: 100vw;
   /* Ширина контейнера */
   height: 100vh;
@@ -157,7 +158,7 @@ import Badge from "./Badge.vue";
   /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
   /* Отключаем повторение фона */
-  background-size: auto 100%;
+  background-size: 80% 160%;
   /* Начальный размер фона */
   animation: skewAnimationMob 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
@@ -165,17 +166,17 @@ import Badge from "./Badge.vue";
 /* Анимация искажения правого края */
 @keyframes skewAnimation {
   0% {
-    background-size: 50% 100%;
+    background-size: 35% 70%;
     /* Начальный размер фона */
   }
 
   50% {
-    background-size: 60% 90%;
+    background-size: 40% 60%;
     /* Конечный размер фона */
   }
 
   100% {
-    background-size: 50% 110%;
+    background-size: 35% 75%;
     /* Конечный размер фона */
   }
 }
@@ -201,6 +202,7 @@ import Badge from "./Badge.vue";
   .pulse-background {
   position: absolute;
   left: 45%;
+  top: 15%;
   width: 100vw;
   /* Ширина контейнера */
   height: 100vh;
@@ -209,7 +211,7 @@ import Badge from "./Badge.vue";
   /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
   /* Отключаем повторение фона */
-  background-size: 50% 100%;
+  background-size: 35% 70%;
   /* Начальный размер фона */
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }

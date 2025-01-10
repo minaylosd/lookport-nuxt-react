@@ -1,13 +1,13 @@
 <template>
   <button ref="button" v-if="props.big"
-    class="anim-up relative px-7 py-5 md:px-[49px] md:py-[25.5px] overflow-hidden rounded-full btn-xl before:transition-colors before:duration-300 ease-in-out">
+    class="anim-up relative px-7 py-5 md:px-[49px] md:py-[25.5px] overflow-hidden rounded-full btn-xl before:transition-colors before:duration-500 ease-in">
     <p
-      class="relative z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-300 ease-in-out">
+      class="relative z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
       Get
       Started</p>
   </button>
-  <button v-else class="relative px-[31px] py-[15px] overflow-hidden rounded-full btn-sm">
-    <p class="relative z-10 text-lg font-normal leading-[13px] -tracking-[0.04em] text-white font-geometria">Get Started
+  <button v-else class="relative px-[31px] py-[15px] overflow-hidden rounded-full btn-sm before:transition-colors before:duration-500 ease-in">
+    <p class="relative z-10 text-lg font-normal leading-[13px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">Get Started
     </p>
   </button>
 
@@ -60,6 +60,19 @@
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
   -webkit-mask-composite: destination-out;
+}
+
+.btn-sm:hover::before {
+  background: linear-gradient(154deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 1) 50%,
+      rgba(255, 255, 255, 0.4) 100%);
+  -webkit-mask: none;
+  mask: none;
+}
+
+.btn-sm:hover p {
+  color: #373737;
 }
 </style>
 

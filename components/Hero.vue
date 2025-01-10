@@ -17,13 +17,13 @@
         </h1>
         <p
           class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
-          Empowering promoters with artificial intelligence
+          Empowering promoters with Artificial Intelligence
         </p>
         <div class="flex items-center gap-4 md:flex-row">
           <GetStartedBtn :big="true" />
-          <NuxtLink
+          <div ref="link"
             class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
-            Learn More</NuxtLink>
+            Learn More</div>
         </div>
       </div>
 
@@ -61,6 +61,8 @@ const lowerWrapper = ref(null);
 const lowerImage = ref(null);
 const lowerGlare = ref(null);
 
+const link = ref(null);
+
 const friction = 1 / 60;
 const maxAngle = 15;
 let x = 0, y = 0;
@@ -96,6 +98,8 @@ const updateAnimation = () => {
   requestAnimationFrame(updateAnimation);
 };
 
+
+
 onMounted(() => {
   const animate = section.value.querySelectorAll('.anim-up');
   gsap.fromTo(animate, {
@@ -114,6 +118,12 @@ onMounted(() => {
     })
   });
 
+  const scroll = () => {
+    const ai = document.getElementById('ai');
+    ai.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
+  }
+
+  link.value.addEventListener('click', scroll)
 })
 </script>
 

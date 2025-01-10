@@ -19,7 +19,7 @@
             We are here to help you<br />starting with Lookport
           </p>
 
-          <p class="text-lg font-normal leading-none tracking-tighter text-white anim-up font-geometria">
+          <p class="mb-1 text-lg font-normal leading-none tracking-tighter text-white/50 anim-up font-geometria">
             Promoters support team:
           </p>
           <div class="anim-up">

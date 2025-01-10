@@ -1,15 +1,15 @@
 <template>
-  <section class="relative w-full mb-20 section">
+  <section id="ai" class="relative w-full mb-20 section">
     <div class="absolute inset-0 w-full h-full">
 
       <div class="hidden md:block body">
         <div class="pulse-background"></div>
-        <div class="circle"></div>
       </div>
     </div>
     <!-- <img src="/images/ai-form.png" class="absolute max-w-[730px] w-full h-auto object-cover top-1/2 -left-[290px] -translate-y-1/2" alt=""> -->
     <div
       class="relative flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-10 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
+      <div class="circle"></div>
       <div class="relative z-30 flex flex-col gap-6 pt-[18px] basis-1/2">
         <h1
           class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-[#eeeeee] font-ag uppercase">
@@ -44,7 +44,7 @@
 const listItems = [
   "Demand forecasting",
   "User behaviour analysis",
-  "User behaviour analysis",
+  "Dynamic pricing",
   "Marketing analysis",
 ];
 </script>
@@ -152,7 +152,7 @@ li::before {
 /* Анимация пульсации фона с размытиями и искажениями */
 @keyframes pulse {
   0% {
-    background-size: 100% 100%;
+    background-size: 80% 80%;
     transform: rotate(5deg) skew(0deg, 0deg);
     /* Легкое поворачивание и искажение */
     filter: blur(5px);
@@ -160,7 +160,7 @@ li::before {
   }
 
   100% {
-    background-size: 140% 140%;
+    background-size: 110% 110%;
     transform: rotate(13deg) skew(6deg, 6deg);
     /* Сильное искажение */
     filter: blur(35px);

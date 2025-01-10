@@ -3,13 +3,14 @@
     <AppHeader />
     <main class="flex flex-col items-center w-full">
       <Hero />
+      <AISection />
+      <FeaturesSection />
       <ClientOnly>
-        <div class="w-full mb-20 h-svh">
+        <div id="logo" class="w-full mb-20 h-svh">
           <ThreeLogoSection class="w-full h-svh" />
         </div>
       </ClientOnly>
-      <AISection />
-      <FeaturesSection />
+      <Seats />
       <NotificationSection />
       <BroadcastSection />
       <PriceOptions />
@@ -34,6 +35,7 @@ import PriceOptions from "./components/PriceOptions.vue";
 import Domains from "./components/Domains.vue";
 import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
+import Seats from './components/Seats.vue';
 import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
 import gsap from 'gsap';
@@ -79,7 +81,6 @@ const registerObserver = () => {
 
 onMounted(() => {
   sections.value = document.querySelectorAll('.section');
-  console.log(sections.value);
   registerObserver();
 })
 

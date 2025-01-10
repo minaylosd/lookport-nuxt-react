@@ -22,10 +22,11 @@
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
   <div class="relative w-full h-screen section">
     <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt="">
+    <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
     <!-- <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt=""> -->
     <div class="relative w-full h-full overflow-hidden">
 
-      <!-- <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56" alt=""> -->
+      
       <div
         class="absolute z-40 -bottom-28 blur-2xl left-0 w-full h-1/3 bg-[linear-gradient(to_bottom,_rgba(0,0,0,0)_0%,_#000_75%)]">
       </div>

@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState, Fragment } from "react";
-import { MeshTransmissionMaterial, useGLTF, Text } from "@react-three/drei";
+import { MeshTransmissionMaterial, useGLTF, Text, GradientTexture } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useControls } from "leva";
 
 export default function Model(props) {
   const groupRef = useRef(); // Ссылка на группу объектов
@@ -15,28 +14,30 @@ export default function Model(props) {
   let scrollTimeout = useRef(null); // Таймер для сброса скорости
 
   // Параметры для первого объекта
-  const materialProps1 = useControls({
-    thickness: { value: 0.85, min: 0, max: 3, step: 0.05 },
-    roughness: { value: 0, min: 0, max: 1, step: 0.1 },
-    transmission: { value: 1, min: 0, max: 1, step: 0.1 },
-    ior: { value: 1.2, min: 0, max: 3, step: 0.1 },
-    chromaticAberration: { value: 1, min: 0, max: 1 },
-    backside: { value: true },
-  });
+  const materialProps1 = {
+    thickness: 1.50,
+    roughness: 0.1,
+    transmission: 1,
+    ior: 1.3,
+    chromaticAberration: 1,
+    backside: true,
+  };
 
   // Параметры для второго объекта
-  const materialProps2 = useControls({
-    thickness: { value: 3, min: 0, max: 3, step: 0.05 },
-    roughness: { value: 0.2, min: 0, max: 1, step: 0.1 },
-    transmission: { value: 0.8, min: 0, max: 1, step: 0.1 },
-    ior: { value: 1.5, min: 0, max: 3, step: 0.1 },
-    chromaticAberration: { value: 1, min: 0, max: 1 },
-    backside: { value: false },
-    color: { value: "#8000ff" }, // Цвет для второго объекта
-  });
+  const materialProps2 = {
+    thickness: 3,
+    roughness: 0.2,
+    transmission: 0.8, 
+    ior: 1.5, 
+    chromaticAberration: 1, 
+    backside: false,
+    color: "#8000ff", // Цвет для второго объекта
+  };
 
   // Добавляем слушатель на прокрутку
   useEffect(() => {
+    const logo = document.getElementById("logo");
+
     const handleScroll = () => {
       setScrollSpeed(5); // Увеличиваем скорость при прокрутке
 
@@ -49,26 +50,35 @@ export default function Model(props) {
       }, 300);
     };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
-      }
-    }; // Убираем слушатель при размонтировании
+    const observer = new IntersectionObserver((entries)=> {
+      entries.forEach((entry)=> {
+        if (entry.isIntersecting) {
+          window.addEventListener("scroll", handleScroll);
+        } else {
+          window.removeEventListener("scroll", handleScroll);
+          if (scrollTimeout.current) {
+            clearTimeout(scrollTimeout.current);
+          }
+        }
+      })
+    })
+
+    observer.observe(logo);
   }, []);
 
   // Обработчик для движения мыши
   useEffect(() => {
+    const logo = document.getElementById("logo");
+
     const handleMouseMove = (event) => {
       const x = (event.clientX / window.innerWidth) * 2 - 1; // Нормализуем X в диапазон от -1 до 1
       const y = -(event.clientY / window.innerHeight) * 2 + 1; // Нормализуем Y в диапазон от -1 до 1
       setMousePosition({ x, y });
     };
 
-    window.addEventListener("mousemove", handleMouseMove);
+    logo.addEventListener("mousemove", handleMouseMove);
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      logo.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
@@ -93,9 +103,9 @@ export default function Model(props) {
     if (groupRef.current) {
       // Интерполируем движение модели в сторону курсора
       groupRef.current.position.x +=
-        (mousePosition.x - groupRef.current.position.x) * 0.1;
+        (mousePosition.x - groupRef.current.position.x) * 0.06;
       groupRef.current.position.y +=
-        (mousePosition.y - groupRef.current.position.y) * 0.1;
+        (mousePosition.y - groupRef.current.position.y) * 0.06;
     }
   });
 
@@ -122,13 +132,22 @@ export default function Model(props) {
       </group>
 
       <group ref={textGroup} position={[0, -0.3, 0.5]}>
+        
         <Text
-          font={"/three/PPNeueMontreal-Bold.otf"}
-          fontSize={0.6}
-          color="white"
+          font={"/three/AGLettericaUltraCompressed-Roman.otf"}
+          fontSize={1.3}
+          text="LET AI HANDLE IT"
           anchorX="center"
           anchorY="bottom">
-          Innovation
+          <meshBasicMaterial>
+            <GradientTexture
+              stops={[0, 0.5, 1]}
+              colors={[0xaaaaaa, 'white', 0xaaaaaa]}
+              rotation={-1.72}
+              width={props.width/2}
+              size={props.height/4}
+            />
+          </meshBasicMaterial> 
         </Text>
       </group>
     </Fragment>

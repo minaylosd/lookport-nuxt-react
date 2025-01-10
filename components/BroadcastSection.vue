@@ -1,8 +1,9 @@
 <template>
-  <div class="relative z-40 flex items-center w-full mb-20 md:h-screen section">
+  <div class="relative flex items-center w-full mb-20 md:h-screen section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
+        <div class="circle"></div>
         <div class="gradient-overlay"></div>
       </div>
     </div>
@@ -18,6 +19,7 @@
       <div class="relative flex justify-center order-1 md:justify-end basis-5/12 md:order-none">
         <img class="anim-up object-cover w-full md:w-[120%] max-w-[611px] h-auto mix-blend-lighten"
           src="/images/broadcast.png" />
+        <img class="absolute z-10 bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[200%] max-w-[1200px] object-cover" src="/images/broadcast-figure.png" alt="">
       </div>
 
       <div class="relative z-30 flex flex-col gap-6 basis-7/12">
@@ -45,9 +47,9 @@ import GetStartedBtn from "./GetStartedBtn.vue";
 .body {
   margin: 0;
   padding: 0;
-  background: #0a0a0a;
+  /* background: #0a0a0a; */
   /* Чёрный фон */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
@@ -80,6 +82,20 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   width: 30vw;
   height: 400px;
   filter: blur(105px) brightness(1) contrast(0.7);
+}
+
+.circle {
+  position: absolute;
+  top: 15vh;
+  left: -30vh;
+  /* transform: translate((-50%, -50%)); */
+  width: 70vh;
+  height: 70vh;
+  border-radius: 50%;
+  background: linear-gradient(117.5deg, rgba(49, 51, 64, 0.4) 0.16%, rgba(49, 51, 64, 0) 100%);
+  backdrop-filter: blur(70px);
+  /* Поверх всех элементов */
+  pointer-events: none;
 }
 
 /* Анимация искажения правого края */
@@ -134,5 +150,14 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   100% {
     opacity: 0;
   }
+}
+
+@media (min-width: 640px) {
+  .circle {
+    width: 90vh;
+  height: 90vh;
+  left: -45vh;
+  }
+  
 }
 </style>
