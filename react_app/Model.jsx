@@ -135,7 +135,7 @@ export default function Model(props) {
         
         <Text
           font={"/three/AGLettericaUltraCompressed-Roman.otf"}
-          fontSize={1.3}
+          fontSize={1.4}
           text="LET AI HANDLE IT"
           anchorX="center"
           anchorY="bottom">
