@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center w-full mb-20 md:h-screen">
+  <section ref="section" class="relative flex items-center w-full md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -8,7 +8,7 @@
     </div>
 
     <div
-      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pb-10 mx-auto pt-28 md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
+      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pt-20 pb-10 mx-auto md:px-10 md:pt-40 md:pb-40 md:gap-20 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col">
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-screen section">
+  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -25,7 +25,7 @@
         </p>
         <div class="flex flex-col md:items-center md:flex-row xl:mt-6 gap-7">
           <div
-            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
+            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl outline-[1px] outline outline-white/5 bg-[linear-gradient(65deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Whatsapp.svg" alt="WhatsApp icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
               <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
@@ -37,7 +37,7 @@
             </div>
           </div>
           <div
-            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl border border-white/5 bg-[linear-gradient(70deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
+            class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl outline-[1px] outline outline-white/5 bg-[linear-gradient(65deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Telegram.svg" alt="Telegram icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
               <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
@@ -152,7 +152,7 @@ import Badge from "./Badge.vue";
   top: 12%;
   width: 100vw;
   /* Ширина контейнера */
-  height: 100vh;
+  height: 100%;
   /* Высота контейнера */
   background-image: url('/images/phone.png');
   /* Устанавливаем картинку как фон */

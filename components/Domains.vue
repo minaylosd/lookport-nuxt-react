@@ -20,7 +20,7 @@
 
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
-  <div class="relative w-full h-screen section">
+  <div class="relative w-full h-lvh section">
     <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt="">
     <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
     <!-- <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt=""> -->
@@ -28,7 +28,7 @@
 
       
       <div
-        class="absolute z-40 -bottom-28 blur-2xl left-0 w-full h-1/3 bg-[linear-gradient(to_bottom,_rgba(0,0,0,0)_0%,_#000_75%)]">
+        class="absolute z-40 -bottom-10 blur-xl left-1/2 -translate-x-1/2 w-[120vw] h-1/2 bg-[linear-gradient(to_bottom,_rgba(0,0,0,0)_0%,_#000_65%)]">
       </div>
       <section
         class="relative z-30 flex flex-col items-center justify-center w-full max-w-screen-lg px-6 py-40 mx-auto md:px-10 xl:max-w-screen-xl">
