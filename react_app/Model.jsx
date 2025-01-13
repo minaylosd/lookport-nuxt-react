@@ -7,10 +7,16 @@ export default function Model(props) {
   const firstMesh = useRef(); // Ссылка на первый объект
   const secondMesh = useRef(); // Ссылка на второй объект
   const textGroup = useRef(); // Ссылка на группу с текстом
+
+  const circleScale = useRef(props.width < 640 ? 0.06 : 0.1);
+  const fontSize = useRef(props.width < 640 ? 0.7 : 1.4);
+  const pos = useRef(props.width < 640 ? [0, -0.11, 0.5] : [0, -0.3, 0.5]);
+
   const { nodes } = useGLTF("/three/Logo_1.glb");
 
   const [scrollSpeed, setScrollSpeed] = useState(1); // Начальная скорость вращения
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
   let scrollTimeout = useRef(null); // Таймер для сброса скорости
 
   // Параметры для первого объекта
@@ -53,15 +59,17 @@ export default function Model(props) {
     const observer = new IntersectionObserver((entries)=> {
       entries.forEach((entry)=> {
         if (entry.isIntersecting) {
+          setIsVisible(true);
           window.addEventListener("scroll", handleScroll);
         } else {
+          setIsVisible(false);
           window.removeEventListener("scroll", handleScroll);
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);
           }
         }
       })
-    })
+    }, {threshold: 0.25})
 
     observer.observe(logo);
   }, []);
@@ -84,6 +92,8 @@ export default function Model(props) {
 
   // Анимация вращения и движения
   useFrame(() => {
+    if (!isVisible) return;
+
     if (firstMesh.current) {
       // Вращение первого объекта с учетом текущей скорости
       firstMesh.current.rotation.y += 0.01 * scrollSpeed; // Вращение по Y
@@ -117,7 +127,7 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.Circle005.geometry}
-          scale={0.1}>
+          scale={props.scale}>
           <MeshTransmissionMaterial {...materialProps1} color={"white"} />
         </mesh>
 
@@ -126,16 +136,16 @@ export default function Model(props) {
           castShadow
           receiveShadow
           geometry={nodes.Circle006.geometry}
-          scale={0.1}>
+          scale={props.scale}>
           <MeshTransmissionMaterial {...materialProps2} ior={"0.3"} />
         </mesh>
       </group>
 
-      <group ref={textGroup} position={[0, -0.3, 0.5]}>
+      <group ref={textGroup} position={props.position}>
         
         <Text
           font={"/three/AGLettericaUltraCompressed-Roman.otf"}
-          fontSize={1.4}
+          fontSize={props.font}
           text="LET AI HANDLE IT"
           anchorX="center"
           anchorY="bottom">
