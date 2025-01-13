@@ -7,7 +7,7 @@
       </div>
     </div>
     <section
-      class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-10 pt-10 mx-auto md:pt-40 md:pb-16 md:flex-row xl:max-w-screen-xl">
+      class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 pt-10 mx-auto md:pt-40 md:pb-16 md:flex-row xl:max-w-screen-xl">
       <div class="relative flex flex-col order-2 basis-5/12 md:-order-none">
         
         <div class="relative z-10 flex flex-col items-center w-fit gap-7">

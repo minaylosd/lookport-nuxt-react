@@ -2,7 +2,7 @@
   <button ref="button" v-if="props.big"
     class="anim-up relative px-7 py-5 md:px-[49px] md:py-[25.5px] overflow-hidden rounded-full btn-xl before:transition-colors before:duration-500 ease-in">
     <p
-      class="relative z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
+      class="relative whitespace-nowrap z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
       Get
       Started</p>
   </button>

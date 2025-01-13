@@ -13,7 +13,7 @@
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
           class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
-          AI-driven Event ticketing platform
+          <span class="whitespace-nowrap">AI-driven Event</span><br />ticketing platform
         </h1>
         <p
           class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
@@ -22,7 +22,7 @@
         <div class="flex items-center gap-4 md:flex-row">
           <GetStartedBtn :big="true" />
           <div ref="link"
-            class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
+            class="anim-up whitespace-nowrap cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
             Learn More</div>
         </div>
       </div>
@@ -102,19 +102,28 @@ const updateAnimation = () => {
 
 onMounted(() => {
   const animate = section.value.querySelectorAll('.anim-up');
+  section.value.addEventListener('mousemove', (e) => {
+    const followX = (window.innerWidth / 2 - e.clientX) / 70;
+    const followY = (window.innerHeight / 2 - e.clientY) / 30;
+
+    targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+    targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+  });
+
+  updateAnimation();
   gsap.fromTo(animate, {
     opacity: 0, y: 100
   }, {
     opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
-      section.value.addEventListener('mousemove', (e) => {
-        const followX = (window.innerWidth / 2 - e.clientX) / 20;
-        const followY = (window.innerHeight / 2 - e.clientY) / 20;
+      // section.value.addEventListener('mousemove', (e) => {
+      //   const followX = (window.innerWidth / 2 - e.clientX) / 70;
+      //   const followY = (window.innerHeight / 2 - e.clientY) / 30;
 
-        targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-        targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
-      });
+      //   targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+      //   targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+      // });
 
-      updateAnimation();
+      // updateAnimation();
     })
   });
 
@@ -223,19 +232,20 @@ onMounted(() => {
 
 .wrapper-upper {
   z-index: 2;
-  left: -15px;
+  left: 6px;
   /* Верхняя картинка всегда сверху */
 }
 
 .wrapper-lower {
   z-index: 1;
   /* Нижняя картинка находится под верхней */
-  right: -15px;
+  right: 6px;
   transform: translateZ(300px);
 }
 
 .interactive-image {
-  width: 230px;
+  min-width: 180px;
+  width: 180px;
   /* Размер обеих картинок одинаковый */
   height: auto;
   border-radius: 10px;
@@ -243,26 +253,29 @@ onMounted(() => {
   pointer-events: none;
   overflow: hidden;
   position: relative;
-  filter: brightness(77%);
+  filter: brightness(97%);
 }
 
 .glare {
   position: absolute;
-  width: 200px;
+  width: 140px;
   /* Размер блика */
   height: 100px;
   /* Размер блика */
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(30px);
-  opacity: 0.4;
+  filter: blur(20px);
+  opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 1280px) {
+  .wrapper-upper {
+    left: -15px;
+  }
   .wrapper-lower {
     z-index: 1;
     /* Нижняя картинка находится под верхней */
@@ -271,6 +284,7 @@ onMounted(() => {
   }
 
   .interactive-image {
+    min-width: 300px;
     width: 300px;
     /* Размер обеих картинок одинаковый */
     height: auto;
@@ -279,7 +293,7 @@ onMounted(() => {
     pointer-events: none;
     overflow: hidden;
     position: relative;
-    filter: brightness(77%);
+    filter: brightness(97%);
   }
 }
 </style>
