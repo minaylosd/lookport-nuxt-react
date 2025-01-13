@@ -84,7 +84,7 @@
     </section>
   </div>
 
-  <div class="relative flex items-center w-full md:h-lvh md:max-h-max section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
+  <div class="relative z-[1] flex items-center w-full md:h-lvh md:max-h-max section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
@@ -237,7 +237,7 @@ li::before {
   object-fit: cover;
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
   filter: blur(30px) brightness(1.2) contrast(1.1);
-  z-index: 1;
+  z-index: 2;
 }
 
 /* Наложение динамического слоя */
@@ -252,7 +252,7 @@ li::before {
   /* Накладываем эффект */
   animation: gradientFlow1 5s ease-in infinite;
   /* Увеличиваем время анимации */
-  z-index: 2;
+  z-index: 3;
 }
 
 /* Анимация для фона */
