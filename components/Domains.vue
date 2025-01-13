@@ -21,12 +21,20 @@
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
   <div class="relative w-full h-lvh section">
-    <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt="">
+    <!-- <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt=""> -->
+    <div class="absolute inset-0 w-full h-full">
+      <div class="body">
+        <div class="pulse-background"></div>
+        <div class="gradient-overlay"></div>
+        <div class="pulse-background-left"></div>
+        <div class="pulse-background-right"></div>
+      </div>
+    </div>
     <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
     <!-- <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt=""> -->
     <div class="relative w-full h-full overflow-hidden">
 
-      
+
       <div
         class="absolute z-40 -bottom-10 blur-xl left-1/2 -translate-x-1/2 w-[120vw] h-1/2 bg-[linear-gradient(to_bottom,_rgba(0,0,0,0)_0%,_#000_65%)]">
       </div>
@@ -98,5 +106,99 @@ import WebIcon from "./WebIcon.vue";
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+.body {
+  margin: 0;
+  padding: 0;
+  background: #000; /* Чёрный фон */
+  overflow: hidden;
+  height: 100vh;
+  cursor: pointer;
+}
+.pulse-background-left{
+  position: absolute;
+  left: -10%;
+  min-width: 1000px;
+  width: 100vw; /* Ширина контейнера */
+  height: 100vh; /* Высота контейнера */
+  background-image: url('/images/left.png'); /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat; /* Отключаем повторение фона */
+  background-size: 80% 100%; /* Начальный размер фона */
+  filter: blur(25px);
+}
+.pulse-background-right{
+  position: absolute;
+  left: 40%;
+  min-width: 1000px;
+  width: 100vw; /* Ширина контейнера */
+  height: 100vh; /* Высота контейнера */
+  background-image: url('/images/right.png'); /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat; /* Отключаем повторение фона */
+  background-size: 80% 100%; /* Начальный размер фона */
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  transition: background-size 0.4s ease-out; /* Плавный переход */
+  filter: blur(25px);
+}
+/* Стили для контейнера с фоном */
+.pulse-background {
+  position: absolute;
+  left: 24%;
+  top: 35%;
+  min-width: 1000px;
+  width: 100vw; /* Ширина контейнера */
+  height: 100vh; /* Высота контейнера */
+  background-image: url('/images/center.png'); /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat; /* Отключаем повторение фона */
+  background-size: 45% 66%; /* Начальный размер фона */
+  animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  filter: blur(25px);
+
+}
+@keyframes transformAnimation {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638));
+  mix-blend-mode: overlay; /* Накладываем эффект */
+  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  z-index: 2;
+}
+
+/* Анимация искажения правого края */
+@keyframes skewAnimation {
+  0% {
+    background-size: 80% 100%; /* Начальный размер фона */
+  }
+  100% {
+    background-size: 84% 105%; /* Конечный размер фона */
+  }
+}
+@keyframes gradientFlow1 {
+  0% {
+    opacity: 0;
+  }
+  25%{
+    opacity: 0.25;
+  }
+  50%{
+    opacity: 0.8;
+  }
+  75%{
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 </style>
