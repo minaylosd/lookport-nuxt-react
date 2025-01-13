@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full overflow-hidden max-h-[778px]">
+  <div class="relative z-30 w-full overflow-hidden max-h-[778px]">
     <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[778px]">
       <video class="object-cover w-full h-auto py-10" src="/Sequence_02_3.mp4" autoplay muted loop></video>
       <svg>
