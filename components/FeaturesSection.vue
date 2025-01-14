@@ -301,7 +301,7 @@ li::before {
   padding: 0;
   /* background: #0a0a0a; Чёрный фон */
   /* overflow: hidden; */
-  height: 100lvh;
+  height: 100%;
   cursor: pointer;
 }
 
@@ -309,7 +309,7 @@ li::before {
   position: absolute;
   left: 75%;
   width: 100vw; /* Ширина контейнера */
-  height: 100lvh; /* Высота контейнера */
+  height: 100%; /* Высота контейнера */
   background-image: url('/images/Neonright.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: auto 100%; /* Начальный размер фона */
@@ -328,7 +328,7 @@ li::before {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100lvh;
+  height: 100%;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay; /* Накладываем эффект */
   

@@ -226,17 +226,17 @@ defineExpose({ animate });
 
 @keyframes skewAnimationMob {
   0% {
-    background-size: 100% 100%;
+    background-size: 90% 90%;
     /* Начальный размер фона */
   }
 
   50% {
-    background-size: 110% 90%;
+    background-size: 100% 80%;
     /* Конечный размер фона */
   }
 
   100% {
-    background-size: 100% 110%;
+    background-size: 90% 100%;
     /* Конечный размер фона */
   }
 }
@@ -248,7 +248,7 @@ defineExpose({ animate });
     top: 15%;
     width: 100vw;
     /* Ширина контейнера */
-    height: 100lvh;
+    height: 100%;
     /* Высота контейнера */
     background-image: url('/images/phone.png');
     /* Устанавливаем картинку как фон */

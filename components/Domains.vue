@@ -113,7 +113,7 @@ import WebIcon from "./WebIcon.vue";
   padding: 0;
   background: #000; /* Чёрный фон */
   overflow: hidden;
-  height: 100lvh;
+  height: 100%;
   cursor: pointer;
 }
 .pulse-background-left{
@@ -121,7 +121,7 @@ import WebIcon from "./WebIcon.vue";
   left: -10%;
   min-width: 1000px;
   width: 100vw; /* Ширина контейнера */
-  height: 100lvh; /* Высота контейнера */
+  height: 100%; /* Высота контейнера */
   background-image: url('/images/left.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 80% 100%; /* Начальный размер фона */
@@ -132,7 +132,7 @@ import WebIcon from "./WebIcon.vue";
   left: 40%;
   min-width: 1000px;
   width: 100vw; /* Ширина контейнера */
-  height: 100lvh; /* Высота контейнера */
+  height: 100%; /* Высота контейнера */
   background-image: url('/images/right.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 80% 100%; /* Начальный размер фона */
@@ -147,7 +147,7 @@ import WebIcon from "./WebIcon.vue";
   top: 35%;
   min-width: 1000px;
   width: 100vw; /* Ширина контейнера */
-  height: 100lvh; /* Высота контейнера */
+  height: 100%; /* Высота контейнера */
   background-image: url('/images/center.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 45% 66%; /* Начальный размер фона */
@@ -176,7 +176,7 @@ import WebIcon from "./WebIcon.vue";
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100lvh;
+  height: 100%;
   background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638));
   mix-blend-mode: overlay; /* Накладываем эффект */
   
