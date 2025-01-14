@@ -4,7 +4,7 @@ import Model from "./Model";
 import { Environment } from "@react-three/drei";
 export default function () {
   const [screenWidth, setWidth] = useState(window.innerWidth);
-  const [screenHeight, setHeight] = useState(window.innerHeight < 1300 ? window.innerHeight : 1300);
+  const [screenHeight, setHeight] = useState(screen.availHeight < 1300 ? screen.availHeight : 1300);
   const [scale, setScale] = useState(window.innerWidth < 640 ? 0.06 : 0.1);
   const [font, setFont] = useState(window.innerWidth < 640 ? 0.7 : 1.4);
   const [position, setPosition] = useState(window.innerWidth < 640 ? [0, -0.11, 0.5] : [0, -0.3, 0.5]);
@@ -16,7 +16,7 @@ export default function () {
       clearTimeout(timeout);
       timeout = setTimeout(()=> {
         setWidth(window.innerWidth);
-        setHeight(window.innerHeight < 1300 ? window.innerHeight : 1300);
+        setHeight(screen.availHeight < 1300 ? screen.availHeight : 1300);
         setScale(window.innerWidth < 640 ? 0.06 : 0.1);
         setFont(window.innerWidth < 640 ? 0.7 : 1.4);
         setPosition(window.innerWidth < 640 ? [0, -0.11, 0.5] : [0, -0.3, 0.5]);
