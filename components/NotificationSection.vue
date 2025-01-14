@@ -248,7 +248,7 @@ defineExpose({ animate });
     top: 15%;
     width: 100vw;
     /* Ширина контейнера */
-    height: 100vh;
+    height: 100lvh;
     /* Высота контейнера */
     background-image: url('/images/phone.png');
     /* Устанавливаем картинку как фон */

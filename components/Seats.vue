@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex items-center w-full mb-20 md:h-lvh max-h-max section">
+  <div class="relative flex items-center w-full mb-20 md:h-lvh max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>
@@ -12,7 +12,8 @@
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-10 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl xl:gap-20">
       <div class="relative flex flex-col items-center order-2 gap-5 anim-up basis-5/12 xl:basis-1/2 md:order-none">
-        <img class="absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%] min-w-[200%] object-cover" src="/images/seats-gradient.png" alt="">
+        <img class="absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%] min-w-[200%] object-cover"
+          src="/images/seats-gradient.png" alt="">
         <img class="relative z-10 block object-cover w-full max-w-[520px] h-auto" src="/images/seats-nogradient.png" />
       </div>
 
@@ -101,9 +102,13 @@ li::before {
   background-repeat: no-repeat;
   background-size: auto 100%;
   object-fit: cover;
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+
   filter: blur(30px) brightness(1.2) contrast(1.1);
   z-index: 1;
+}
+
+.visible .pulse-background {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
 /* Наложение динамического слоя */
@@ -116,9 +121,13 @@ li::before {
   background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite;
+
   /* Увеличиваем время анимации */
   z-index: 2;
+}
+
+.visible .gradient-overlay {
+  animation: gradientFlow1 5s ease-in infinite;
 }
 
 /* Анимация для фона */
@@ -159,36 +168,51 @@ li::before {
   padding: 0;
   /* background: #0a0a0a; Чёрный фон */
   /* overflow: hidden; */
-  height: 100vh;
+  height: 100lvh;
   cursor: pointer;
 }
 
 .pulse-background-pricing {
   position: absolute;
   left: 75%;
-  width: 100vw; /* Ширина контейнера */
-  height: 100vh; /* Высота контейнера */
-  background-image: url('/images/Neonright.png'); /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: auto 100%; /* Начальный размер фона */
+  width: 100vw;
+  /* Ширина контейнера */
+  height: 100lvh;
+  /* Высота контейнера */
+  background-image: url('/images/Neonright.png');
+  /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat;
+  /* Отключаем повторение фона */
+  background-size: auto 100%;
+  /* Начальный размер фона */
   object-fit: cover;
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
-  transition: background-size 0.2s ease-out; /* Плавный переход */
+
+  transition: background-size 0.2s ease-out;
+  /* Плавный переход */
   filter: blur(25px) brightness(1.6) contrast(1.1);
-  -webkit-mask: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
-  mask: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
 }
+
+.visible .pulse-background-pricing {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
+
 /* Наложение динамического слоя */
 .gradient-overlay-pricing {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100lvh;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
-  mix-blend-mode: overlay; /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  mix-blend-mode: overlay;
+  /* Накладываем эффект */
+
   z-index: 2;
+}
+
+.visible .gradient-overlay-pricing {
+  animation: gradientFlow1 5s ease-in infinite;
+  /* Увеличиваем время анимации */
 }
 
 /* Анимация для фона */
@@ -196,23 +220,29 @@ li::before {
   0% {
     background-size: 30% 100%;
   }
+
   100% {
     background-size: 35% 100%;
   }
 }
+
 @keyframes gradientFlow1Pricing {
   0% {
     opacity: 0;
   }
-  25%{
+
+  25% {
     opacity: 0.25;
   }
-  50%{
+
+  50% {
     opacity: 0.8;
   }
-  75%{
+
+  75% {
     opacity: 0.25;
   }
+
   100% {
     opacity: 0;
   }
@@ -220,11 +250,12 @@ li::before {
 
 @media (min-width:640px) {
   .pulse-background {
-  background-size: 30% 100%;
-}
+    background-size: 30% 100%;
+  }
 
   .pulse-background-pricing {
-  background-size: 30% 100%; /* Начальный размер фона */
-}
+    background-size: 30% 100%;
+    /* Начальный размер фона */
+  }
 }
 </style>

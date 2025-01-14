@@ -89,7 +89,7 @@ li::before {
   /* background: #000; */
   /* Чёрный фон */
   /* overflow: hidden; */
-  height: 100vh;
+  height: 100lvh;
   cursor: pointer;
 }
 
@@ -99,7 +99,7 @@ li::before {
   left: -10%;
   width: 50vw;
   /* Ширина контейнера */
-  height: 100vh;
+  height: 100lvh;
   /* Высота контейнера */
   background-image: url('/images/object.png');
   /* Устанавливаем картинку как фон */

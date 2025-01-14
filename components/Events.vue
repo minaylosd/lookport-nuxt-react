@@ -28,7 +28,7 @@ video {
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
-  height: 100vh;
+  height: 100lvh;
   background-color: #0a0a0a;
 }
 
