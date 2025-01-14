@@ -70,8 +70,12 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   /* Отключаем повторение фона */
   background-size: 50% 80%;
   /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  
   filter: blur(5px) brightness(1) contrast(1);
+}
+
+.visible .pulse-background {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
 .pulse-background::after {
@@ -128,9 +132,13 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite;
+  
   /* Увеличиваем время анимации */
   z-index: 2;
+}
+
+.visible .gradient-overlay {
+  animation: gradientFlow1 5s ease-in infinite;
 }
 
 @keyframes gradientFlow1 {

@@ -76,11 +76,14 @@ import LangSelector from './LangSelector.vue';
   /* Отключаем повторение фона */
   background-size: 90% 120%;
   /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
   transition: background-size 0.2s ease-out;
   /* Плавный переход */
   filter: blur(25px);
   /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
+}
+
+.visible .pulse-background {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
 .gradient-overlay {
@@ -92,11 +95,13 @@ import LangSelector from './LangSelector.vue';
   background: radial-gradient(circle at 10% 10%, rgb(0, 195, 255), rgba(255, 0, 225, 0.638));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite;
   /* Увеличиваем время анимации */
   z-index: 2;
 }
 
+.visible .gradient-overlay {
+  animation: gradientFlow1 5s ease-in infinite;
+}
 /* Анимация для фона */
 @keyframes skewAnimation {
   0% {

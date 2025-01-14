@@ -136,7 +136,7 @@ import WebIcon from "./WebIcon.vue";
   background-image: url('/images/right.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 80% 100%; /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  
   transition: background-size 0.4s ease-out; /* Плавный переход */
   filter: blur(25px);
 }
@@ -151,9 +151,17 @@ import WebIcon from "./WebIcon.vue";
   background-image: url('/images/center.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 45% 66%; /* Начальный размер фона */
-  animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  
   filter: blur(25px);
 
+}
+
+.visible .pulse-background-right {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+}
+
+.visible .pulse-background {
+  animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
 }
 @keyframes transformAnimation {
   0% {
@@ -171,8 +179,12 @@ import WebIcon from "./WebIcon.vue";
   height: 100vh;
   background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638));
   mix-blend-mode: overlay; /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  
   z-index: 2;
+}
+
+.visible .gradient-overlay {
+  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
 }
 
 /* Анимация искажения правого края */

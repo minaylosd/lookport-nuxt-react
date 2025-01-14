@@ -204,8 +204,12 @@ onMounted(() => {
   /* Псевдоэлемент должен быть поверх фона */
   opacity: 0;
   /* Начальная прозрачность */
-  animation: pulse 3s infinite alternate;
+  
   /* Анимация изменения прозрачности */
+}
+
+.visible .black::after {
+  animation: pulse 3s infinite alternate;
 }
 
 /* Анимация прозрачности */

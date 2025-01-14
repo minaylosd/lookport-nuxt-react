@@ -235,9 +235,13 @@ li::before {
   background-repeat: no-repeat;
   background-size: auto 100%;
   object-fit: cover;
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  
   filter: blur(30px) brightness(1.2) contrast(1.1);
   z-index: 2;
+}
+
+.visible .pulse-background {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
 /* Наложение динамического слоя */
@@ -250,9 +254,13 @@ li::before {
   background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite;
+  
   /* Увеличиваем время анимации */
   z-index: 3;
+}
+
+.visible .gradient-overlay {
+  animation: gradientFlow1 5s ease-in infinite;
 }
 
 /* Анимация для фона */
@@ -306,9 +314,13 @@ li::before {
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: auto 100%; /* Начальный размер фона */
   object-fit: cover;
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  
   transition: background-size 0.2s ease-out; /* Плавный переход */
   filter: blur(25px) brightness(1.6) contrast(1.1);
+}
+
+.visible .pulse-background-pricing {
+  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 /* Наложение динамического слоя */
 .gradient-overlay-pricing {
@@ -319,8 +331,12 @@ li::before {
   height: 100vh;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay; /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  
   z-index: 2;
+}
+
+.visible .gradient-overlay-pricing {
+  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
 }
 
 /* Анимация для фона */

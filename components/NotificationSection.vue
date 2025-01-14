@@ -54,69 +54,75 @@
       <div class="flex justify-center w-full">
         <div class="relative w-[275px] flex flex-col h-full anim-up">
           <img src="/images/screen-st1.png" class="object-cover w-full h-auto" alt="">
-          <img ref="blur" src="/images/screen-st2.png" class="absolute inset-0 z-10 object-cover w-full h-auto opacity-0 appear" alt="">
+          <img ref="blur" src="/images/screen-st2.png"
+            class="absolute inset-0 z-10 object-cover w-full h-auto opacity-0 appear" alt="">
           <div class="absolute  inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
-            <h5 ref="header" class="appear font-geometria font-bold opacity-0 text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
+            <h5 ref="header"
+              class="appear font-geometria font-bold opacity-0 text-white text-lg leading-none mb-[18px]">Lookport Bot
+            </h5>
             <div class="flex flex-col justify-end w-full basis-9/12">
               <div ref="msgOne" class="flex items-end mb-2 opacity-0 appear">
-              <div class="w-[18px] h-[18px] mr-2">
-                <AvatarIcon />
+                <div class="w-[18px] h-[18px] mr-2">
+                  <AvatarIcon />
+                </div>
+
+                <div class="w-[165px] backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
+                  <p class="font-geometria font-medium text-[9px] text-white">✅ +2 tickets, $85</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">General Admission x2<br />Show in
+                    Berlin - 421 / 750</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80">Source: Instagram Ads (UTM:
+                    inst)<br />Isabelle Black, test@example.com</p>
+                </div>
+
+                <p class="font-geometria font-normal text-[7px] text-[#828282]">12:00</p>
               </div>
 
-              <div class="w-[165px] backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
-                <p class="font-geometria font-medium text-[9px] text-white">✅ +2 tickets, $85</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">General Admission x2<br />Show in
-                  Berlin - 421 / 750</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80">Source: Instagram Ads (UTM:
-                  inst)<br />Isabelle Black, test@example.com</p>
+              <div ref="msgTwo" class="flex items-end mb-2 opacity-0 appear">
+                <div class="w-[18px] h-[18px] mr-2">
+                  <AvatarIcon />
+                </div>
+
+                <div
+                  class="w-[165px] backdrop-blur-lg bg-[linear-gradient(137deg,_rgba(23,_38,_86,_1)_0%,_rgba(112,_90,_191,_1)_100%)] rounded-[5px] p-2 mr-1">
+                  <p class="font-geometria font-medium text-[9px] text-white">✅ +2 tickets, $380</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">Gold circle x2<br />Show in London
+                    -
+                    526 / 810</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80">Source: Instagram Ads (UTM:
+                    Fb)<br />John
+                    White, test@example.com</p>
+                </div>
+
+                <p class="font-geometria font-normal text-[7px] text-[#828282]">12:16</p>
               </div>
 
-              <p class="font-geometria font-normal text-[7px] text-[#828282]">12:00</p>
+              <div ref="msgThree" class="items-end justify-end hidden w-full gap-1 mb-2 opacity-0 ">
+                <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
+
+                <div class="backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
+                  <p class="font-geometria font-normal text-[9px] text-white/80">/summary</p>
+                </div>
+              </div>
+
+              <div ref="msgFour" class="hidden opacity-0 items-end mb-2.5">
+                <div class="w-[18px] h-[18px] mr-2">
+                  <AvatarIcon />
+                </div>
+
+                <div class="w-[165px] backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
+                  <p class="font-geometria font-medium text-[9px] text-white mb-2">Tour summary</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">Berlin - 421 / 750<br />London -
+                    526
+                    / 810<br />New York - 348 / 520<br />Amsterdam - 317 / 480</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80">Total: 2 025 / 3 182 (63%)</p>
+                  <p class="font-geometria font-medium text-[9px] text-white mb-2">Total revenue: $91 125</p>
+                  <p class="font-geometria font-normal text-[9px] text-white/80">Sold today: 115 tickets</p>
+                </div>
+
+                <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
+              </div>
             </div>
 
-            <div ref="msgTwo" class="flex items-end mb-2 opacity-0 appear">
-              <div class="w-[18px] h-[18px] mr-2">
-                <AvatarIcon />
-              </div>
-
-              <div
-                class="w-[165px] backdrop-blur-lg bg-[linear-gradient(137deg,_rgba(23,_38,_86,_1)_0%,_rgba(112,_90,_191,_1)_100%)] rounded-[5px] p-2 mr-1">
-                <p class="font-geometria font-medium text-[9px] text-white">✅ +2 tickets, $380</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">Gold circle x2<br />Show in London -
-                  526 / 810</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80">Source: Instagram Ads (UTM: Fb)<br />John
-                  White, test@example.com</p>
-              </div>
-
-              <p class="font-geometria font-normal text-[7px] text-[#828282]">12:16</p>
-            </div>
-
-            <div ref="msgThree" class="items-end justify-end hidden w-full gap-1 mb-2 opacity-0 ">
-              <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
-
-              <div class="backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
-                <p class="font-geometria font-normal text-[9px] text-white/80">/summary</p>
-              </div>
-            </div>
-
-            <div ref="msgFour" class="hidden opacity-0 items-end mb-2.5">
-              <div class="w-[18px] h-[18px] mr-2">
-                <AvatarIcon />
-              </div>
-
-              <div class="w-[165px] backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
-                <p class="font-geometria font-medium text-[9px] text-white mb-2">Tour summary</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80 mb-2">Berlin - 421 / 750<br />London - 526
-                  / 810<br />New York - 348 / 520<br />Amsterdam - 317 / 480</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80">Total: 2 025 / 3 182 (63%)</p>
-                <p class="font-geometria font-medium text-[9px] text-white mb-2">Total revenue: $91 125</p>
-                <p class="font-geometria font-normal text-[9px] text-white/80">Sold today: 115 tickets</p>
-              </div>
-
-              <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
-            </div>
-            </div>
-            
 
             <div ref="type"
               class="appear relative mb-12 mt-auto z-10 justify-self-end opacity-0 flex w-full rounded-full items-center h-7 justify-between pl-2.5 backdrop-blur-lg bg-[rgba(255,255,255,_0.1)]">
@@ -134,7 +140,7 @@
 </template>
 
 <script setup>
-import {ref, onMounted} from 'vue';
+import { ref, onMounted } from 'vue';
 import Badge from "./Badge.vue";
 import gsap from "gsap";
 
@@ -151,12 +157,12 @@ let tl;
 let timeout;
 
 const animate = () => {
-  tl = gsap.timeline({repeat: -1, repeatDelay: 5});
-  tl.to('.appear', {opacity:1, delay: 1});
-  tl.to(msgThree.value, {display: 'flex', opacity: 1, delay: 0.2})
-  tl.to(msgFour.value, {display: 'flex', opacity: 1, delay: 0.2})
+  tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
+  tl.to('.appear', { opacity: 1, delay: 1 });
+  tl.to(msgThree.value, { display: 'flex', opacity: 1, delay: 0.2 })
+  tl.to(msgFour.value, { display: 'flex', opacity: 1, delay: 0.2 })
 };
-defineExpose({animate});
+defineExpose({ animate });
 
 // onMounted(() => {
 //   tl = gsap.timeline({repeat: -1, repeatDelay: 5});
@@ -193,6 +199,10 @@ defineExpose({animate});
   /* Отключаем повторение фона */
   background-size: 80% 160%;
   /* Начальный размер фона */
+
+}
+
+.visible .pulse-background {
   animation: skewAnimationMob 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
 
@@ -233,20 +243,24 @@ defineExpose({animate});
 
 @media (min-width: 640px) {
   .pulse-background {
-  position: absolute;
-  left: 45%;
-  top: 15%;
-  width: 100vw;
-  /* Ширина контейнера */
-  height: 100vh;
-  /* Высота контейнера */
-  background-image: url('/images/phone.png');
-  /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat;
-  /* Отключаем повторение фона */
-  background-size: 35% 70%;
-  /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
-}
+    position: absolute;
+    left: 45%;
+    top: 15%;
+    width: 100vw;
+    /* Ширина контейнера */
+    height: 100vh;
+    /* Высота контейнера */
+    background-image: url('/images/phone.png');
+    /* Устанавливаем картинку как фон */
+    background-repeat: no-repeat;
+    /* Отключаем повторение фона */
+    background-size: 35% 70%;
+    /* Начальный размер фона */
+
+  }
+
+  .visible .pulse-background {
+    animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  }
 }
 </style>

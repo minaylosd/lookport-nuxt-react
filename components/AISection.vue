@@ -109,13 +109,16 @@ li::before {
   /* Отключаем повторение фона */
   background-size: 50% 50%;
   /* Начальный размер фона */
-  animation: pulse 5s infinite alternate;
   z-index: 1;
   /* Фон на нижнем уровне */
   filter: blur(125px);
   /* Размытие фона */
   clip-path: inset(50 0 10 30);
   /* Можно использовать для добавления размытия по границам */
+}
+
+.visible .pulse-background {
+  animation: pulse 5s infinite alternate;
 }
 
 /* Круг с блюром через псевдоэлемент */

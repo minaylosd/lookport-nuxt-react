@@ -55,27 +55,30 @@ const registerObserver = () => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+      if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        const elements = entry.target.querySelectorAll('.anim-up');
+        if (!entry.target.classList.contains('animated')) {
+          const elements = entry.target.querySelectorAll('.anim-up');
 
-        if (elements.length > 0) {
-          gsap.fromTo(elements, {
-            opacity: 0, y: 100
-          }, {
-            opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
-              if (!entry.target.classList.contains('hero') && !entry.target.classList.contains('alerts')) {
-                return;
-              } else if (entry.target.classList.contains('hero')) {
-                hero.value.registerAnimation();
-              } else if (entry.target.classList.contains('alerts')) {
-                alerts.value.animate();
-              }
-            })
-          });
+          if (elements.length > 0) {
+            gsap.fromTo(elements, {
+              opacity: 0, y: 100
+            }, {
+              opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+                if (!entry.target.classList.contains('hero') && !entry.target.classList.contains('alerts')) {
+                  return;
+                } else if (entry.target.classList.contains('hero')) {
+                  hero.value.registerAnimation();
+                } else if (entry.target.classList.contains('alerts')) {
+                  alerts.value.animate();
+                }
+              })
+            });
+          }
+
+          entry.target.classList.add('animated');
         }
 
-        entry.target.classList.add('animated');
       } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
         entry.target.classList.remove('visible');
       }
