@@ -14,7 +14,7 @@
     <div class="absolute inset-0 w-full h-full z-20 bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(0,0,0,0)_100%)]"></div>
 
     <section
-      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 py-40 mx-auto md:py-64 md:px-10 md:gap-24 md:flex-row xl:max-w-screen-xl">
+      class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-4 px-6 pt-16 pb-40 mx-auto md:pt-40 md:px-10 md:gap-24 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col w-full gap-6 md:basis-5/12">
         <Badge class="anim-up" value="Contact Us" />
         <h1 class="anim-up xl:text-[134px] md:text-8xl text-5xl leading-none font-normal text-white font-ag uppercase">

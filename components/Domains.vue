@@ -20,7 +20,7 @@
 
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
-  <div class="relative w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section">
+  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section">
     <!-- <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt=""> -->
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
