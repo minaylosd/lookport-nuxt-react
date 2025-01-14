@@ -56,7 +56,6 @@ const registerObserver = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
         if (!entry.target.classList.contains('animated')) {
           const elements = entry.target.querySelectorAll('.anim-up');
 
@@ -65,9 +64,7 @@ const registerObserver = () => {
               opacity: 0, y: 100
             }, {
               opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
-                if (!entry.target.classList.contains('hero') && !entry.target.classList.contains('alerts')) {
-                  return;
-                } else if (entry.target.classList.contains('hero')) {
+                if (entry.target.classList.contains('hero')) {
                   hero.value.registerAnimation();
                 } else if (entry.target.classList.contains('alerts')) {
                   alerts.value.animate();
@@ -77,19 +74,29 @@ const registerObserver = () => {
           }
 
           entry.target.classList.add('animated');
+          observer.unobserve(entry.target);
         }
+      }
+    })
+  }, observerOptions);
+
+  const observerGrad = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
 
       } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
         entry.target.classList.remove('visible');
       }
     })
-  }, observerOptions);
+  }, { threshold: 0 });
 
   nextTick(() => {
     if (sections.value.length > 0) {
       sections.value.forEach((section) => {
         if (section) {
           observer.observe(section);
+          observerGrad.observe(section);
         }
       })
     }
