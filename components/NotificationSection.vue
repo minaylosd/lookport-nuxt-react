@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
+  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section alerts">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -52,11 +52,13 @@
       </div>
 
       <div class="flex justify-center w-full">
-        <div class="relative w-[275px]">
-          <img src="/images/iphone-frame.png" class="object-cover w-full max-[275px] h-auto" alt="">
-          <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
-            <h5 class="anim-up font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
-            <div class="flex items-end mb-2 anim-up">
+        <div class="relative w-[275px] flex flex-col h-full anim-up">
+          <img src="/images/screen-st1.png" class="object-cover w-full h-auto" alt="">
+          <img ref="blur" src="/images/screen-st2.png" class="absolute inset-0 z-10 object-cover w-full h-auto opacity-0 appear" alt="">
+          <div class="absolute  inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
+            <h5 ref="header" class="appear font-geometria font-bold opacity-0 text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
+            <div class="flex flex-col justify-end w-full basis-9/12">
+              <div ref="msgOne" class="flex items-end mb-2 opacity-0 appear">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>
@@ -72,7 +74,7 @@
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:00</p>
             </div>
 
-            <div class="flex items-end mb-2 anim-up">
+            <div ref="msgTwo" class="flex items-end mb-2 opacity-0 appear">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>
@@ -89,7 +91,7 @@
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:16</p>
             </div>
 
-            <div class="flex items-end justify-end w-full gap-1 mb-2 anim-up">
+            <div ref="msgThree" class="items-end justify-end hidden w-full gap-1 mb-2 opacity-0 ">
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
 
               <div class="backdrop-blur-lg bg-[#24212f]/70 rounded-[5px] p-2 mr-1">
@@ -97,7 +99,7 @@
               </div>
             </div>
 
-            <div class="anim-up flex items-end mb-2.5">
+            <div ref="msgFour" class="hidden opacity-0 items-end mb-2.5">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />
               </div>
@@ -113,10 +115,12 @@
 
               <p class="font-geometria font-normal text-[7px] text-[#828282]">12:25</p>
             </div>
+            </div>
+            
 
-            <div
-              class="flex w-full rounded-full items-center h-7 justify-between pl-2.5 backdrop-blur-lg bg-[rgba(255,255,255,_0.1)]">
-              <p class="font-geometria font-normal text-[9px] text-white/60">Write</p>
+            <div ref="type"
+              class="appear relative mb-12 mt-auto z-10 justify-self-end opacity-0 flex w-full rounded-full items-center h-7 justify-between pl-2.5 backdrop-blur-lg bg-[rgba(255,255,255,_0.1)]">
+              <p ref="input" class="font-geometria font-normal text-[9px] text-white/60">Write</p>
               <div class="h-7 w-7">
                 <MsgIcon />
               </div>
@@ -130,7 +134,36 @@
 </template>
 
 <script setup>
+import {ref, onMounted} from 'vue';
 import Badge from "./Badge.vue";
+import gsap from "gsap";
+
+const blur = ref(null);
+const header = ref(null);
+const msgOne = ref(null);
+const msgTwo = ref(null);
+const msgThree = ref(null);
+const msgFour = ref(null);
+const type = ref(null);
+const input = ref(null);
+
+let tl;
+let timeout;
+
+const animate = () => {
+  tl = gsap.timeline({repeat: -1, repeatDelay: 5});
+  tl.to('.appear', {opacity:1, delay: 1});
+  tl.to(msgThree.value, {display: 'flex', opacity: 1, delay: 0.2})
+  tl.to(msgFour.value, {display: 'flex', opacity: 1, delay: 0.2})
+};
+defineExpose({animate});
+
+// onMounted(() => {
+//   tl = gsap.timeline({repeat: -1, repeatDelay: 5});
+//   tl.to('.appear', {opacity:1, delay: 1});
+//   tl.to(msgThree.value, {display: 'flex', opacity: 1, delay: 0.2})
+//   tl.to(msgFour.value, {display: 'flex', opacity: 1, delay: 0.2})
+// })
 </script>
 
 <style scoped>

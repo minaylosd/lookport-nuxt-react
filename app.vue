@@ -2,16 +2,16 @@
   <div class="flex flex-col w-full h-full overflow-hidden bg-pagebg">
     <AppHeader />
     <main class="flex flex-col items-center w-full">
-      <Hero />
+      <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
       <ClientOnly>
-        <div id="logo" class="w-full mb-20 h-svh">
-          <ThreeLogoSection class="w-full h-svh" />
+        <div id="logo" class="w-full mb-20">
+          <ThreeLogoSection class="w-full" />
         </div>
       </ClientOnly>
       <Seats />
-      <NotificationSection />
+      <NotificationSection ref="alerts" />
       <BroadcastSection />
       <PriceOptions />
       <Domains />
@@ -44,6 +44,9 @@ const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 
 const sections = ref([]);
 
+const hero = ref(null);
+const alerts = ref(null)
+
 const registerObserver = () => {
   const observerOptions = {
     root: null,
@@ -52,19 +55,32 @@ const registerObserver = () => {
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) {
+      if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+        entry.target.classList.add('visible');
         const elements = entry.target.querySelectorAll('.anim-up');
 
-        gsap.fromTo(elements, {
-          opacity: 0, y: 100
-        }, {
-          opacity: 1, y: 0, stagger: 0.05,
-        });
+        if (elements.length > 0) {
+          gsap.fromTo(elements, {
+            opacity: 0, y: 100
+          }, {
+            opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+              if (!entry.target.classList.contains('hero') && !entry.target.classList.contains('alerts')) {
+                return;
+              } else if (entry.target.classList.contains('hero')) {
+                hero.value.registerAnimation();
+              } else if (entry.target.classList.contains('alerts')) {
+                alerts.value.animate();
+              }
+            })
+          });
+        }
 
-        observer.unobserve(entry.target);
+        entry.target.classList.add('animated');
+      } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
+        entry.target.classList.remove('visible');
       }
     })
-  }, observerOptions)
+  }, observerOptions);
 
   nextTick(() => {
     if (sections.value.length > 0) {

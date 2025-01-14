@@ -11,7 +11,7 @@
       </svg>
 
       <div
-        class="h-full absolute z-30 bottom-0 left-0 w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(0,0,0,0.3)_40%,_rgba(10,10,10,0.9)_60%,_rgba(10,10,10,1)_100%)]">
+        class="h-full absolute z-30 bottom-0 left-0 w-full bg-[linear-gradient(to_bottom,rgba(0,0,0,0)_0%,rgba(10,10,10,0.3)_40%,_rgba(0,10,10,0.9)_60%,_rgba(0,0,0,1)_100%)]">
       </div>
 
       <p

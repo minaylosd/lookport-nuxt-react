@@ -1,5 +1,5 @@
 <template>
-    <div class="relative flex items-center w-full mb-20 md:h-screen section">
+    <div class="relative flex items-center w-full mb-20 md:h-lvh max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>
@@ -85,7 +85,7 @@ li::before {
   margin: 0;
   padding: 0;
   /* background: #0a0a0a; */
-  overflow: hidden;
+  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
@@ -175,6 +175,8 @@ li::before {
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
   transition: background-size 0.2s ease-out; /* Плавный переход */
   filter: blur(25px) brightness(1.6) contrast(1.1);
+  -webkit-mask: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
+  mask: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0) 100%);
 }
 /* Наложение динамического слоя */
 .gradient-overlay-pricing {
