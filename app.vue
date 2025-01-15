@@ -113,14 +113,14 @@ const registerObserver = () => {
 
 onMounted(() => {
   sections.value = document.querySelectorAll('.section');
-  onNuxtReady(() => {
+  // onNuxtReady(() => {
   // gsap.to(loader.value, {
   // opacity: 0, onComplete: (() => {
   // loaded.value = true;
   registerObserver();
   // })
   // })
-  });
+  // });
 });
 
 </script>
