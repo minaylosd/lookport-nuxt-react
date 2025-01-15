@@ -2,6 +2,9 @@
   <div class="flex flex-col w-full h-full overflow-hidden bg-pagebg">
     <AppHeader />
     <main class="flex flex-col items-center w-full">
+      <!-- <div v-if="!loaded" ref="loader" class="fixed w-full h-lvh inset-0 z-[110] bg-black flex items-center justify-center">
+      <div class="bg-white h-0.5 w-0 growA"></div>
+    </div> -->
       <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
@@ -23,7 +26,8 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted } from 'vue';
+import { onNuxtReady } from '#app';
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import Hero from "./components/Hero.vue";
@@ -45,7 +49,9 @@ const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 const sections = ref([]);
 
 const hero = ref(null);
-const alerts = ref(null)
+const alerts = ref(null);
+const loaded = ref(false);
+const loader = ref(null);
 
 const registerObserver = () => {
   const observerOptions = {
@@ -56,6 +62,7 @@ const registerObserver = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        // entry.target.classList.add('visible');
         if (!entry.target.classList.contains('animated')) {
           const elements = entry.target.querySelectorAll('.anim-up');
 
@@ -76,38 +83,62 @@ const registerObserver = () => {
           entry.target.classList.add('animated');
           observer.unobserve(entry.target);
         }
+      } else {
+        // entry.target.classList.remove('visible');
       }
     })
   }, observerOptions);
 
-  const observerGrad = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  // const observerGrad = new IntersectionObserver((entries) => {
+  //   entries.forEach((entry) => {
+  //     if (entry.isIntersecting) {
+  //       entry.target.classList.add('visible');
 
-      } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
-        entry.target.classList.remove('visible');
+  //     } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
+  //       entry.target.classList.remove('visible');
+  //     }
+  //   })
+  // }, { threshold: 0 });
+
+  if (sections.value.length > 0) {
+    sections.value.forEach((section) => {
+      if (section) {
+        observer.observe(section);
+        // observerGrad.observe(section);
       }
     })
-  }, { threshold: 0 });
-
-  nextTick(() => {
-    if (sections.value.length > 0) {
-      sections.value.forEach((section) => {
-        if (section) {
-          observer.observe(section);
-          observerGrad.observe(section);
-        }
-      })
-    }
-
-  })
+  }
 
 };
 
 onMounted(() => {
   sections.value = document.querySelectorAll('.section');
+  onNuxtReady(() => {
+  // gsap.to(loader.value, {
+  // opacity: 0, onComplete: (() => {
+  // loaded.value = true;
   registerObserver();
-})
+  // })
+  // })
+  });
+});
 
 </script>
+
+<style scoped>
+.growA {
+  animation: grow 3s ease-in;
+}
+
+@keyframes grow {
+  0% {
+    width: 0%;
+    /* Начальный размер фона */
+  }
+
+  100% {
+    width: 80%;
+    /* Конечный размер фона */
+  }
+}
+</style>

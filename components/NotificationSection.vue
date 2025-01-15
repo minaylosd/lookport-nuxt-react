@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section alerts">
+  <div class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section alerts">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative w-full section">
+    class="relative visible w-full section">
     <!-- <img class="absolute left-0 bottom-0 w-full max-w-[1054px] h-auto object-cover"
       src="/images/Vector.png" alt=""> -->
 

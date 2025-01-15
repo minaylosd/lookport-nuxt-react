@@ -85,9 +85,9 @@ export default function Model(props) {
     };
 
     logo.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      logo.removeEventListener("mousemove", handleMouseMove);
-    };
+    // return () => {
+    //   logo.removeEventListener("mousemove", handleMouseMove);
+    // };
   }, []);
 
   // Анимация вращения и движения

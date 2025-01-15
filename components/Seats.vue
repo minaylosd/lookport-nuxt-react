@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-lvh max-h-max section">
+  <div class="relative flex items-center visible w-full mb-20 md:h-lvh max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>

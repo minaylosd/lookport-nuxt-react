@@ -20,12 +20,12 @@
 
 <template>
   <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
-  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section">
+  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section visible bg-pagebg">
     <!-- <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt=""> -->
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
-        <div class="gradient-overlay"></div>
+        <!-- <div class="gradient-overlay"></div> -->
         <div class="pulse-background-left"></div>
         <div class="pulse-background-right"></div>
       </div>
@@ -111,7 +111,7 @@ import WebIcon from "./WebIcon.vue";
 .body {
   margin: 0;
   padding: 0;
-  background: #000; /* Чёрный фон */
+  /* background: #000; Чёрный фон */
   overflow: hidden;
   height: 100%;
   cursor: pointer;
