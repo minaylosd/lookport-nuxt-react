@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center visible w-full section hero md:mb-20 md:h-screen">
+  <section ref="section" class="relative flex items-center visible w-full hero md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -46,10 +46,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import Badge from "./Badge.vue";
 import GetStartedBtn from './GetStartedBtn.vue';
 import gsap from 'gsap';
+
+const load = inject('loadThree');
 
 const section = ref(null);
 
@@ -113,23 +115,24 @@ const registerAnimation = () => {
 defineExpose({registerAnimation});
 
 onMounted(() => {
-  // const animate = section.value.querySelectorAll('.anim-up');
+  const animate = section.value.querySelectorAll('.anim-up');
 
-  // gsap.fromTo(animate, {
-  //   opacity: 0, y: 100
-  // }, {
-  //   opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
-  //     section.value.addEventListener('mousemove', (e) => {
-  //       const followX = (window.innerWidth / 2 - e.clientX) / 70;
-  //       const followY = (window.innerHeight / 2 - e.clientY) / 30;
+  gsap.fromTo(animate, {
+    opacity: 0, y: 100
+  }, {
+    opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+      load();
+      section.value.addEventListener('mousemove', (e) => {
+        const followX = (window.innerWidth / 2 - e.clientX) / 70;
+        const followY = (window.innerHeight / 2 - e.clientY) / 30;
 
-  //       targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-  //       targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
-  //     });
+        targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+        targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+      });
 
-  //     updateAnimation();
-  //   })
-  // });
+      updateAnimation();
+    })
+  });
 
   const scroll = () => {
     const ai = document.getElementById('ai');

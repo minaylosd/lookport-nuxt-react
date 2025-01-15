@@ -8,7 +8,7 @@
       <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
-      <ClientOnly>
+      <ClientOnly v-if="loaded">
         <div id="logo" class="w-full mb-20">
           <ThreeLogoSection class="w-full" />
         </div>
@@ -26,7 +26,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, provide } from 'vue';
 import { onNuxtReady } from '#app';
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
@@ -53,6 +53,12 @@ const alerts = ref(null);
 const loaded = ref(false);
 const loader = ref(null);
 
+const loadThree = () => {
+  loaded.value = true;
+}
+
+provide('loadThree', loadThree);
+
 const registerObserver = () => {
   const observerOptions = {
     root: null,
@@ -71,6 +77,7 @@ const registerObserver = () => {
               opacity: 0, y: 100
             }, {
               opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+                // loaded.value = true;
                 if (entry.target.classList.contains('hero')) {
                   hero.value.registerAnimation();
                 } else if (entry.target.classList.contains('alerts')) {
@@ -118,6 +125,7 @@ onMounted(() => {
   // opacity: 0, onComplete: (() => {
   // loaded.value = true;
   registerObserver();
+  // loaded.value = true;
   // })
   // })
   // });
