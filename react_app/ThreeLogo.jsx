@@ -23,10 +23,6 @@ export default function () {
       }, 500)
     };
     window.addEventListener('resize', handleResize);
-
-     return () => {
-      window.removeEventListener("resize");
-    };
   }, [])
   return (
     <Fragment>

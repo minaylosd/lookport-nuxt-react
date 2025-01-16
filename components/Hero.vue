@@ -1,9 +1,8 @@
 <template>
-  <section ref="section" class="relative flex items-center w-full section hero md:mb-20 md:h-screen">
+  <section ref="section" class="relative flex items-center visible w-full section hero md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
-        <!-- <img ref="image" class="image" src="/screen-1-background/img/tickets.png" /> -->
       </div>
     </div>
 
@@ -49,7 +48,6 @@
 import { ref, onMounted } from 'vue';
 import Badge from "./Badge.vue";
 import GetStartedBtn from './GetStartedBtn.vue';
-import gsap from 'gsap';
 
 const section = ref(null);
 
@@ -113,24 +111,6 @@ const registerAnimation = () => {
 defineExpose({registerAnimation});
 
 onMounted(() => {
-  // const animate = section.value.querySelectorAll('.anim-up');
-
-  // gsap.fromTo(animate, {
-  //   opacity: 0, y: 100
-  // }, {
-  //   opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
-  //     section.value.addEventListener('mousemove', (e) => {
-  //       const followX = (window.innerWidth / 2 - e.clientX) / 70;
-  //       const followY = (window.innerHeight / 2 - e.clientY) / 30;
-
-  //       targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-  //       targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
-  //     });
-
-  //     updateAnimation();
-  //   })
-  // });
-
   const scroll = () => {
     const ai = document.getElementById('ai');
     ai.scrollIntoView({ behavior: "smooth", block: 'nearest', inline: 'center' })
@@ -167,9 +147,6 @@ onMounted(() => {
   margin: 0;
   padding: 0;
   height: 100%;
-  /* overflow: hidden; */
-  /* background-color: #0a0a0a; */
-  /* Базовый фон */
   position: relative;
   z-index: -11;
 }

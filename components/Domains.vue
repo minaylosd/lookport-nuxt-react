@@ -1,37 +1,13 @@
-<!-- <template>
-  <div class="w-full">
-    <section
-      class="flex flex-col items-center justify-center w-full max-w-screen-lg px-6 py-48 mx-auto md:px-10 xl:max-w-screen-xl">
-      <div class="mb-6">
-        <Badge value="Seamless Branding" />
-      </div>
-      <h1
-        class="md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-center font-ag uppercase mb-6 text-grad">
-        Custom domain for your events
-      </h1>
-      <p
-        class="md:text-2xl text-lg leading-[140%] font-normal tracking-tighter font-geometria text-center text-[#bbbbbb]">
-        Brand your events with custom domains.<br />
-        Integrate your branding seamlessly.
-      </p>
-    </section>
-  </div>
-</template> -->
-
 <template>
-  <!-- if needed radial gradient: bg-[radial-gradient(ellipse,_rgba(35,_28,_61,_1)_0%,#0A0A0A_100%)] -->
-  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section">
-    <!-- <img class="absolute inset-0 object-cover w-full h-full" src="/images/domain-grad.png" alt=""> -->
+  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section visible bg-pagebg">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
-        <div class="gradient-overlay"></div>
         <div class="pulse-background-left"></div>
         <div class="pulse-background-right"></div>
       </div>
     </div>
     <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
-    <!-- <img src="/images/notifications-glass.png" class="absolute w-full max-w-[800px] z-50 rotate-[15deg] -top-[500px] -right-[400px]" alt=""> -->
     <div class="relative w-full h-full overflow-hidden">
 
 
@@ -83,7 +59,6 @@
 </template>
 
 <script setup>
-import Badge from "./Badge.vue";
 import WebIcon from "./WebIcon.vue";
 </script>
 
@@ -111,7 +86,7 @@ import WebIcon from "./WebIcon.vue";
 .body {
   margin: 0;
   padding: 0;
-  background: #000; /* Чёрный фон */
+  /* background: #000; Чёрный фон */
   overflow: hidden;
   height: 100%;
   cursor: pointer;

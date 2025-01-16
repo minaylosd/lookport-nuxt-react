@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative w-full section">
+  <footer class="relative visible w-full section">
     <div class="absolute bottom-0 z-0 bg-black w-full h-[200lvh]"></div>
     <div class="absolute bottom-0 left-0 z-10 w-full">
       <div class="body">
@@ -12,28 +12,25 @@
       <div class="absolute inset-0 bg-[radial-gradient(ellipse,_rgba(33,_27,_58,_1)_0%,#0A0A0A_100%)] opacity-70"></div>
       <div class="absolute inset-0 z-10 bg-[#0A0A0A]/40"></div>
 
-
       <div class="relative z-20 w-full max-w-screen-xl px-6 mx-auto md:px-10">
         <div class="flex flex-col justify-between gap-4 pb-5 md:flex-row">
           <div class="flex flex-col items-start justify-between w-full gap-6 md:flex-row md:gap-30">
             <div
               class="flex flex-col flex-wrap justify-end text-base font-normal leading-6 text-white md:flex-row gap-x-6 gap-y-4 font-geometria">
-              <div class="flex gap-2">
+              <div class="relative flex gap-2 group text-[#b6b6b6] hover:text-white transition-colors duration-500 ease-out">
                 <a class="whitespace-nowrap" href="/">Privacy Policy</a>
+                <div class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out"></div>
               </div>
-              <div class="flex gap-2">
+              <div class="relative flex gap-2 group text-[#b6b6b6] hover:text-white transition-colors duration-500 ease-out">
                 <a class="whitespace-nowrap" href="/">Terms of Use</a>
+                <div class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out"></div>
               </div>
-              <div class="flex gap-2">
+              <div class="relative flex gap-2 group text-[#b6b6b6] hover:text-white transition-colors duration-500 ease-out">
                 <a class="whitespace-nowrap" href="/">Cookie Settings</a>
+                <div class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out"></div>
               </div>
             </div>
           </div>
-
-          <!-- <div class="flex text-base font-normal gap-9 font-geometria">
-          <p class="text-[#8a8a8a] tracking-tighter">Язык:</p>
-          <LangSelector />
-        </div> -->
         </div>
 
         <div
@@ -50,7 +47,6 @@
 
 <script setup>
 import LogoLink from './LogoLink.vue';
-import LangSelector from './LangSelector.vue';
 </script>
 
 <style scoped>

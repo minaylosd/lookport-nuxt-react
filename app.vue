@@ -5,7 +5,7 @@
       <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
-      <ClientOnly>
+      <ClientOnly v-if="loaded">
         <div id="logo" class="w-full mb-20">
           <ThreeLogoSection class="w-full" />
         </div>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, onMounted } from 'vue';
 import AppHeader from "./components/AppHeader.vue";
 import AppFooter from "./components/AppFooter.vue";
 import Hero from "./components/Hero.vue";
@@ -45,7 +45,8 @@ const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 const sections = ref([]);
 
 const hero = ref(null);
-const alerts = ref(null)
+const alerts = ref(null);
+const loaded = ref(false);
 
 const registerObserver = () => {
   const observerOptions = {
@@ -64,6 +65,9 @@ const registerObserver = () => {
               opacity: 0, y: 100
             }, {
               opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+                if (loaded.value == false) {
+                  loaded.value = true;
+                }
                 if (entry.target.classList.contains('hero')) {
                   hero.value.registerAnimation();
                 } else if (entry.target.classList.contains('alerts')) {
@@ -80,34 +84,18 @@ const registerObserver = () => {
     })
   }, observerOptions);
 
-  const observerGrad = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-
-      } else if (!entry.target.isIntersecting && entry.target.classList.contains('visible')) {
-        entry.target.classList.remove('visible');
+  if (sections.value.length > 0) {
+    sections.value.forEach((section) => {
+      if (section) {
+        observer.observe(section);
       }
     })
-  }, { threshold: 0 });
-
-  nextTick(() => {
-    if (sections.value.length > 0) {
-      sections.value.forEach((section) => {
-        if (section) {
-          observer.observe(section);
-          observerGrad.observe(section);
-        }
-      })
-    }
-
-  })
+  }
 
 };
 
 onMounted(() => {
   sections.value = document.querySelectorAll('.section');
   registerObserver();
-})
-
+});
 </script>

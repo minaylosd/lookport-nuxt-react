@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
+  <div class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
@@ -48,9 +48,6 @@ import GetStartedBtn from "./GetStartedBtn.vue";
 .body {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; */
-  /* Чёрный фон */
-  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
@@ -131,9 +128,6 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   height: 100%;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay;
-  /* Накладываем эффект */
-  
-  /* Увеличиваем время анимации */
   z-index: 2;
 }
 

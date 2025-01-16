@@ -1,5 +1,5 @@
 <template>
-  <div ref="stripeSection" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
+  <div ref="stripeSection" class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div ref='stripePulse' class="pulse-background"></div>
@@ -9,10 +9,10 @@
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 pt-10 mx-auto md:pt-40 md:pb-16 md:flex-row xl:max-w-screen-xl">
       <div class="relative flex flex-col order-2 basis-5/12 md:-order-none">
-        
+
         <div class="relative z-10 flex flex-col items-center w-fit gap-7">
           <img class="anim-up absolute left-1/2 object-cover -translate-x-1/2 -bottom-1/3 max-w-[430px]"
-          src="/images/stripe-glass.png" alt="" />
+            src="/images/stripe-glass.png" alt="" />
           <div
             class="anim-up w-[245px] flex items-center gap-3 p-2 rounded-xl border border-white/10 bg-[#333131]/100 backdrop-blur-3xl shadow-md">
             <img src="/images/icons/stripe-logo.svg" class="overflow-hidden w-11 h-11" />
@@ -28,7 +28,8 @@
           <div
             class="flex flex-col relative w-full max-w-[315px] pt-4 px-4 pb-[78px] rounded-[26px] border border-white/10 bg-[linear-gradient(to_bottom,_#10101000_0%,_#151515_25%,_#202020_75%,_#26262600_100%)] backdrop-blur-lg shadow-md">
             <div v-for="(item, index) in listItems" :key="index"
-              :class="index != 0 ? 'pt-5 border-t border-white/10' : ''" class="flex items-center justify-between pb-5 anim-up">
+              :class="index != 0 ? 'pt-5 border-t border-white/10' : ''"
+              class="flex items-center justify-between pb-5 anim-up">
               <div class="flex items-center gap-2">
                 <img :src="item.img" class="overflow-hidden border rounded-full w-11 h-11 border-white/10"
                   :alt="item.name" />
@@ -84,7 +85,8 @@
     </section>
   </div>
 
-  <div class="relative z-[1] flex items-center w-full md:h-lvh md:max-h-max section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
+  <div
+    class="relative z-[1] flex items-center w-full md:h-lvh md:max-h-max section visible bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
       <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
@@ -113,8 +115,10 @@
 
       <div class="relative flex flex-col items-end gap-5 basis-1/2">
         <div class="relative w-full">
-          <img src="/images/features-circle.png" class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="" />
-          <img class="anim-up object-cover relative w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
+          <img src="/images/features-circle.png"
+            class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="" />
+          <img
+            class="anim-up object-cover relative w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
             src="/images/percent.png" />
         </div>
       </div>
@@ -235,7 +239,7 @@ li::before {
   background-repeat: no-repeat;
   background-size: auto 100%;
   object-fit: cover;
-  
+
   filter: blur(30px) brightness(1.2) contrast(1.1);
   z-index: 2;
 }
@@ -254,7 +258,7 @@ li::before {
   background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5));
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  
+
   /* Увеличиваем время анимации */
   z-index: 3;
 }
@@ -299,8 +303,6 @@ li::before {
 .body-pricing {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; Чёрный фон */
-  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
@@ -308,20 +310,27 @@ li::before {
 .pulse-background-pricing {
   position: absolute;
   left: 75%;
-  width: 100vw; /* Ширина контейнера */
-  height: 100%; /* Высота контейнера */
-  background-image: url('/images/Neonright.png'); /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: auto 100%; /* Начальный размер фона */
+  width: 100vw;
+  /* Ширина контейнера */
+  height: 100%;
+  /* Высота контейнера */
+  background-image: url('/images/Neonright.png');
+  /* Устанавливаем картинку как фон */
+  background-repeat: no-repeat;
+  /* Отключаем повторение фона */
+  background-size: auto 100%;
+  /* Начальный размер фона */
   object-fit: cover;
-  
-  transition: background-size 0.2s ease-out; /* Плавный переход */
+
+  transition: background-size 0.2s ease-out;
+  /* Плавный переход */
   filter: blur(25px) brightness(1.6) contrast(1.1);
 }
 
 .visible .pulse-background-pricing {
   animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
 }
+
 /* Наложение динамического слоя */
 .gradient-overlay-pricing {
   position: absolute;
@@ -330,13 +339,15 @@ li::before {
   width: 100vw;
   height: 100%;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
-  mix-blend-mode: overlay; /* Накладываем эффект */
-  
+  mix-blend-mode: overlay;
+  /* Накладываем эффект */
+
   z-index: 2;
 }
 
 .visible .gradient-overlay-pricing {
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  animation: gradientFlow1 5s ease-in infinite;
+  /* Увеличиваем время анимации */
 }
 
 /* Анимация для фона */
@@ -344,23 +355,29 @@ li::before {
   0% {
     background-size: 30% 100%;
   }
+
   100% {
     background-size: 35% 100%;
   }
 }
+
 @keyframes gradientFlow1Pricing {
   0% {
     opacity: 0;
   }
-  25%{
+
+  25% {
     opacity: 0.25;
   }
-  50%{
+
+  50% {
     opacity: 0.8;
   }
-  75%{
+
+  75% {
     opacity: 0.25;
   }
+
   100% {
     opacity: 0;
   }
@@ -368,11 +385,12 @@ li::before {
 
 @media (min-width:640px) {
   .pulse-background {
-  background-size: 30% 100%;
-}
+    background-size: 30% 100%;
+  }
 
-.pulse-background-pricing {
-  background-size: 30% 100%; /* Начальный размер фона */
-}
+  .pulse-background-pricing {
+    background-size: 30% 100%;
+    /* Начальный размер фона */
+  }
 }
 </style>

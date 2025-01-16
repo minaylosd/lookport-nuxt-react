@@ -1,7 +1,6 @@
 <template>
   <div
-    class="relative w-full section bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
-    <!-- <img class="absolute inset-0 object-cover w-full h-full" src="/images/prices-bg.png" alt=""> -->
+    class="relative w-full section visible bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
@@ -73,7 +72,7 @@
   /* Отключаем повторение фона */
   background-size: 70% 120%;
   /* Начальный размер фона */
-  
+
   filter: blur(25px);
 }
 
@@ -87,16 +86,16 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 10% 10%, rgb(0, 195, 255), rgba(255, 0, 225, 0.638));
+  /* background: radial-gradient(circle at 10% 10%, rgb(0, 195, 255), rgba(255, 0, 225, 0.638)); */
   mix-blend-mode: overlay;
   /* Накладываем эффект */
-  
+
   /* Увеличиваем время анимации */
   z-index: 2;
 }
 
 .visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite;
+  /* animation: gradientFlow1 5s ease-in infinite; */
 }
 
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section alerts">
+  <div class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section alerts">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -163,21 +163,12 @@ const animate = () => {
   tl.to(msgFour.value, { display: 'flex', opacity: 1, delay: 0.2 })
 };
 defineExpose({ animate });
-
-// onMounted(() => {
-//   tl = gsap.timeline({repeat: -1, repeatDelay: 5});
-//   tl.to('.appear', {opacity:1, delay: 1});
-//   tl.to(msgThree.value, {display: 'flex', opacity: 1, delay: 0.2})
-//   tl.to(msgFour.value, {display: 'flex', opacity: 1, delay: 0.2})
-// })
 </script>
 
 <style scoped>
 .body {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; */
-  /* Чёрный фон */
   overflow: hidden;
   height: 100%;
   width: 100%;

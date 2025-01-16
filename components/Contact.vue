@@ -1,16 +1,6 @@
 <template>
   <div
-    class="relative w-full section">
-    <!-- <img class="absolute left-0 bottom-0 w-full max-w-[1054px] h-auto object-cover"
-      src="/images/Vector.png" alt=""> -->
-
-    <!-- <div
-      class="absolute z-20 w-full min-w-[1600px] -translate-x-1/2 left-1/2 -bottom-2/3 md:-bottom-1/2 h-[130lvh] md:h-[150lvh]">
-      <div class="body">
-        <div class="pulse-background"></div>
-        <div class="gradient-overlay"></div>
-      </div>
-    </div> -->
+    class="relative visible w-full section">
     <div class="absolute inset-0 w-full h-full z-20 bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(0,0,0,0)_100%)]"></div>
 
     <section
