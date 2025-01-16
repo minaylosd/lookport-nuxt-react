@@ -8,10 +8,6 @@ export default function Model(props) {
   const secondMesh = useRef(); // Ссылка на второй объект
   const textGroup = useRef(); // Ссылка на группу с текстом
 
-  const circleScale = useRef(props.width < 640 ? 0.06 : 0.1);
-  const fontSize = useRef(props.width < 640 ? 0.7 : 1.4);
-  const pos = useRef(props.width < 640 ? [0, -0.11, 0.5] : [0, -0.3, 0.5]);
-
   const { nodes } = useGLTF("/three/Logo_1.glb");
 
   const [scrollSpeed, setScrollSpeed] = useState(1); // Начальная скорость вращения
@@ -85,9 +81,6 @@ export default function Model(props) {
     };
 
     logo.addEventListener("mousemove", handleMouseMove);
-    // return () => {
-    //   logo.removeEventListener("mousemove", handleMouseMove);
-    // };
   }, []);
 
   // Анимация вращения и движения

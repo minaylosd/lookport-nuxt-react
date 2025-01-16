@@ -48,9 +48,6 @@ import GetStartedBtn from "./GetStartedBtn.vue";
 .body {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; */
-  /* Чёрный фон */
-  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
@@ -131,9 +128,6 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   height: 100%;
   background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
   mix-blend-mode: overlay;
-  /* Накладываем эффект */
-  
-  /* Увеличиваем время анимации */
   z-index: 2;
 }
 

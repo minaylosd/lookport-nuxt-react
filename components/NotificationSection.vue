@@ -163,21 +163,12 @@ const animate = () => {
   tl.to(msgFour.value, { display: 'flex', opacity: 1, delay: 0.2 })
 };
 defineExpose({ animate });
-
-// onMounted(() => {
-//   tl = gsap.timeline({repeat: -1, repeatDelay: 5});
-//   tl.to('.appear', {opacity:1, delay: 1});
-//   tl.to(msgThree.value, {display: 'flex', opacity: 1, delay: 0.2})
-//   tl.to(msgFour.value, {display: 'flex', opacity: 1, delay: 0.2})
-// })
 </script>
 
 <style scoped>
 .body {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; */
-  /* Чёрный фон */
   overflow: hidden;
   height: 100%;
   width: 100%;

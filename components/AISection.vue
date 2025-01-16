@@ -6,7 +6,7 @@
         <div class="pulse-background"></div>
       </div>
     </div>
-    <!-- <img src="/images/ai-form.png" class="absolute max-w-[730px] w-full h-auto object-cover top-1/2 -left-[290px] -translate-y-1/2" alt=""> -->
+
     <div
       class="relative flex flex-col items-center justify-between w-full max-w-screen-lg gap-6 px-6 py-10 mx-auto md:py-40 md:flex-row xl:items-start xl:gap-20 xl:max-w-screen-xl">
       <div class="circle"></div>

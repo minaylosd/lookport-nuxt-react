@@ -12,7 +12,6 @@
       <div class="absolute inset-0 bg-[radial-gradient(ellipse,_rgba(33,_27,_58,_1)_0%,#0A0A0A_100%)] opacity-70"></div>
       <div class="absolute inset-0 z-10 bg-[#0A0A0A]/40"></div>
 
-
       <div class="relative z-20 w-full max-w-screen-xl px-6 mx-auto md:px-10">
         <div class="flex flex-col justify-between gap-4 pb-5 md:flex-row">
           <div class="flex flex-col items-start justify-between w-full gap-6 md:flex-row md:gap-30">
@@ -32,11 +31,6 @@
               </div>
             </div>
           </div>
-
-          <!-- <div class="flex text-base font-normal gap-9 font-geometria">
-          <p class="text-[#8a8a8a] tracking-tighter">Язык:</p>
-          <LangSelector />
-        </div> -->
         </div>
 
         <div
@@ -53,7 +47,6 @@
 
 <script setup>
 import LogoLink from './LogoLink.vue';
-import LangSelector from './LangSelector.vue';
 </script>
 
 <style scoped>
