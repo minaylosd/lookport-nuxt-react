@@ -15,6 +15,8 @@ export default function () {
     const handleResize = ()=> {
       clearTimeout(timeout);
       timeout = setTimeout(()=> {
+        // if (window.a)
+        alert(screen.availHeight);
         setWidth(window.innerWidth);
         setHeight(screen.availHeight < 1300 ? screen.availHeight : 1300);
         setScale(window.innerWidth < 640 ? 0.06 : 0.1);
