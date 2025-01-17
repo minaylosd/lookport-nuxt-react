@@ -98,7 +98,7 @@ const updateAnimation = () => {
 
 const registerAnimation = () => {
   section.value.addEventListener('mousemove', (event) => {
-    alert(event.clientX, event.clientY);
+    // alert(event.clientX, event.clientY);
     const followX = (window.innerWidth / 2 - event.clientX) / 70;
     const followY = (window.innerHeight / 2 - event.clientY) / 30;
 
