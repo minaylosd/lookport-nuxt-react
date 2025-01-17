@@ -1,7 +1,7 @@
 <template>
   <div class="relative z-30 w-full overflow-hidden max-h-[778px]">
     <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[778px]">
-      <video class="object-cover w-full h-auto py-10" src="/Sequence_02_3.mp4" autoplay muted loop></video>
+      <video class="object-cover w-full h-auto py-10" src="/Sequence_02_3-2.mp4" autoplay muted loop playsinline webkit-playsinline></video>
       <svg>
         <mask id="mask">
           <rect fill="white" width="100%" height="110%"></rect>
