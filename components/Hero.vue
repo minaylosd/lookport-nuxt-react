@@ -97,9 +97,10 @@ const updateAnimation = () => {
 };
 
 const registerAnimation = () => {
-  section.value.addEventListener('mousemove', (e) => {
-    const followX = (window.innerWidth / 2 - e.clientX) / 70;
-    const followY = (window.innerHeight / 2 - e.clientY) / 30;
+  section.value.addEventListener('mousemove', (event) => {
+    alert(event.clientX, event.clientY);
+    const followX = (window.innerWidth / 2 - event.clientX) / 70;
+    const followY = (window.innerHeight / 2 - event.clientY) / 30;
 
     targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
     targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
