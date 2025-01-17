@@ -104,6 +104,9 @@ const registerAnimation = () => {
 
     targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
     targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+
+    alert(targetX, targetY);
+
   });
 
   updateAnimation();
