@@ -11,11 +11,11 @@
       <div class="flex flex-col">
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
-          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
+          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl 3xl:text-[134px] font-ag">
           <span class="whitespace-nowrap">AI-driven Event</span><br />ticketing platform
         </h1>
         <p
-          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl 3xl:text-[32px] text-lg 3xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with Artificial Intelligence
         </p>
         <div class="flex items-center gap-4 md:flex-row">
@@ -26,10 +26,10 @@
         </div>
       </div>
 
-      <div class="relative h-full w-full xl:max-w-[371px] max-w-[340px]">
+      <div class="relative h-full w-full 3xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper">
+          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
             <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
@@ -86,7 +86,7 @@ const updateAnimation = () => {
       perspective(600px)
       rotateY(${y * 0.2}deg)
       rotateX(${x * 0.2}deg)
-      translateZ(150px) /* Смещаем назад */
+      translateZ(150px)
     `;
   const lowerGlareX = 50 + y * 0.7;
   const lowerGlareY = 50 - x * 0.7;
@@ -97,14 +97,12 @@ const updateAnimation = () => {
 };
 
 const registerAnimation = () => {
-  section.value.addEventListener('mousemove', (e) => {
-    const followX = (window.innerWidth / 2 - e.clientX) / 70;
-    const followY = (window.innerHeight / 2 - e.clientY) / 30;
-
+  section.value.addEventListener('mousemove', (event) => {
+    const followX = (window.innerWidth / 2 - event.clientX) / 70;
+    const followY = (window.innerHeight / 2 - event.clientY) / 30;
+    
     targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
     targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
-
-    alert(targetX, targetY);
 
   });
 
@@ -228,7 +226,8 @@ onMounted(() => {
   z-index: 1;
   /* Нижняя картинка находится под верхней */
   right: 6px;
-  transform: translateZ(300px);
+  /* transform: translateZ(150px); */
+  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
 }
 
 .interactive-image {
@@ -260,7 +259,7 @@ onMounted(() => {
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 1680px) {
   .wrapper-upper {
     left: -15px;
   }
@@ -269,7 +268,8 @@ onMounted(() => {
     z-index: 1;
     /* Нижняя картинка находится под верхней */
     right: -140px;
-    transform: translateZ(300px);
+    /* transform: translateZ(300px); */
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
   }
 
   .interactive-image {

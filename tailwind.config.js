@@ -16,6 +16,9 @@ export default {
       },
       colors: {
         pagebg: "#0A0A0A"
+      },
+      screens: {
+        "3xl": '1680px',
       }
     },
   },
