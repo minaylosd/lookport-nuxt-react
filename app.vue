@@ -5,11 +5,13 @@
       <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
-      <ClientOnly v-if="loaded">
-        <div id="logo" class="w-full mb-20">
+      <div class="w-full mb-20 h-svh max-h-[1000px] section three">
+        <ClientOnly v-if="loaded">
+        <div id="logo" class="w-full mb-20 flex flex-col h-full max-h-[1000px]">
           <ThreeLogoSection class="w-full" />
         </div>
       </ClientOnly>
+      </div>
       <Seats />
       <NotificationSection ref="alerts" />
       <BroadcastSection />
@@ -57,6 +59,10 @@ const registerObserver = () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
+        if (entry.target.classList.contains('three') && loaded.value == false) {
+          loaded.value = true;
+          return;
+        }
         if (!entry.target.classList.contains('animated')) {
           const elements = entry.target.querySelectorAll('.anim-up');
 
