@@ -94,9 +94,9 @@ const updateAnimation = () => {
 const onMouseMove = (e) => {
   const followX = (window.innerWidth / 2 - e.clientX) / 70;
   const followY = (window.innerHeight / 2 - e.clientY) / 30;
-    
-    targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-    targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+
+  targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+  targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
 };
 
 const registerAnimation = () => {
@@ -182,7 +182,7 @@ onMounted(() => {
   /* Псевдоэлемент должен быть поверх фона */
   opacity: 0;
   /* Начальная прозрачность */
-  
+
   /* Анимация изменения прозрачности */
 }
 
@@ -252,13 +252,19 @@ onMounted(() => {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(20px);
+  filter: blur(40px);
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
   top: 50%;
   left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .glare {
+    filter: blur(20px);
+  }
 }
 
 @media (min-width: 1680px) {
