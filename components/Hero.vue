@@ -256,6 +256,8 @@ onMounted(() => {
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
+  top:50%;
+  left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
