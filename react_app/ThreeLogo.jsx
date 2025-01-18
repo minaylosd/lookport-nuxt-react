@@ -19,7 +19,6 @@ export default function () {
         if (mobile == true && window.innerWidth == screenWidth) {
           return;
         }
-        alert(screen.availHeight);
         setMobile(window.innerWidth < 640? true : false);
         setWidth(window.innerWidth);
         setHeight(screen.availHeight < 1300 ? screen.availHeight : 1300);
