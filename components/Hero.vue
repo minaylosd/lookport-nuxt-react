@@ -252,7 +252,7 @@ onMounted(() => {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(40px);
+  filter: blur(30px);
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
