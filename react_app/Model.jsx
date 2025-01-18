@@ -56,9 +56,15 @@ export default function Model(props) {
       entries.forEach((entry)=> {
         if (entry.isIntersecting) {
           setIsVisible(true);
+          if (props.mobile) {
+            return;
+          }
           window.addEventListener("scroll", handleScroll);
         } else {
           setIsVisible(false);
+          if (props.mobile) {
+            return;
+          }
           window.removeEventListener("scroll", handleScroll);
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);

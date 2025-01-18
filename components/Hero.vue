@@ -11,11 +11,11 @@
       <div class="flex flex-col">
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
-          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
+          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl 3xl:text-[134px] font-ag">
           <span class="whitespace-nowrap">AI-driven Event</span><br />ticketing platform
         </h1>
         <p
-          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl 3xl:text-[32px] text-lg 3xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with Artificial Intelligence
         </p>
         <div class="flex items-center gap-4 md:flex-row">
@@ -26,10 +26,11 @@
         </div>
       </div>
 
-      <div class="relative h-full w-full xl:max-w-[371px] max-w-[340px]">
+      <div class="relative h-full w-full 3xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper">
+          <div ref="upperWrapper"
+            class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
             <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
@@ -66,49 +67,49 @@ const maxAngle = 15;
 let x = 0, y = 0;
 let targetX = 0, targetY = 0;
 
+let mouseX = 0, mouseY = 0;
+
+const applyTransforms = (wrapper, glare, xFactor, yFactor, rotateFactorX, rotateFactorY, translateZ = 0) => {
+  wrapper.style.transform = `
+      perspective(600px)
+      rotateY(${y * yFactor}deg)
+      rotateX(${x * xFactor}deg)
+      translateZ(${translateZ}px)
+    `;
+
+  glare.style.left = `${50 + y * rotateFactorY}%`;
+  glare.style.top = `${50 - x * rotateFactorX}%`;
+}
+
 const updateAnimation = () => {
   x += (targetX - x) * friction;
   y += (targetY - y) * friction;
 
-  // Анимация верхней картинки
-  upperWrapper.value.style.transform = `
-      perspective(600px)
-      rotateY(${y * 0.8}deg)
-      rotateX(${x * 0.5}deg)
-    `;
-  const upperGlareX = 50 + y * 1.1;
-  const upperGlareY = 50 - x * 1.1;
-  upperGlare.value.style.left = `${upperGlareX}%`;
-  upperGlare.value.style.top = `${upperGlareY}%`;
-
-  // Анимация нижней картинки
-  lowerWrapper.value.style.transform = `
-      perspective(600px)
-      rotateY(${y * 0.2}deg)
-      rotateX(${x * 0.2}deg)
-      translateZ(150px) /* Смещаем назад */
-    `;
-  const lowerGlareX = 50 + y * 0.7;
-  const lowerGlareY = 50 - x * 0.7;
-  lowerGlare.value.style.left = `${lowerGlareX}%`;
-  lowerGlare.value.style.top = `${lowerGlareY}%`;
+  applyTransforms(upperWrapper.value, upperGlare.value, 0.5, 0.8, 1.1, 1.1);
+  applyTransforms(lowerWrapper.value, lowerGlare.value, 0.2, 0.2, 0.7, 0.7, 150);
 
   requestAnimationFrame(updateAnimation);
 };
 
+const onMouseMove = (e) => {
+  const followX = (window.innerWidth / 2 - e.clientX) / 70;
+  const followY = (window.innerHeight / 2 - e.clientY) / 30;
+
+  targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
+  targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+};
+
 const registerAnimation = () => {
   section.value.addEventListener('mousemove', (e) => {
-    const followX = (window.innerWidth / 2 - e.clientX) / 70;
-    const followY = (window.innerHeight / 2 - e.clientY) / 30;
-
-    targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
-    targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    onMouseMove(e);
   });
 
   updateAnimation();
 }
 
-defineExpose({registerAnimation});
+defineExpose({ registerAnimation });
 
 onMounted(() => {
   const scroll = () => {
@@ -181,7 +182,7 @@ onMounted(() => {
   /* Псевдоэлемент должен быть поверх фона */
   opacity: 0;
   /* Начальная прозрачность */
-  
+
   /* Анимация изменения прозрачности */
 }
 
@@ -225,7 +226,8 @@ onMounted(() => {
   z-index: 1;
   /* Нижняя картинка находится под верхней */
   right: 6px;
-  transform: translateZ(300px);
+  /* transform: translateZ(150px); */
+  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
 }
 
 .interactive-image {
@@ -250,14 +252,22 @@ onMounted(() => {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(20px);
+  filter: blur(30px);
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
+  top: 50%;
+  left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
+  .glare {
+    filter: blur(20px);
+  }
+}
+
+@media (min-width: 1680px) {
   .wrapper-upper {
     left: -15px;
   }
@@ -266,7 +276,8 @@ onMounted(() => {
     z-index: 1;
     /* Нижняя картинка находится под верхней */
     right: -140px;
-    transform: translateZ(300px);
+    /* transform: translateZ(300px); */
+    transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
   }
 
   .interactive-image {
