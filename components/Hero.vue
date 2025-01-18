@@ -29,7 +29,8 @@
       <div class="relative h-full w-full 3xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
+          <div ref="upperWrapper"
+            class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
             <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
@@ -66,50 +67,49 @@ const maxAngle = 15;
 let x = 0, y = 0;
 let targetX = 0, targetY = 0;
 
+let mouseX = 0, mouseY = 0;
+
+const applyTransforms = (wrapper, glare, xFactor, yFactor, rotateFactorX, rotateFactorY, translateZ = 0) => {
+  wrapper.style.transform = `
+      perspective(600px)
+      rotateY(${y * yFactor}deg)
+      rotateX(${x * xFactor}deg)
+      translateZ(${translateZ}px)
+    `;
+
+  glare.style.left = `${50 + y * rotateFactorY}%`;
+  glare.style.top = `${50 - x * rotateFactorX}%`;
+}
+
 const updateAnimation = () => {
   x += (targetX - x) * friction;
   y += (targetY - y) * friction;
 
-  // Анимация верхней картинки
-  upperWrapper.value.style.transform = `
-      perspective(600px)
-      rotateY(${y * 0.8}deg)
-      rotateX(${x * 0.5}deg)
-    `;
-  const upperGlareX = 50 + y * 1.1;
-  const upperGlareY = 50 - x * 1.1;
-  upperGlare.value.style.left = `${upperGlareX}%`;
-  upperGlare.value.style.top = `${upperGlareY}%`;
-
-  // Анимация нижней картинки
-  lowerWrapper.value.style.transform = `
-      perspective(600px)
-      rotateY(${y * 0.2}deg)
-      rotateX(${x * 0.2}deg)
-      translateZ(150px)
-    `;
-  const lowerGlareX = 50 + y * 0.7;
-  const lowerGlareY = 50 - x * 0.7;
-  lowerGlare.value.style.left = `${lowerGlareX}%`;
-  lowerGlare.value.style.top = `${lowerGlareY}%`;
+  applyTransforms(upperWrapper.value, upperGlare.value, 0.5, 0.8, 1.1, 1.1);
+  applyTransforms(lowerWrapper.value, lowerGlare.value, 0.2, 0.2, 0.7, 0.7, 150);
 
   requestAnimationFrame(updateAnimation);
 };
 
-const registerAnimation = () => {
-  section.value.addEventListener('mousemove', (event) => {
-    const followX = (window.innerWidth / 2 - event.clientX) / 70;
-    const followY = (window.innerHeight / 2 - event.clientY) / 30;
+const onMouseMove = (e) => {
+  const followX = (window.innerWidth / 2 - e.clientX) / 70;
+  const followY = (window.innerHeight / 2 - e.clientY) / 30;
     
     targetY = Math.max(-maxAngle, Math.min(maxAngle, -followX));
     targetX = Math.max(-maxAngle, Math.min(maxAngle, followY));
+};
 
+const registerAnimation = () => {
+  section.value.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    onMouseMove(e);
   });
 
   updateAnimation();
 }
 
-defineExpose({registerAnimation});
+defineExpose({ registerAnimation });
 
 onMounted(() => {
   const scroll = () => {
@@ -256,7 +256,7 @@ onMounted(() => {
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
-  top:50%;
+  top: 50%;
   left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
