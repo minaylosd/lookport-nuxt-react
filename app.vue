@@ -76,9 +76,11 @@ const registerObserver = () => {
                 }
                 if (entry.target.classList.contains('hero')) {
                   hero.value.registerAnimation();
-                } else if (entry.target.classList.contains('alerts')) {
-                  alerts.value.animate();
                 }
+                //  else 
+                // if (entry.target.classList.contains('alerts')) {
+                  // alerts.value.animate();
+                // }
               })
             });
           }
