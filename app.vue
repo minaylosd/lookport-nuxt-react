@@ -5,13 +5,13 @@
       <Hero ref="hero" />
       <AISection />
       <FeaturesSection />
-      <div class="w-full mb-20 h-svh max-h-[1000px] section three">
+      <!-- <div class="w-full mb-20 h-svh max-h-[1000px] section three">
         <ClientOnly v-if="loaded">
         <div id="logo" class="w-full mb-20 flex flex-col h-full max-h-[1000px]">
           <ThreeLogoSection class="w-full" />
         </div>
       </ClientOnly>
-      </div>
+      </div> -->
       <Seats />
       <NotificationSection ref="alerts" />
       <BroadcastSection />
