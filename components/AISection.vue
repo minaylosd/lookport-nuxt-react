@@ -1,5 +1,5 @@
 <template>
-  <section id="ai" class="relative visible w-full mb-20 section">
+  <section id="ai" class="relative w-full mb-20 section">
     <div class="absolute inset-0 w-full h-full">
 
       <div class="hidden md:block body">
@@ -118,7 +118,7 @@ li::before {
 }
 
 .visible .pulse-background {
-  animation: pulse 5s infinite alternate;
+  /* animation: pulse 5s infinite alternate; */
 }
 
 /* Круг с блюром через псевдоэлемент */

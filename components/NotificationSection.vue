@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section alerts">
+  <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section alerts">
     <div class="absolute inset-0 z-20">
       <div class="body">
         <div class="pulse-background">
@@ -162,7 +162,7 @@ let timeout;
   overflow: hidden;
   height: 100%;
   width: 100%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Стили для контейнера с фоном */
@@ -181,45 +181,6 @@ let timeout;
   background-size: 80% 160%;
   /* Начальный размер фона */
 
-}
-
-.visible .pulse-background {
-  animation: skewAnimationMob 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
-}
-
-/* Анимация искажения правого края */
-@keyframes skewAnimation {
-  0% {
-    background-size: 35% 70%;
-    /* Начальный размер фона */
-  }
-
-  50% {
-    background-size: 40% 60%;
-    /* Конечный размер фона */
-  }
-
-  100% {
-    background-size: 35% 75%;
-    /* Конечный размер фона */
-  }
-}
-
-@keyframes skewAnimationMob {
-  0% {
-    background-size: 90% 90%;
-    /* Начальный размер фона */
-  }
-
-  50% {
-    background-size: 100% 80%;
-    /* Конечный размер фона */
-  }
-
-  100% {
-    background-size: 90% 100%;
-    /* Конечный размер фона */
-  }
 }
 
 @media (min-width: 640px) {
@@ -241,7 +202,7 @@ let timeout;
   }
 
   .visible .pulse-background {
-    animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+    /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
   }
 }
 </style>

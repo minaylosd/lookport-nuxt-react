@@ -1,9 +1,9 @@
 <template>
-  <div class="relative flex items-center visible w-full mb-20 md:h-lvh max-h-max section">
+  <div class="relative flex items-center w-full mb-20 md:h-lvh max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body-pricing">
         <div class="pulse-background-pricing"></div>
-        <div class="gradient-overlay-pricing"></div>
+        <!-- <div class="gradient-overlay-pricing"></div> -->
       </div>
     </div>
     <section
@@ -83,7 +83,7 @@ li::before {
   margin: 0;
   padding: 0;
   height: 100%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Стили для фоновой картинки */
@@ -98,12 +98,12 @@ li::before {
   background-size: auto 100%;
   object-fit: cover;
 
-  filter: blur(30px) brightness(1.2) contrast(1.1);
+  /* filter: blur(30px) brightness(1.2) contrast(1.1); */
   z-index: 1;
 }
 
 .visible .pulse-background {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 /* Наложение динамического слоя */
@@ -113,8 +113,8 @@ li::before {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5));
-  mix-blend-mode: overlay;
+  /* background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5)); */
+  /* mix-blend-mode: overlay; */
   /* Накладываем эффект */
 
   /* Увеличиваем время анимации */
@@ -122,11 +122,11 @@ li::before {
 }
 
 .visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite;
+  /* animation: gradientFlow1 5s ease-in infinite; */
 }
 
 /* Анимация для фона */
-@keyframes skewAnimation {
+/* @keyframes skewAnimation {
   0% {
     background-size: 30% 100%;
   }
@@ -156,13 +156,13 @@ li::before {
   100% {
     opacity: 0;
   }
-}
+} */
 
 .body-pricing {
   margin: 0;
   padding: 0;
   height: 100%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .pulse-background-pricing {
@@ -176,17 +176,17 @@ li::before {
   /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
   /* Отключаем повторение фона */
-  background-size: auto 100%;
+  background-size: 35% 100%;
   /* Начальный размер фона */
   object-fit: cover;
 
-  transition: background-size 0.2s ease-out;
+  /* transition: background-size 0.2s ease-out; */
   /* Плавный переход */
-  filter: blur(25px) brightness(1.6) contrast(1.1);
+  /* filter: blur(25px) brightness(1.6) contrast(1.1); */
 }
 
 .visible .pulse-background-pricing {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 /* Наложение динамического слоя */
@@ -196,20 +196,20 @@ li::before {
   left: 0;
   width: 100vw;
   height: 100%;
-  background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
-  mix-blend-mode: overlay;
+  /* background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4)); */
+  /* mix-blend-mode: overlay; */
   /* Накладываем эффект */
 
   z-index: 2;
 }
 
 .visible .gradient-overlay-pricing {
-  animation: gradientFlow1 5s ease-in infinite;
+  /* animation: gradientFlow1 5s ease-in infinite; */
   /* Увеличиваем время анимации */
 }
 
 /* Анимация для фона */
-@keyframes skewAnimationPricing {
+/* @keyframes skewAnimationPricing {
   0% {
     background-size: 30% 100%;
   }
@@ -239,7 +239,7 @@ li::before {
   100% {
     opacity: 0;
   }
-}
+} */
 
 @media (min-width:640px) {
   .pulse-background {

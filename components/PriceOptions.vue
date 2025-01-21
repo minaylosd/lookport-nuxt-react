@@ -1,10 +1,10 @@
 <template>
   <div
-    class="relative w-full section visible bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
+    class="relative w-full section bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
-        <div class="pulse-background"></div>
-        <div class="gradient-overlay"></div>
+        <!-- <div class="pulse-background"></div> -->
+        <!-- <div class="gradient-overlay"></div> -->
         <div class="pulse-background-left"></div>
       </div>
     </div>
@@ -55,7 +55,7 @@
   margin: 0;
   padding: 0;
   height: 100%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 /* Стили для контейнера с фоном */
@@ -73,11 +73,11 @@
   background-size: 70% 120%;
   /* Начальный размер фона */
 
-  filter: blur(25px);
+  /* filter: blur(25px); */
 }
 
 .visible .pulse-background {
-  animation: skewAnimation 5s ease-in infinite alternate-reverse;
+  /* animation: skewAnimation 5s ease-in infinite alternate-reverse; */
 }
 
 .gradient-overlay {
@@ -87,7 +87,7 @@
   width: 100%;
   height: 100%;
   /* background: radial-gradient(circle at 10% 10%, rgb(0, 195, 255), rgba(255, 0, 225, 0.638)); */
-  mix-blend-mode: overlay;
+  /* mix-blend-mode: overlay; */
   /* Накладываем эффект */
 
   /* Увеличиваем время анимации */
@@ -113,7 +113,7 @@
   /* Отключаем повторение фона */
   background-size: 50% 100%;
   /* Начальный размер фона */
-  filter: blur(25px);
+  /* filter: blur(25px); */
   /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 

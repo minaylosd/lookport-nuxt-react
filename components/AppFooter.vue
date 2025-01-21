@@ -1,10 +1,10 @@
 <template>
-  <footer class="relative visible w-full section">
+  <footer class="relative w-full section">
     <div class="absolute bottom-0 z-0 bg-black w-full h-[200lvh]"></div>
     <div class="absolute bottom-0 left-0 z-10 w-full">
       <div class="body">
         <div class="pulse-background"></div>
-        <div class="gradient-overlay"></div>
+        <!-- <div class="gradient-overlay"></div> -->
       </div>
     </div>
     <div
@@ -72,14 +72,14 @@ import LogoLink from './LogoLink.vue';
   /* Отключаем повторение фона */
   background-size: 90% 120%;
   /* Начальный размер фона */
-  transition: background-size 0.2s ease-out;
+  /* transition: background-size 0.2s ease-out; */
   /* Плавный переход */
-  filter: blur(25px);
+  /* filter: blur(25px); */
   /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 .visible .pulse-background {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 .gradient-overlay {

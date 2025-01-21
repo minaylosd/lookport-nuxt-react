@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center visible w-full section hero md:mb-20 md:h-screen">
+  <section ref="section" class="relative flex items-center w-full section hero md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -173,9 +173,9 @@ onMounted(() => {
   left: 0;
   width: 90%;
   height: 90%;
-  background: radial-gradient(ellipse 80% 60% at center, #3BAFDA 30%, transparent 55%),
+  /* background: radial-gradient(ellipse 80% 60% at center, #3BAFDA 30%, transparent 55%),
     radial-gradient(ellipse 60% 90% at bottom right, #FF40FF 35%, transparent 95%),
-    radial-gradient(ellipse 70% 50% at 50% 30%, #300dad 40%, transparent 80%);
+    radial-gradient(ellipse 70% 50% at 50% 30%, #300dad 40%, transparent 80%); */
   /* Градиент */
   z-index: 1;
   /* Псевдоэлемент должен быть поверх фона */
@@ -186,7 +186,7 @@ onMounted(() => {
 }
 
 .visible .black::after {
-  animation: pulse 3s infinite alternate;
+  /* animation: pulse 3s infinite alternate; */
 }
 
 /* Анимация прозрачности */

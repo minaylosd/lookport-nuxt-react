@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section visible bg-pagebg">
+  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section bg-pagebg">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
@@ -89,8 +89,9 @@ import WebIcon from "./WebIcon.vue";
   /* background: #000; Чёрный фон */
   overflow: hidden;
   height: 100%;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
+
 .pulse-background-left{
   position: absolute;
   left: -10%;
@@ -100,7 +101,7 @@ import WebIcon from "./WebIcon.vue";
   background-image: url('/images/left.png'); /* Устанавливаем картинку как фон */
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 80% 100%; /* Начальный размер фона */
-  filter: blur(25px);
+  /* filter: blur(25px); */
 }
 .pulse-background-right{
   position: absolute;
@@ -112,8 +113,8 @@ import WebIcon from "./WebIcon.vue";
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 80% 100%; /* Начальный размер фона */
   
-  transition: background-size 0.4s ease-out; /* Плавный переход */
-  filter: blur(25px);
+  /* transition: background-size 0.4s ease-out; Плавный переход */
+  /* filter: blur(25px); */
 }
 /* Стили для контейнера с фоном */
 .pulse-background {
@@ -127,16 +128,16 @@ import WebIcon from "./WebIcon.vue";
   background-repeat: no-repeat; /* Отключаем повторение фона */
   background-size: 45% 66%; /* Начальный размер фона */
   
-  filter: blur(25px);
+  /* filter: blur(25px); */
 
 }
 
 .visible .pulse-background-right {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 .visible .pulse-background {
-  animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+  /* animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate; */
 }
 @keyframes transformAnimation {
   0% {
@@ -152,26 +153,26 @@ import WebIcon from "./WebIcon.vue";
   left: 0;
   width: 100vw;
   height: 100%;
-  background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638));
-  mix-blend-mode: overlay; /* Накладываем эффект */
+  /* background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638)); */
+  /* mix-blend-mode: overlay; Накладываем эффект */
   
   z-index: 2;
 }
 
 .visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
+  /* animation: gradientFlow1 5s ease-in infinite; Увеличиваем время анимации */
 }
 
 /* Анимация искажения правого края */
-@keyframes skewAnimation {
-  0% {
-    background-size: 80% 100%; /* Начальный размер фона */
-  }
-  100% {
-    background-size: 84% 105%; /* Конечный размер фона */
-  }
-}
-@keyframes gradientFlow1 {
+/* @keyframes skewAnimation { */
+  /* 0% { */
+    /* background-size: 80% 100%; Начальный размер фона */
+  /* } */
+  /* 100% { */
+    /* background-size: 84% 105%; Конечный размер фона */
+  /* } */
+/* } */
+/* @keyframes gradientFlow1 {
   0% {
     opacity: 0;
   }
@@ -187,5 +188,5 @@ import WebIcon from "./WebIcon.vue";
   100% {
     opacity: 0;
   }
-}
+} */
 </style>

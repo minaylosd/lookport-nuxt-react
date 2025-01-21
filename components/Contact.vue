@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative visible w-full section">
+    class="relative w-full section">
     <div class="absolute inset-0 w-full h-full z-20 bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(0,0,0,0)_100%)]"></div>
 
     <section
@@ -54,80 +54,5 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   height: 10px;
   min-width: 10px;
   min-height: 10px;
-}
-
-.body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  width: 100%;
-}
-
-/* Стили для контейнера с фоном */
-.pulse-background {
-  position: absolute;
-  left: 10%;
-  width: 100%;
-  /* Ширина контейнера */
-  height: 100%;
-  /* Высота контейнера */
-  background-image: url('/images/Vector.png');
-  /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat;
-  /* Отключаем повторение фона */
-  background-size: 90% 120%;
-  /* Начальный размер фона */
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
-  transition: background-size 0.2s ease-out;
-  /* Плавный переход */
-  filter: blur(25px);
-  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 10% 10%, rgb(0, 195, 255), rgba(255, 0, 225, 0.638));
-  mix-blend-mode: overlay;
-  /* Накладываем эффект */
-  animation: gradientFlow1 5s ease-in infinite;
-  /* Увеличиваем время анимации */
-  z-index: 2;
-}
-
-/* Анимация для фона */
-@keyframes skewAnimation {
-  0% {
-    background-size: 80% 100%;
-  }
-
-  100% {
-    background-size: 75% 110%;
-  }
-}
-
-@keyframes gradientFlow1 {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  75% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0;
-  }
 }
 </style>
