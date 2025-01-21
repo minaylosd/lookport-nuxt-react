@@ -31,12 +31,12 @@
           <!-- Верхняя картинка -->
           <div ref="upperWrapper"
             class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
-            <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
+            <img src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
           <!-- Нижняя картинка -->
           <div ref="lowerWrapper" class="anim-up wrapper wrapper-lower">
-            <img ref="lowerImage" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
+            <img src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
             <div ref="lowerGlare" class="glare"></div>
           </div>
         </div>
@@ -53,11 +53,9 @@ import GetStartedBtn from './GetStartedBtn.vue';
 const section = ref(null);
 
 const upperWrapper = ref(null);
-const upperImage = ref(null);
 const upperGlare = ref(null);
 
 const lowerWrapper = ref(null);
-const lowerImage = ref(null);
 const lowerGlare = ref(null);
 
 const link = ref(null);
@@ -67,10 +65,15 @@ const maxAngle = 15;
 let x = 0, y = 0;
 let targetX = 0, targetY = 0;
 
-let mouseX = 0, mouseY = 0;
-
 const applyTransforms = (wrapper, glare, xFactor, yFactor, rotateFactorX, rotateFactorY, translateZ = 0) => {
   wrapper.style.transform = `
+      perspective(600px)
+      rotateY(${y * yFactor}deg)
+      rotateX(${x * xFactor}deg)
+      translateZ(${translateZ}px)
+    `;
+
+  wrapper.style.webkitTransform = `
       perspective(600px)
       rotateY(${y * yFactor}deg)
       rotateX(${x * xFactor}deg)
@@ -91,7 +94,7 @@ const updateAnimation = () => {
   requestAnimationFrame(updateAnimation);
 };
 
-const onMouseMove = (e) => {
+const onPointerMove = (e) => {
   const followX = (window.innerWidth / 2 - e.clientX) / 70;
   const followY = (window.innerHeight / 2 - e.clientY) / 30;
 
@@ -100,11 +103,7 @@ const onMouseMove = (e) => {
 };
 
 const registerAnimation = () => {
-  section.value.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    onMouseMove(e);
-  });
+  section.value.addEventListener('pointermove', onPointerMove);
 
   updateAnimation();
 }
@@ -212,8 +211,11 @@ onMounted(() => {
   position: absolute;
   display: inline-block;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   perspective: 600px;
+  -webkit-perspective: 600px;
   transition: transform 0.2s ease-out;
+  -webkit-transition: -webkit-transform 0.2s ease-out;
 }
 
 .wrapper-upper {
@@ -228,6 +230,7 @@ onMounted(() => {
   right: 6px;
   /* transform: translateZ(150px); */
   transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
+  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
 }
 
 .interactive-image {
@@ -241,6 +244,7 @@ onMounted(() => {
   overflow: hidden;
   position: relative;
   filter: brightness(97%);
+  -webkit-filter: brightness(97%);
 }
 
 .glare {
@@ -252,19 +256,16 @@ onMounted(() => {
   background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(30px);
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
   opacity: 0.6;
   /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
   top: 50%;
   left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
-}
-
-@media (min-width: 768px) {
-  .glare {
-    filter: blur(20px);
-  }
+  -webkit-transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
 @media (min-width: 1680px) {
@@ -278,6 +279,7 @@ onMounted(() => {
     right: -140px;
     /* transform: translateZ(300px); */
     transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
+    -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
   }
 
   .interactive-image {
@@ -291,6 +293,8 @@ onMounted(() => {
     overflow: hidden;
     position: relative;
     filter: brightness(97%);
+    -webkit-filter: brightness(97%);
   }
+
 }
 </style>
