@@ -70,7 +70,7 @@ const registerObserver = () => {
             gsap.fromTo(elements, {
               opacity: 0, y: 100
             }, {
-              opacity: 1, y: 0, stagger: 0.05, onComplete: (() => {
+              opacity: 1, y: 0, stagger: 0.05, force3D: false, onComplete: (() => {
                 if (loaded.value == false) {
                   loaded.value = true;
                 }
