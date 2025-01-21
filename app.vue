@@ -38,11 +38,11 @@ import Domains from "./components/Domains.vue";
 import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
 import Seats from './components/Seats.vue';
-import { applyPureReactInVue, applyReactInVue } from "veaury";
+// import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
 import gsap from 'gsap';
 
-const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
+// const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 
 const sections = ref([]);
 
