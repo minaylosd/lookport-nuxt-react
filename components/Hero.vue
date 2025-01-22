@@ -161,12 +161,13 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   filter: blur(50px);
+  -webkit-filter: blur(50px);
   position: relative;
   /* Для позиционирования псевдоэлемента */
 }
 
 .black::after {
-  filter: blur(50px);
+  /* filter: blur(50px); */
   content: '';
   position: absolute;
   top: 0;

@@ -69,10 +69,11 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   /* Начальный размер фона */
   
   filter: blur(5px) brightness(1) contrast(1);
+  -webkit-filter: blur(5px) brightness(1) contrast(1);
 }
 
 .visible .pulse-background {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 .pulse-background::after {
@@ -84,6 +85,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   width: 30vw;
   height: 400px;
   filter: blur(105px) brightness(1) contrast(0.7);
+  -webkit-filter: blur(105px) brightness(1) contrast(0.7);
 }
 
 .circle {
@@ -132,7 +134,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
 }
 
 .visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite;
+  /* animation: gradientFlow1 5s ease-in infinite; */
 }
 
 @keyframes gradientFlow1 {
