@@ -1,5 +1,5 @@
 <template>
-  <div ref="stripeSection" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
+  <div id="features" ref="stripeSection" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div ref='stripePulse' class="pulse-background"></div>

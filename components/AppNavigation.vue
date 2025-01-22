@@ -2,7 +2,7 @@
 const menuItems = [
   {
     name: "Home",
-    link: "/",
+    link: "#hero",
   },
   {
     name: "Our Features",

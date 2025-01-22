@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div id="contact"
     class="relative w-full section">
     <div class="absolute inset-0 w-full h-full z-20 bg-[radial-gradient(ellipse_50%_30%_at_center,_rgba(35,28,61,1)_0%,_rgba(0,0,0,0)_100%)]"></div>
 

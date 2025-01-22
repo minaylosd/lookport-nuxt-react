@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center w-full section hero md:mb-20 md:h-screen">
+  <section id="hero" ref="section" class="relative flex items-center w-full section hero md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
