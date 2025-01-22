@@ -92,11 +92,6 @@ export default function Model(props) {
   }, []);
 
   const animate = () => {
-    console.log(n.current);
-    n.current += 1;
-
-    if (!isVisible) return;
-
     if (firstMesh.current) {
       firstMesh.current.rotation.y += 0.01 * scrollSpeed.current; // Вращение по Y
     }
@@ -131,36 +126,6 @@ export default function Model(props) {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
     };
   }, [isVisible]);
-
-
-  // Анимация вращения и движения
-  // useFrame(() => {
-  //   if (!isVisible) return;
-
-  //   if (firstMesh.current) {
-      
-  //     firstMesh.current.rotation.y += 0.01 * scrollSpeed; 
-  //   }
-
-  //   if (secondMesh.current) {
-      
-  //     secondMesh.current.rotation.y -= 0.01 * scrollSpeed; 
-  //   }
-
-  //   if (textGroup.current) {
-      
-  //     textGroup.current.rotation.set(0, 0, 0); 
-  //   }
-
-    
-  //   if (groupRef.current) {
-      
-  //     groupRef.current.position.x +=
-  //       (mousePosition.x - groupRef.current.position.x) * 0.06;
-  //     groupRef.current.position.y +=
-  //       (mousePosition.y - groupRef.current.position.y) * 0.06;
-  //   }
-  // });
 
   return (
     <Fragment>
