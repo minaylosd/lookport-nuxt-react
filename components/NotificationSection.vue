@@ -1,12 +1,5 @@
 <template>
   <div class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section alerts">
-    <div class="absolute inset-0 z-20">
-      <div class="body">
-        <div class="pulse-background">
-        </div>
-      </div>
-    </div>
-
     <img src="/images/notifications-glass.png"
       class="anim-up absolute -bottom-24 -left-[260px] z-50 w-full max-w-[500px] h-auto object-cover" alt="" />
 
@@ -51,7 +44,9 @@
         </div>
       </div>
 
-      <div class="flex justify-center w-full">
+      <div class="relative flex justify-center w-full">
+        <img src="/images/phone.png"
+          class="absolute object-cover sm:min-w-[700px] sm:w-[700px] w-full min-w-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 " />
         <div class="relative w-[275px]">
           <img src="/images/iphone-frame.png" class="object-cover w-full h-auto anim-up" alt="">
           <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
@@ -167,18 +162,16 @@ let timeout;
 
 /* Стили для контейнера с фоном */
 .pulse-background {
-  position: absolute;
   /* left: 45%; */
-  top: 12%;
-  width: 100vw;
+  /* width: 100vw; */
   /* Ширина контейнера */
-  height: 100%;
+  /* height: 100%; */
   /* Высота контейнера */
   background-image: url('/images/phone.png');
   /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
   /* Отключаем повторение фона */
-  background-size: 80% 160%;
+  background-size: 120% 120%;
   /* Начальный размер фона */
 
 }
@@ -186,17 +179,17 @@ let timeout;
 @media (min-width: 640px) {
   .pulse-background {
     position: absolute;
-    left: 45%;
-    top: 15%;
-    width: 100vw;
+    /* left: 45%; */
+    /* top: 15%; */
+    /* width: 100vw; */
     /* Ширина контейнера */
-    height: 100%;
+    /* height: 100%; */
     /* Высота контейнера */
     background-image: url('/images/phone.png');
     /* Устанавливаем картинку как фон */
     background-repeat: no-repeat;
     /* Отключаем повторение фона */
-    background-size: 35% 70%;
+    background-size: 120% 120%;
     /* Начальный размер фона */
 
   }
