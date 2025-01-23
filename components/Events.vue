@@ -43,7 +43,7 @@ const handleIntersect = (entries) => {
 onMounted(() => {
   observer = new IntersectionObserver(handleIntersect,
   { root: null,
-    rootMargin: "100px 0px 100px 0px",
+    rootMargin: "500px 0px 500px 0px",
     threshold: 0
   });
 
