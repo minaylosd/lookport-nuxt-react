@@ -132,28 +132,28 @@ export default function Model(props) {
   };
   
   // Управление запуском/остановкой анимации
-  useEffect(() => {
-    const handleVisibilityChange = () => {
-      if (document.hidden && animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      } else {
-        animationRef.current = requestAnimationFrame(animate);
-      }
-    };
+  // useEffect(() => {
+  //   const handleVisibilityChange = () => {
+  //     if (document.hidden && animationRef.current) {
+  //       cancelAnimationFrame(animationRef.current);
+  //     } else {
+  //       animationRef.current = requestAnimationFrame(animate);
+  //     }
+  //   };
   
-    document.addEventListener("visibilitychange", handleVisibilityChange);
+  //   document.addEventListener("visibilitychange", handleVisibilityChange);
   
-    if (isVisible) {
-      animationRef.current = requestAnimationFrame(animate);
-    } else if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current);
-    }
+  //   if (isVisible) {
+  //     animationRef.current = requestAnimationFrame(animate);
+  //   } else if (animationRef.current) {
+  //     cancelAnimationFrame(animationRef.current);
+  //   }
   
-    return () => {
-      if (animationRef.current) cancelAnimationFrame(animationRef.current);
-      document.removeEventListener("visibilitychange", handleVisibilityChange);
-    };
-  }, [isVisible]);
+  //   return () => {
+  //     if (animationRef.current) cancelAnimationFrame(animationRef.current);
+  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
+  //   };
+  // }, [isVisible]);
 
   return (
     <Fragment>
