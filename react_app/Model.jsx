@@ -104,44 +104,54 @@ export default function Model(props) {
   }, []);
 
   const animate = () => {
+    if (!isVisible || document.hidden) return; // Останавливаем, если вкладка неактивна
+  
     if (firstMesh.current) {
-      firstMesh.current.rotation.y += 0.01 * scrollSpeed.current; // Вращение по Y
+      firstMesh.current.rotation.y += 0.01 * scrollSpeed.current;
     }
-
+  
     if (secondMesh.current) {
-      secondMesh.current.rotation.y -= 0.01 * scrollSpeed.current; // Вращение по Y
+      secondMesh.current.rotation.y -= 0.01 * scrollSpeed.current;
     }
-
+  
     if (textGroup.current) {
-      textGroup.current.rotation.set(0, 0, 0); // Убираем вращение
+      textGroup.current.rotation.set(0, 0, 0);
     }
-
+  
     if (groupRef.current) {
       groupRef.current.position.x +=
         (mousePosition.current.x - groupRef.current.position.x) * 0.06;
       groupRef.current.position.y +=
         (mousePosition.current.y - groupRef.current.position.y) * 0.06;
     }
-
-    animationRef.current = requestAnimationFrame(animate);
+  
+    // Ограничение FPS (30 кадров в секунду)
+    setTimeout(() => {
+      animationRef.current = requestAnimationFrame(animate);
+    }, 1000 / 30);
   };
-
+  
   // Управление запуском/остановкой анимации
   useEffect(() => {
-    // const timestamp = new Date(); 
-    // console.log('rotation check if can run requestAnimationFrame ', timestamp.getTime());
+    const handleVisibilityChange = () => {
+      if (document.hidden && animationRef.current) {
+        cancelAnimationFrame(animationRef.current);
+      } else {
+        animationRef.current = requestAnimationFrame(animate);
+      }
+    };
+  
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+  
     if (isVisible) {
       animationRef.current = requestAnimationFrame(animate);
-      const timestamp = new Date(); 
-      console.log('rotation event added ', timestamp.getTime());
     } else if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
-      const timestamp = new Date(); 
-      console.log('rotation event canceled ', timestamp.getTime());
     }
-
+  
     return () => {
       if (animationRef.current) cancelAnimationFrame(animationRef.current);
+      document.removeEventListener("visibilitychange", handleVisibilityChange);
     };
   }, [isVisible]);
 
