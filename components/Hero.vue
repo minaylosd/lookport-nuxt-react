@@ -11,11 +11,11 @@
       <div class="flex flex-col">
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
-          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl 3xl:text-[134px] font-ag">
+          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           <span class="whitespace-nowrap">AI-driven Event</span><br />ticketing platform
         </h1>
         <p
-          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl 3xl:text-[32px] text-lg 3xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with Artificial Intelligence
         </p>
         <div class="flex items-center gap-4 md:flex-row">
@@ -269,7 +269,7 @@ onMounted(() => {
   -webkit-transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 1680px) {
+@media (min-width: 1280px) {
   .wrapper-upper {
     left: -15px;
   }
