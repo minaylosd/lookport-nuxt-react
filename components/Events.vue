@@ -1,7 +1,7 @@
 <template>
   <div class="relative z-30 w-full overflow-hidden max-h-[400px] sm:max-h-[778px]">
     <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[400px] sm:max-h-[778px]">
-      <video ref="video" class="object-cover w-full h-auto py-10" src="/Sequence_02_3-2.mp4" muted loop
+      <video ref="video" style="opacity: 0;" class="object-cover w-full h-auto py-10 transition-opacity duration-300 ease-in" src="/Sequence_02_3-2.mp4" muted loop
         playsinline></video>
       <svg>
         <mask id="mask">
@@ -34,6 +34,7 @@ const handleIntersect = (entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       video.value.play();
+      video.value.style.opacity = 1;
     } else {
       video.value.pause();
     }
