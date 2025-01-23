@@ -8,7 +8,10 @@ export default function Model(props) {
   const secondMesh = useRef(); // Ссылка на второй объект
   const textGroup = useRef(); // Ссылка на группу с текстом
   const animationRef = useRef();
-  const n = useRef(0);
+
+  const fps = 30;
+  const interval = 1000 / fps;
+  let lastTime = 0;
 
   const { nodes } = useGLTF("/three/Logo_1.glb");
 
@@ -46,8 +49,6 @@ export default function Model(props) {
 
     const handleScroll = () => {
       scrollSpeed.current = 5; // Увеличиваем скорость при прокрутке
-      const timestamp = new Date();
-      console.log('speed increased ', timestamp.getTime());
 
       // Сбрасываем таймер, чтобы скорость возвращалась к нормальной через 300 мс после остановки прокрутки
       if (scrollTimeout.current) {
@@ -55,8 +56,6 @@ export default function Model(props) {
       }
       scrollTimeout.current = setTimeout(() => {
         scrollSpeed.current = 1; // Возвращаем скорость к нормальной
-        const timestamp = new Date();
-        console.log('speed decreased ', timestamp.getTime());
       }, 300);
     };
 
@@ -103,57 +102,46 @@ export default function Model(props) {
     console.log('mousemove event added ', timestamp.getTime());
   }, []);
 
-  const animate = () => {
-    if (!isVisible || document.hidden) return; // Останавливаем, если вкладка неактивна
-  
-    if (firstMesh.current) {
-      firstMesh.current.rotation.y += 0.01 * scrollSpeed.current;
-    }
-  
-    if (secondMesh.current) {
-      secondMesh.current.rotation.y -= 0.01 * scrollSpeed.current;
-    }
-  
-    if (textGroup.current) {
-      textGroup.current.rotation.set(0, 0, 0);
-    }
-  
-    if (groupRef.current) {
-      groupRef.current.position.x +=
-        (mousePosition.current.x - groupRef.current.position.x) * 0.06;
-      groupRef.current.position.y +=
-        (mousePosition.current.y - groupRef.current.position.y) * 0.06;
-    }
-  
-    // Ограничение FPS (30 кадров в секунду)
-    setTimeout(() => {
-      animationRef.current = requestAnimationFrame(animate);
-    }, 1000 / 30);
+  const animate = (currentTime) => {
+    if (currentTime - lastTime >= interval) {
+      if (!isVisible || document.hidden) return; // Останавливаем, если вкладка неактивна
+    
+      if (firstMesh.current) {
+        firstMesh.current.rotation.y += 0.01 * scrollSpeed.current;
+      }
+    
+      if (secondMesh.current) {
+        secondMesh.current.rotation.y -= 0.01 * scrollSpeed.current;
+      }
+    
+      if (textGroup.current) {
+        textGroup.current.rotation.set(0, 0, 0);
+      }
+    
+      if (groupRef.current) {
+        groupRef.current.position.x +=
+          (mousePosition.current.x - groupRef.current.position.x) * 0.06;
+        groupRef.current.position.y +=
+          (mousePosition.current.y - groupRef.current.position.y) * 0.06;
+      }
+        animationRef.current = requestAnimationFrame(animate);
+      }
   };
   
   // Управление запуском/остановкой анимации
-  // useEffect(() => {
-  //   const handleVisibilityChange = () => {
-  //     if (document.hidden && animationRef.current) {
-  //       cancelAnimationFrame(animationRef.current);
-  //     } else {
-  //       animationRef.current = requestAnimationFrame(animate);
-  //     }
-  //   };
+  useEffect(() => {
+    if (isVisible) {
+      console.log('adding request isVisible');
+      animationRef.current = requestAnimationFrame(animate);
+    } else if (!isVisible && animationRef.current) {
+      cancelAnimationFrame(animationRef.current);
+      console.log('delete request isVisible');
+    }
   
-  //   document.addEventListener("visibilitychange", handleVisibilityChange);
-  
-  //   if (isVisible) {
-  //     animationRef.current = requestAnimationFrame(animate);
-  //   } else if (animationRef.current) {
-  //     cancelAnimationFrame(animationRef.current);
-  //   }
-  
-  //   return () => {
-  //     if (animationRef.current) cancelAnimationFrame(animationRef.current);
-  //     document.removeEventListener("visibilitychange", handleVisibilityChange);
-  //   };
-  // }, [isVisible]);
+    return () => {
+      if (animationRef.current) cancelAnimationFrame(animationRef.current);
+    };
+  }, [isVisible]);
 
   return (
     <Fragment>
