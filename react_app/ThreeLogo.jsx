@@ -13,6 +13,7 @@ export default function () {
   let timeout;
   
   useEffect(()=> {
+    console.log('mounted canvas wrapper');
     const handleResize = ()=> {
       clearTimeout(timeout);
       timeout = setTimeout(()=> {

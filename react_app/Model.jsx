@@ -40,6 +40,8 @@ export default function Model(props) {
 
   // Добавляем слушатель на прокрутку
   useEffect(() => {
+    const timestamp = new Date(); 
+    console.log('mounted geometry ', timestamp);
     const logo = document.getElementById("logo");
 
     const handleScroll = () => {
@@ -62,12 +64,16 @@ export default function Model(props) {
             return;
           }
           window.addEventListener("scroll", handleScroll);
+          const timestamp = new Date(); 
+          console.log('scroll event added ', timestamp);
         } else {
           setIsVisible(false);
           if (props.mobile) {
             return;
           }
           window.removeEventListener("scroll", handleScroll);
+          const timestamp = new Date(); 
+          console.log('scroll event removed ', timestamp);
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);
           }
@@ -89,6 +95,8 @@ export default function Model(props) {
     };
 
     logo.addEventListener("mousemove", handleMouseMove);
+    const timestamp = new Date(); 
+    console.log('mousemove event added ', timestamp);
   }, []);
 
   const animate = () => {
@@ -118,8 +126,12 @@ export default function Model(props) {
   useEffect(() => {
     if (isVisible) {
       animationRef.current = requestAnimationFrame(animate);
+      const timestamp = new Date(); 
+      console.log('rotation event added ', timestamp);
     } else if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
+      const timestamp = new Date(); 
+      console.log('rotation event canceled ', timestamp);
     }
 
     return () => {
