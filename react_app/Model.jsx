@@ -41,7 +41,7 @@ export default function Model(props) {
   // Добавляем слушатель на прокрутку
   useEffect(() => {
     const timestamp = new Date(); 
-    console.log('mounted geometry ', timestamp);
+    console.log('mounted geometry ', timestamp.getTime());
     const logo = document.getElementById("logo");
 
     const handleScroll = () => {
@@ -65,7 +65,7 @@ export default function Model(props) {
           }
           window.addEventListener("scroll", handleScroll);
           const timestamp = new Date(); 
-          console.log('scroll event added ', timestamp);
+          console.log('scroll event added ', timestamp.getTime());
         } else {
           setIsVisible(false);
           if (props.mobile) {
@@ -73,7 +73,7 @@ export default function Model(props) {
           }
           window.removeEventListener("scroll", handleScroll);
           const timestamp = new Date(); 
-          console.log('scroll event removed ', timestamp);
+          console.log('scroll event removed ', timestamp.getTime());
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);
           }
@@ -96,7 +96,7 @@ export default function Model(props) {
 
     logo.addEventListener("mousemove", handleMouseMove);
     const timestamp = new Date(); 
-    console.log('mousemove event added ', timestamp);
+    console.log('mousemove event added ', timestamp.getTime());
   }, []);
 
   const animate = () => {
@@ -127,11 +127,11 @@ export default function Model(props) {
     if (isVisible) {
       animationRef.current = requestAnimationFrame(animate);
       const timestamp = new Date(); 
-      console.log('rotation event added ', timestamp);
+      console.log('rotation event added ', timestamp.getTime());
     } else if (animationRef.current) {
       cancelAnimationFrame(animationRef.current);
       const timestamp = new Date(); 
-      console.log('rotation event canceled ', timestamp);
+      console.log('rotation event canceled ', timestamp.getTime());
     }
 
     return () => {
