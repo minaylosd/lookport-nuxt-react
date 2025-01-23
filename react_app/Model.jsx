@@ -46,6 +46,8 @@ export default function Model(props) {
 
     const handleScroll = () => {
       scrollSpeed.current = 5; // Увеличиваем скорость при прокрутке
+      const timestamp = new Date();
+      console.log('speed increased ', timestamp.getTime());
 
       // Сбрасываем таймер, чтобы скорость возвращалась к нормальной через 300 мс после остановки прокрутки
       if (scrollTimeout.current) {
@@ -53,6 +55,8 @@ export default function Model(props) {
       }
       scrollTimeout.current = setTimeout(() => {
         scrollSpeed.current = 1; // Возвращаем скорость к нормальной
+        const timestamp = new Date();
+        console.log('speed decreased ', timestamp.getTime());
       }, 300);
     };
 
