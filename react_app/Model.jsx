@@ -9,7 +9,7 @@ export default function Model(props) {
   const textGroup = useRef(); // Ссылка на группу с текстом
   const animationRef = useRef();
 
-  const fps = 30;
+  const fps = 40;
   const interval = 1000 / fps;
   let lastTime = 0;
 
@@ -43,21 +43,21 @@ export default function Model(props) {
 
   // Добавляем слушатель на прокрутку
   useEffect(() => {
-    const timestamp = new Date(); 
-    console.log('mounted geometry ', timestamp.getTime());
+    // const timestamp = new Date(); 
+    // console.log('mounted geometry ', timestamp.getTime());
     const logo = document.getElementById("logo");
 
-    const handleScroll = () => {
-      scrollSpeed.current = 5; // Увеличиваем скорость при прокрутке
+    // const handleScroll = () => {
+      // scrollSpeed.current = 5; // Увеличиваем скорость при прокрутке
 
       // Сбрасываем таймер, чтобы скорость возвращалась к нормальной через 300 мс после остановки прокрутки
-      if (scrollTimeout.current) {
-        clearTimeout(scrollTimeout.current);
-      }
-      scrollTimeout.current = setTimeout(() => {
-        scrollSpeed.current = 1; // Возвращаем скорость к нормальной
-      }, 300);
-    };
+      // if (scrollTimeout.current) {
+        // clearTimeout(scrollTimeout.current);
+      // }
+      // scrollTimeout.current = setTimeout(() => {
+        // scrollSpeed.current = 1; // Возвращаем скорость к нормальной
+      // }, 300);
+    // };
 
     const observer = new IntersectionObserver((entries)=> {
       entries.forEach((entry)=> {
@@ -66,17 +66,17 @@ export default function Model(props) {
           if (props.mobile) {
             return;
           }
-          window.addEventListener("scroll", handleScroll);
-          const timestamp = new Date(); 
-          console.log('scroll event added ', timestamp.getTime());
+          // window.addEventListener("scroll", handleScroll);
+          // const timestamp = new Date(); 
+          // console.log('scroll event added ', timestamp.getTime());
         } else {
           setIsVisible(false);
           if (props.mobile) {
             return;
           }
-          window.removeEventListener("scroll", handleScroll);
-          const timestamp = new Date(); 
-          console.log('scroll event removed ', timestamp.getTime());
+          // window.removeEventListener("scroll", handleScroll);
+          // const timestamp = new Date(); 
+          // console.log('scroll event removed ', timestamp.getTime());
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);
           }
