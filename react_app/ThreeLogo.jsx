@@ -13,7 +13,8 @@ export default function () {
   let timeout;
   
   useEffect(()=> {
-    console.log('mounted canvas wrapper');
+    const timestamp = new Date(); 
+    console.log('mounted canvas wrapper ', timestamp.getTime());
     const handleResize = ()=> {
       clearTimeout(timeout);
       timeout = setTimeout(()=> {

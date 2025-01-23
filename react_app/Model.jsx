@@ -124,6 +124,8 @@ export default function Model(props) {
 
   // Управление запуском/остановкой анимации
   useEffect(() => {
+    // const timestamp = new Date(); 
+    // console.log('rotation check if can run requestAnimationFrame ', timestamp.getTime());
     if (isVisible) {
       animationRef.current = requestAnimationFrame(animate);
       const timestamp = new Date(); 
