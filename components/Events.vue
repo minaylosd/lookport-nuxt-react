@@ -1,7 +1,8 @@
 <template>
-  <div class="relative z-30 w-full overflow-hidden max-h-[778px]">
-    <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[778px]">
-      <video class="object-cover w-full h-auto py-10" src="/Sequence_02_3-2.mp4" autoplay muted loop playsinline></video>
+  <div class="relative z-30 w-full overflow-hidden max-h-[400px] sm:max-h-[778px]">
+    <section class="relative flex flex-col items-center justify-center w-full mx-auto max-h-[400px] sm:max-h-[778px]">
+      <video ref="video" class="object-cover w-full h-auto py-10" src="/Sequence_02_3-2.mp4" muted loop
+        playsinline></video>
       <svg>
         <mask id="mask">
           <rect fill="white" width="100%" height="110%"></rect>
@@ -22,6 +23,41 @@
     </section>
   </div>
 </template>
+
+<script setup>
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+
+const video = ref(null);
+let observer = null;
+
+const handleIntersect = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      video.value.play();
+    } else {
+      video.value.pause();
+    }
+  });
+};
+
+onMounted(() => {
+  observer = new IntersectionObserver(handleIntersect,
+  { root: null,
+    rootMargin: "100px 0px 100px 0px",
+    threshold: 0
+  });
+
+  if (video.value) {
+    observer.observe(video.value);
+  }
+});
+
+onBeforeUnmount(() => {
+  if (observer && video.value) {
+    observer.unobserve(video.value);
+  }
+})
+</script>
 
 <style scoped>
 video {
