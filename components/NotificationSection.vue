@@ -28,10 +28,10 @@
             class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl outline-[1px] outline outline-white/5 bg-[linear-gradient(65deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Whatsapp.svg" alt="WhatsApp icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
-              <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
+              <p class="text-xs font-normal leading-none md:text-sm font-geometria text-white/50">
                 Available in
               </p>
-              <p class="text-base font-medium text-white md:text-lg font geometria">
+              <p class="text-base font-medium text-white md:text-lg font-geometria">
                 WhatsApp
               </p>
             </div>
@@ -40,10 +40,10 @@
             class="anim-up flex w-52 items-center gap-3.5 px-6 py-4 rounded-2xl outline-[1px] outline outline-white/5 bg-[linear-gradient(65deg,_#313340cc_0%,_#31334000_100%)] backdrop-blur-md">
             <img src="/images/icons/Telegram.svg" alt="Telegram icon" class="object-cover w-7 h-7 md:w-9 md:h-9" />
             <div>
-              <p class="text-xs font-normal leading-none md:text-sm font geometria text-white/50">
+              <p class="text-xs font-normal leading-none md:text-sm font-geometria text-white/50">
                 Available in
               </p>
-              <p class="text-base font-medium text-white md:text-lg font geometria">
+              <p class="text-base font-medium text-white md:text-lg font-geometria">
                 Telegram
               </p>
             </div>
