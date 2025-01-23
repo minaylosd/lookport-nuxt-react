@@ -89,7 +89,7 @@
     class="relative z-[1] flex items-center w-full md:h-lvh md:max-h-max section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
-      <div class="flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
+      <div class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
         <h1
           class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
           Transparent Pricing
@@ -107,8 +107,8 @@
               {{ item }}
             </li>
           </ul>
-          <div class="anim-up">
-            <GetStartedBtn />
+          <div>
+            <GetStartedBtn class="anim-up" />
           </div>
         </div>
       </div>
