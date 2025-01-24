@@ -64,27 +64,28 @@ const registerObserver = () => {
           loaded.value = true;
           return;
         }
-        // const elements = entry.target.querySelectorAll('.anim-up');
+        const elements = entry.target.querySelectorAll('.anim-up');
 
-        // if (elements.length > 0) {
-        //   elements.forEach((el, index) => {
-        //     el.style.transitionDelay = `${index * 0.05}s`;
-        //   })
+        if (elements.length > 0) {
+          elements.forEach((el, index) => {
+            el.style.transitionDelay = `${index * 0.05}s`;
+          })
+        }
 
-          entry.target.classList.add('animated');
-          if (entry.target.classList.contains('hero')) {
-            setTimeout(() => {
-              hero.value.registerAnimation();
-            }, 500)
-          }
+        entry.target.classList.add('animated');
 
-          if (loaded.value == false) {
-            setTimeout(() => {
-              loaded.value = true;
-            }, 500)
-          }
-          observer.unobserve(entry.target);
-        // }
+        if (entry.target.classList.contains('hero')) {
+          setTimeout(() => {
+            hero.value.registerAnimation();
+          }, 500)
+        }
+
+        if (loaded.value == false) {
+          setTimeout(() => {
+            loaded.value = true;
+          }, 500)
+        }
+        observer.unobserve(entry.target);
       }
     })
   }, observerOptions);
