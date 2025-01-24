@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState, Fragment } from "react";
 import { MeshTransmissionMaterial, useGLTF, Text, GradientTexture } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
 
 export default function Model(props) {
   const groupRef = useRef(); // Ссылка на группу объектов
@@ -43,21 +42,7 @@ export default function Model(props) {
 
   // Добавляем слушатель на прокрутку
   useEffect(() => {
-    // const timestamp = new Date(); 
-    // console.log('mounted geometry ', timestamp.getTime());
     const logo = document.getElementById("logo");
-
-    // const handleScroll = () => {
-      // scrollSpeed.current = 5; // Увеличиваем скорость при прокрутке
-
-      // Сбрасываем таймер, чтобы скорость возвращалась к нормальной через 300 мс после остановки прокрутки
-      // if (scrollTimeout.current) {
-        // clearTimeout(scrollTimeout.current);
-      // }
-      // scrollTimeout.current = setTimeout(() => {
-        // scrollSpeed.current = 1; // Возвращаем скорость к нормальной
-      // }, 300);
-    // };
 
     const observer = new IntersectionObserver((entries)=> {
       entries.forEach((entry)=> {
@@ -66,17 +51,11 @@ export default function Model(props) {
           if (props.mobile) {
             return;
           }
-          // window.addEventListener("scroll", handleScroll);
-          // const timestamp = new Date(); 
-          // console.log('scroll event added ', timestamp.getTime());
         } else {
           setIsVisible(false);
           if (props.mobile) {
             return;
           }
-          // window.removeEventListener("scroll", handleScroll);
-          // const timestamp = new Date(); 
-          // console.log('scroll event removed ', timestamp.getTime());
           if (scrollTimeout.current) {
             clearTimeout(scrollTimeout.current);
           }
@@ -98,8 +77,6 @@ export default function Model(props) {
     };
 
     logo.addEventListener("mousemove", handleMouseMove);
-    const timestamp = new Date(); 
-    console.log('mousemove event added ', timestamp.getTime());
   }, []);
 
   const animate = (currentTime) => {
@@ -131,11 +108,9 @@ export default function Model(props) {
   // Управление запуском/остановкой анимации
   useEffect(() => {
     if (isVisible) {
-      console.log('adding request isVisible');
       animationRef.current = requestAnimationFrame(animate);
     } else if (!isVisible && animationRef.current) {
       cancelAnimationFrame(animationRef.current);
-      console.log('delete request isVisible');
     }
   
     return () => {
