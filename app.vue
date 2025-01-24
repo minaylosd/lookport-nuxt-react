@@ -6,13 +6,13 @@
       <AISection />
       <FeaturesSection />
       <PricingSection />
-      <div class="w-full mb-20 h-svh max-h-[1000px] section three">
+      <!-- <div class="w-full mb-20 h-svh max-h-[1000px] section three">
         <ClientOnly v-if="loaded">
           <div id="logo" class="w-full mb-20 flex flex-col h-full max-h-[1000px]">
             <ThreeLogoSection class="w-full" />
           </div>
         </ClientOnly>
-      </div>
+      </div> -->
       <Seats />
       <NotificationSection ref="alerts" />
       <BroadcastSection />
@@ -40,8 +40,9 @@ import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
 import Seats from './components/Seats.vue';
 import PricingSection from './components/PricingSection.vue';
-import { applyPureReactInVue, applyReactInVue } from "veaury";
+// import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
+import gsap from 'gsap';
 
 useHead({
   script: [
@@ -59,7 +60,7 @@ useHead({
   ]
 })
 
-const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
+// const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 
 const sections = ref([]);
 
@@ -83,24 +84,32 @@ const registerObserver = () => {
         const elements = entry.target.querySelectorAll('.anim-up');
 
         if (elements.length > 0) {
-          elements.forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.05}s`;
+          gsap.fromTo(elements, { opacity: 0, y: 100 }, {
+            opacity: 1, y: 0, stagger: 0.05, force3D: false, onComplete: (() => {
+              if (loaded.value == false) {
+                loaded.value = true;
+              }
+
+              if (entry.target.classList.contains('hero')) {
+                hero.value.registerAnimation();
+              }
+            })
           })
         }
 
-        entry.target.classList.add('animated');
+        // entry.target.classList.add('animated');
 
-        if (entry.target.classList.contains('hero')) {
-          setTimeout(() => {
-            hero.value.registerAnimation();
-          }, 500)
-        }
+        // if (entry.target.classList.contains('hero')) {
+        //   setTimeout(() => {
+        //     hero.value.registerAnimation();
+        //   }, 500)
+        // }
 
-        if (loaded.value == false) {
-          setTimeout(() => {
-            loaded.value = true;
-          }, 500)
-        }
+        // if (loaded.value == false) {
+        // setTimeout(() => {
+        // loaded.value = true;
+        // }, 500)
+        // }
         observer.unobserve(entry.target);
       }
     })
