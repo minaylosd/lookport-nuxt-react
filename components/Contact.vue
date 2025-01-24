@@ -27,7 +27,9 @@
               href="mailto:pomoters@lookport.live">promoters@lookport.live</a>
           </div>
           <div class="flex items-center w-full gap-4 mt-8">
-            <GetStartedBtn class="anim-up" :big="true" />
+            <div class="anim-up">
+              <GetStartedBtn :big="true" />
+            </div>
             <NuxtLink
               class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
               Login</NuxtLink>
