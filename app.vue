@@ -43,6 +43,22 @@ import PricingSection from './components/PricingSection.vue';
 import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
 
+useHead({
+  script: [
+    {
+      type: "application/ld+json",
+      innerHTML: `{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Lookport",
+        "url": "https://ticketing.lookport.live/",
+        "logo": "/Lookport_logo.png",
+        "description": "Lookport is an AI-powered ticketing system designed for event promoters. Sell tickets efficiently with automation, analytics, and smart marketing tools."
+        }`
+    }
+  ]
+})
+
 const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 
 const sections = ref([]);
