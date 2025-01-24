@@ -1,26 +1,25 @@
 <template>
-  <div class="relative flex items-center visible w-full mb-20 md:h-lvh md:max-h-max section">
+  <div id="broadcasting" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
         <div class="circle"></div>
-        <div class="gradient-overlay"></div>
       </div>
     </div>
 
     <div class="anim-up">
-      <img src="/images/broadcast-glass.png"
+      <NuxtImg format="webp" src="/images/broadcast-glass.png"
         class="absolute z-30 top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-full max-w-[900px] h-auto object-cover"
-        alt="" />
+        alt="Glass circle" />
     </div>
 
     <section
       class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-48 md:flex-row xl:max-w-screen-xl">
       <div class="relative flex justify-center order-1 md:justify-end basis-5/12 md:order-none">
-        <img class="anim-up object-cover w-full md:w-[120%] max-w-[611px] h-auto"
-          src="/images/broadcast.png" />
-        <img class="absolute z-10 bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[200%] max-w-[1200px] object-cover"
-          src="/images/broadcast-figure.png" alt="">
+        <NuxtImg format="webp" class="anim-up object-cover w-full md:w-[120%] max-w-[611px] h-auto"
+          src="/images/broadcast.png" alt="Glass figure" />
+        <NuxtImg format="webp" class="absolute z-10 bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[200%] max-w-[1200px] object-cover"
+          src="/images/broadcast-figure.png" alt="Gradient background" />
       </div>
 
       <div class="relative z-30 flex flex-col gap-6 basis-7/12">
@@ -52,27 +51,17 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   cursor: pointer;
 }
 
-/* Стили для контейнера с фоном */
 .pulse-background {
   position: absolute;
   left: 40%;
   top: 20%;
   width: 110vw;
-  /* Ширина контейнера */
   height: 100%;
-  /* Высота контейнера */
-  background-image: url('./img/new.png');
-  /* Устанавливаем картинку как фон */
+  background-image: url('/new.png');
   background-repeat: no-repeat;
-  /* Отключаем повторение фона */
   background-size: 50% 80%;
-  /* Начальный размер фона */
-  
   filter: blur(5px) brightness(1) contrast(1);
-}
-
-.visible .pulse-background {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
+  -webkit-filter: blur(5px) brightness(1) contrast(1);
 }
 
 .pulse-background::after {
@@ -84,13 +73,13 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   width: 30vw;
   height: 400px;
   filter: blur(105px) brightness(1) contrast(0.7);
+  -webkit-filter: blur(105px) brightness(1) contrast(0.7);
 }
 
 .circle {
   position: absolute;
   top: 15%;
   left: -350px;
-  /* transform: translate((-50%, -50%)); */
   width: 70vh;
   max-width: 700px;
   height: 70vh;
@@ -98,63 +87,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   border-radius: 50%;
   background: linear-gradient(117.5deg, rgba(49, 51, 64, 0.4) 0.16%, rgba(49, 51, 64, 0) 100%);
   backdrop-filter: blur(70px);
-  /* Поверх всех элементов */
   pointer-events: none;
-}
-
-/* Анимация искажения правого края */
-@keyframes skewAnimation {
-  0% {
-    background-size: 50% 80%;
-    /* Начальный размер фона */
-  }
-
-  50% {
-    background-size: 52% 80%;
-    /* Конечный размер фона */
-  }
-
-  100% {
-    background-size: 55% 80%;
-    /* Конечный размер фона */
-  }
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
-  mix-blend-mode: overlay;
-  z-index: 2;
-}
-
-.visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite;
-}
-
-@keyframes gradientFlow1 {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  75% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0;
-  }
 }
 
 @media (min-width: 640px) {
@@ -163,6 +96,5 @@ import GetStartedBtn from "./GetStartedBtn.vue";
     height: 90vh;
     left: -45vh;
   }
-
 }
 </style>

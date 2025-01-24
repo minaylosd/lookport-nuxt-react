@@ -1,5 +1,5 @@
 <template>
-  <section ref="section" class="relative flex items-center visible w-full section hero md:mb-20 md:h-screen">
+  <section id="hero" ref="section" class="relative flex items-center w-full section hero md:mb-20 md:h-screen">
     <div class="absolute inset-0 z-30 w-full h-full">
       <div class="body">
         <div class="black"></div>
@@ -11,15 +11,17 @@
       <div class="flex flex-col">
         <Badge class="mb-3 anim-up" value="Unlock the power of AI" />
         <h1
-          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl 3xl:text-[134px] font-ag">
+          class="anim-up mb-3 text-5xl font-normal leading-none text-white uppercase md:text-8xl xl:text-[134px] font-ag">
           <span class="whitespace-nowrap">AI-driven Event</span><br />ticketing platform
         </h1>
         <p
-          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl 3xl:text-[32px] text-lg 3xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
+          class="anim-up md:mb-[70px] mb-6 relative z-10 md:text-2xl xl:text-[32px] text-lg xl:leading-[140%] font-normal tracking-tighter font-geometria text-grad">
           Empowering promoters with Artificial Intelligence
         </p>
         <div class="flex items-center gap-4 md:flex-row">
-          <GetStartedBtn :big="true" />
+          <div class="anim-up">
+            <GetStartedBtn :big="true" />
+          </div>
           <div ref="link"
             class="anim-up whitespace-nowrap cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
             Learn More</div>
@@ -29,14 +31,14 @@
       <div class="relative h-full w-full 3xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper"
-            class="anim-up wrapper wrapper-upper [transform:perspective(600px)_rotateY(0deg)_rotateX(0deg)]">
-            <img ref="upperImage" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
+          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper">
+            <NuxtImg format="webp" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
+
           <!-- Нижняя картинка -->
           <div ref="lowerWrapper" class="anim-up wrapper wrapper-lower">
-            <img ref="lowerImage" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
+            <NuxtImg format="webp" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
             <div ref="lowerGlare" class="glare"></div>
           </div>
         </div>
@@ -53,11 +55,9 @@ import GetStartedBtn from './GetStartedBtn.vue';
 const section = ref(null);
 
 const upperWrapper = ref(null);
-const upperImage = ref(null);
 const upperGlare = ref(null);
 
 const lowerWrapper = ref(null);
-const lowerImage = ref(null);
 const lowerGlare = ref(null);
 
 const link = ref(null);
@@ -67,10 +67,15 @@ const maxAngle = 15;
 let x = 0, y = 0;
 let targetX = 0, targetY = 0;
 
-let mouseX = 0, mouseY = 0;
-
 const applyTransforms = (wrapper, glare, xFactor, yFactor, rotateFactorX, rotateFactorY, translateZ = 0) => {
   wrapper.style.transform = `
+      perspective(600px)
+      rotateY(${y * yFactor}deg)
+      rotateX(${x * xFactor}deg)
+      translateZ(${translateZ}px)
+    `;
+
+  wrapper.style.webkitTransform = `
       perspective(600px)
       rotateY(${y * yFactor}deg)
       rotateX(${x * xFactor}deg)
@@ -91,7 +96,7 @@ const updateAnimation = () => {
   requestAnimationFrame(updateAnimation);
 };
 
-const onMouseMove = (e) => {
+const onPointerMove = (e) => {
   const followX = (window.innerWidth / 2 - e.clientX) / 70;
   const followY = (window.innerHeight / 2 - e.clientY) / 30;
 
@@ -100,11 +105,7 @@ const onMouseMove = (e) => {
 };
 
 const registerAnimation = () => {
-  section.value.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    onMouseMove(e);
-  });
+  section.value.addEventListener('pointermove', onPointerMove);
 
   updateAnimation();
 }
@@ -137,7 +138,7 @@ onMounted(() => {
   background-image: url("~/assets/images/icons/arrow.svg");
   background-repeat: no-repeat;
   display: inline-block;
-  margin-left: 13px;
+  margin-left: 8px;
   width: 10px;
   height: 10px;
   min-width: 10px;
@@ -162,43 +163,8 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   filter: blur(50px);
+  -webkit-filter: blur(50px);
   position: relative;
-  /* Для позиционирования псевдоэлемента */
-}
-
-.black::after {
-  filter: blur(50px);
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 90%;
-  height: 90%;
-  background: radial-gradient(ellipse 80% 60% at center, #3BAFDA 30%, transparent 55%),
-    radial-gradient(ellipse 60% 90% at bottom right, #FF40FF 35%, transparent 95%),
-    radial-gradient(ellipse 70% 50% at 50% 30%, #300dad 40%, transparent 80%);
-  /* Градиент */
-  z-index: 1;
-  /* Псевдоэлемент должен быть поверх фона */
-  opacity: 0;
-  /* Начальная прозрачность */
-
-  /* Анимация изменения прозрачности */
-}
-
-.visible .black::after {
-  animation: pulse 3s infinite alternate;
-}
-
-/* Анимация прозрачности */
-@keyframes pulse {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 0.6;
-  }
 }
 
 .tickets {
@@ -212,28 +178,27 @@ onMounted(() => {
   position: absolute;
   display: inline-block;
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   perspective: 600px;
-  transition: transform 0.2s ease-out;
+  -webkit-perspective: 600px;
+  will-change: transform;
 }
 
 .wrapper-upper {
   z-index: 2;
   left: 6px;
-  /* Верхняя картинка всегда сверху */
 }
 
 .wrapper-lower {
   z-index: 1;
-  /* Нижняя картинка находится под верхней */
   right: 6px;
-  /* transform: translateZ(150px); */
   transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
+  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
 }
 
 .interactive-image {
   min-width: 180px;
   width: 180px;
-  /* Размер обеих картинок одинаковый */
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -241,49 +206,43 @@ onMounted(() => {
   overflow: hidden;
   position: relative;
   filter: brightness(97%);
+  -webkit-filter: brightness(97%);
+  backface-visibility: hidden;
 }
 
 .glare {
   position: absolute;
   width: 140px;
-  /* Размер блика */
   height: 100px;
-  /* Размер блика */
   background: radial-gradient(circle, rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.3));
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(30px);
+  filter: blur(20px);
+  -webkit-filter: blur(20px);
   opacity: 0.6;
-  /* Блик слегка видим */
   transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
   top: 50%;
   left: 50%;
   transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+  -webkit-transition: left 0.2s ease, top 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
 }
 
-@media (min-width: 768px) {
-  .glare {
-    filter: blur(20px);
-  }
-}
-
-@media (min-width: 1680px) {
+@media (min-width: 1280px) {
   .wrapper-upper {
     left: -15px;
   }
 
   .wrapper-lower {
     z-index: 1;
-    /* Нижняя картинка находится под верхней */
     right: -140px;
-    /* transform: translateZ(300px); */
     transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
+    -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateZ(150px);
   }
 
   .interactive-image {
     min-width: 300px;
     width: 300px;
-    /* Размер обеих картинок одинаковый */
     height: auto;
     border-radius: 10px;
     object-fit: cover;
@@ -291,6 +250,14 @@ onMounted(() => {
     overflow: hidden;
     position: relative;
     filter: brightness(97%);
+    -webkit-filter: brightness(97%);
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .body {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 }
 </style>

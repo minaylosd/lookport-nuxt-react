@@ -1,7 +1,6 @@
 <template>
-  <section id="ai" class="relative visible w-full mb-20 section">
+  <section id="ai" class="relative w-full mb-20 section">
     <div class="absolute inset-0 w-full h-full">
-
       <div class="hidden md:block body">
         <div class="pulse-background"></div>
       </div>
@@ -30,11 +29,11 @@
       </div>
 
       <div class="flex flex-col items-end gap-5 basis-1/2">
-        <img class="relative z-30 anim-up xl:max-w-[330px] max-w-72 h-auto object-cover" src="/images/icons/OpenAI.svg"
-          alt="" />
-        <img
+        <NuxtImg format="webp" class="relative z-30 anim-up xl:max-w-[330px] max-w-72 h-auto object-cover"
+          src="/images/icons/OpenAI.svg" alt="OPenAI logo" />
+        <NuxtImg format="webp"
           class="relative z-30 anim-up object-cover xl:w-[110%] w-full max-w-[732px] h-auto xl:-mr-[172px] -mr-20 mix-blend-lighten"
-          src="/images/crystall.png" />
+          src="/images/crystall.png" alt="Crystall" />
       </div>
     </div>
   </section>
@@ -86,42 +85,24 @@ li::before {
 .body {
   margin: 0;
   padding: 0;
-  /* background: #000; */
-  /* Чёрный фон */
-  /* overflow: hidden; */
   height: 100%;
   cursor: pointer;
 }
 
-/* Стили для контейнера с фоном */
 .pulse-background {
   position: absolute;
   left: -10%;
   width: 50vw;
-  /* Ширина контейнера */
   height: 100%;
-  /* Высота контейнера */
   background-image: url('/images/object.png');
-  /* Устанавливаем картинку как фон */
   background-position: center;
-  /* Центрируем фоновое изображение */
   background-repeat: no-repeat;
-  /* Отключаем повторение фона */
   background-size: 50% 50%;
-  /* Начальный размер фона */
   z-index: 1;
-  /* Фон на нижнем уровне */
   filter: blur(125px);
-  /* Размытие фона */
   clip-path: inset(50 0 10 30);
-  /* Можно использовать для добавления размытия по границам */
 }
 
-.visible .pulse-background {
-  animation: pulse 5s infinite alternate;
-}
-
-/* Круг с блюром через псевдоэлемент */
 .circle {
   position: absolute;
   top: 7vh;
@@ -132,7 +113,6 @@ li::before {
   background: linear-gradient(117.5deg, rgba(49, 51, 64, 0.4) 0.16%, rgba(49, 51, 64, 0) 100%);
   backdrop-filter: blur(70px);
   z-index: 3;
-  /* Поверх всех элементов */
   pointer-events: none;
 }
 
@@ -149,25 +129,6 @@ li::before {
     left: -10vw;
     width: 800px;
     height: 800px;
-  }
-}
-
-/* Анимация пульсации фона с размытиями и искажениями */
-@keyframes pulse {
-  0% {
-    background-size: 80% 80%;
-    transform: rotate(5deg) skew(0deg, 0deg);
-    /* Легкое поворачивание и искажение */
-    filter: blur(5px);
-    clip-path: inset(50 0 0 20);
-  }
-
-  100% {
-    background-size: 110% 110%;
-    transform: rotate(13deg) skew(6deg, 6deg);
-    /* Сильное искажение */
-    filter: blur(35px);
-    clip-path: inset(10 0 20 20);
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section visible bg-pagebg">
+  <div id="domains" class="relative z-20 w-full h-lvh md:max-h-[1080px] md:min-h-[900px] section bg-pagebg">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
         <div class="pulse-background"></div>
@@ -7,7 +7,7 @@
         <div class="pulse-background-right"></div>
       </div>
     </div>
-    <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
+    <NuxtImg format="webp" src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="Glass" />
     <div class="relative w-full h-full overflow-hidden">
 
 
@@ -86,106 +86,41 @@ import WebIcon from "./WebIcon.vue";
 .body {
   margin: 0;
   padding: 0;
-  /* background: #000; Чёрный фон */
   overflow: hidden;
   height: 100%;
-  cursor: pointer;
 }
+
 .pulse-background-left{
   position: absolute;
   left: -10%;
   min-width: 1000px;
-  width: 100vw; /* Ширина контейнера */
-  height: 100%; /* Высота контейнера */
-  background-image: url('/images/left.png'); /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: 80% 100%; /* Начальный размер фона */
-  filter: blur(25px);
+  width: 100vw;
+  height: 100%;
+  background-image: url('/images/left.png');
+  background-repeat: no-repeat;
+  background-size: 80% 100%;
 }
 .pulse-background-right{
   position: absolute;
   left: 40%;
   min-width: 1000px;
-  width: 100vw; /* Ширина контейнера */
-  height: 100%; /* Высота контейнера */
-  background-image: url('/images/right.png'); /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: 80% 100%; /* Начальный размер фона */
-  
-  transition: background-size 0.4s ease-out; /* Плавный переход */
-  filter: blur(25px);
+  width: 100vw;
+  height: 100%;
+  background-image: url('/images/right.png');
+  background-repeat: no-repeat;
+  background-size: 80% 100%;
+
 }
-/* Стили для контейнера с фоном */
+
 .pulse-background {
   position: absolute;
   left: 24%;
   top: 35%;
   min-width: 1000px;
-  width: 100vw; /* Ширина контейнера */
-  height: 100%; /* Высота контейнера */
-  background-image: url('/images/center.png'); /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat; /* Отключаем повторение фона */
-  background-size: 45% 66%; /* Начальный размер фона */
-  
-  filter: blur(25px);
-
-}
-
-.visible .pulse-background-right {
-  animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate;
-}
-
-.visible .pulse-background {
-  animation: transformAnimation 5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
-}
-@keyframes transformAnimation {
-  0% {
-    transform: scale(0.8);
-  }
-  100% {
-    transform: scale(0.9);
-  }
-}
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100vw;
-  height: 100%;
-  background: radial-gradient(circle at 5% 5%, rgb(0, 255, 195), rgba(225, 0, 255, 0.638));
-  mix-blend-mode: overlay; /* Накладываем эффект */
-  
-  z-index: 2;
-}
-
-.visible .gradient-overlay {
-  animation: gradientFlow1 5s ease-in infinite; /* Увеличиваем время анимации */
-}
-
-/* Анимация искажения правого края */
-@keyframes skewAnimation {
-  0% {
-    background-size: 80% 100%; /* Начальный размер фона */
-  }
-  100% {
-    background-size: 84% 105%; /* Конечный размер фона */
-  }
-}
-@keyframes gradientFlow1 {
-  0% {
-    opacity: 0;
-  }
-  25%{
-    opacity: 0.25;
-  }
-  50%{
-    opacity: 0.8;
-  }
-  75%{
-    opacity: 0.25;
-  }
-  100% {
-    opacity: 0;
-  }
+  height: 100%; 
+  background-image: url('/images/center.png');
+  background-repeat: no-repeat;
+  background-size: 45% 66%;
 }
 </style>
