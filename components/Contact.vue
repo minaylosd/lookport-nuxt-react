@@ -30,9 +30,9 @@
             <div class="anim-up">
               <GetStartedBtn :big="true" />
             </div>
-            <NuxtLink
+            <a href="https://office.ticketing.lookport.live/auth/login" target="_blank"
               class="anim-up cursor-pointer text-lg font-normal leading-[13px] px-[15px] py-3 text-[#eeeeee] font-geometria text-arrow">
-              Login</NuxtLink>
+              Login</a>
           </div>
         </div>
       </div>
