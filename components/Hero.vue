@@ -31,13 +31,13 @@
       <div class="relative h-full w-full 3xl:max-w-[371px] max-w-[340px]">
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
-          <div ref="upperWrapper" class="wrapper wrapper-upper">
+          <div ref="upperWrapper" class="anim-up wrapper wrapper-upper">
             <NuxtImg format="webp" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
 
           <!-- Нижняя картинка -->
-          <div ref="lowerWrapper" class=" wrapper wrapper-lower">
+          <div ref="lowerWrapper" class="anim-up wrapper wrapper-lower">
             <NuxtImg format="webp" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
             <div ref="lowerGlare" class="glare"></div>
           </div>
@@ -138,7 +138,7 @@ onMounted(() => {
   background-image: url("~/assets/images/icons/arrow.svg");
   background-repeat: no-repeat;
   display: inline-block;
-  margin-left: 13px;
+  margin-left: 8px;
   width: 10px;
   height: 10px;
   min-width: 10px;
@@ -172,41 +172,6 @@ onMounted(() => {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.section:not(.animated) .wrapper-lower {
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(100px) translateZ(150px);
-  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(100px) translateZ(150px);
-  will-change: transform;
-}
-
-
-.section:not(.animated) .wrapper-upper {
-  opacity: 0;
-  transition: opacity 0.5s ease, transform 0.5s ease;
-  -webkit-transition: opacity 0.5s ease, transform 0.5s ease;
-  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(100px) translateZ(0);
-  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(100px) translateZ(0);
-  will-change: transform;
-}
-
-.animated .wrapper-lower {
-  opacity: 1;
-  transition: transform 0.2s ease-out;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0) translateZ(150px);
-  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0) translateZ(150px);
-}
-
-.animated .wrapper-upper {
-  opacity: 1;
-  transition: transform 0.2s ease-out;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0) translateZ(0);
-  -webkit-transform: perspective(600px) rotateY(0deg) rotateX(0deg) translateY(0) translateZ(0);
 }
 
 .wrapper {

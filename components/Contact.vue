@@ -51,7 +51,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   background-image: url("~/assets/images/icons/arrow.svg");
   background-repeat: no-repeat;
   display: inline-block;
-  margin-left: 13px;
+  margin-left: 8px;
   width: 10px;
   height: 10px;
   min-width: 10px;
