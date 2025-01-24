@@ -50,7 +50,7 @@
         <div class="relative w-[275px]">
           <NuxtImg format="webp" src="/images/iphone-frame.png" class="object-cover w-full h-auto anim-up" alt="Phone screen" />
           <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
-            <h5 class="anim-up font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</h5>
+            <p class="anim-up font-geometria font-bold text-white text-lg leading-none mb-[18px]">Lookport Bot</p>
             <div class="flex items-end mb-2 anim-up">
               <div class="w-[18px] h-[18px] mr-2">
                 <AvatarIcon />

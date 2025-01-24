@@ -50,9 +50,9 @@
               <div class="flex items-center gap-2">
                 <NuxtImg src="/images/icons/stripe-avatar.svg" class="w-12 h-12 overflow-hidden rounded-full" alt="Stripe logo" />
                 <div class="flex flex-col gap-1">
-                  <h5 class="text-base font-medium text-white font-geometria">
+                  <p class="text-base font-medium text-white font-geometria">
                     This week
-                  </h5>
+                  </p>
                   <p class="text-sm font-medium text-white/60 font-geometria">
                     417 tickets
                   </p>
