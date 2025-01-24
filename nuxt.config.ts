@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Lookport Ticketing – The AI Ticketing Solution for Event Promoters' },
         { name: 'twitter:description', content: 'Use AI-driven marketing, analytics, and automation to maximize ticket sales. Lookport is built for promoters.' },
-        { name: 'twitter:image', content: 'https://ticketing.lookport.live/' },
+        { name: 'twitter:image', content: 'https://lookport-previewdeploy.netlify.app/preview.jpg' },
         { name: 'twitter:site', content: '@lookport' }
       ],
       style: [
