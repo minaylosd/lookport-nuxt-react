@@ -1,9 +1,8 @@
 <template>
-  <div id="features" ref="stripeSection" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
+  <div id="features" class="relative flex items-center w-full mb-20 md:h-lvh md:max-h-max section">
     <div class="absolute inset-0 w-full h-full">
       <div class="body">
-        <div ref='stripePulse' class="pulse-background"></div>
-        <!-- <div class="gradient-overlay"></div> -->
+        <div class="pulse-background"></div>
       </div>
     </div>
     <section
@@ -84,55 +83,10 @@
       </div>
     </section>
   </div>
-
-  <div
-    class="relative z-[1] flex items-center w-full md:h-lvh md:max-h-max section bg-[radial-gradient(ellipse_20%_50%_at_center,_rgba(35,28,61,1)_0%,_rgba(10,10,10,1)_100%)] mb-20">
-    <section
-      class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl">
-      <div class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-1/2">
-        <h1
-          class="anim-up md:text-8xl text-5xl leading-none font-normal tracking-[-0.01em] text-white font-ag uppercase xl:whitespace-nowrap">
-          Transparent Pricing
-        </h1>
-        <p
-          class="anim-up relative z-10 md:text-2xl text-lg leading-[140%] font-normal tracking-[-0.05em] font-geometria text-[#bbbbbb]">
-          Straightforward: a 6% commission with no hidden fees. Real-time
-          service charge calculations ensure direct fund distribution to your
-          account
-        </p>
-        <div class="flex flex-col justify-between w-full gap-6 xl:flex-row">
-          <ul class="flex flex-col gap-4">
-            <li v-for="(item, index) in bullets" :key="index"
-              class="anim-up flex items-center gap-4 text-lg leading-none font-normal tracking-[-0.04em] font-geometria text-[#dddddd]">
-              {{ item }}
-            </li>
-          </ul>
-          <div>
-            <GetStartedBtn class="anim-up" />
-          </div>
-        </div>
-      </div>
-
-      <div class="relative flex flex-col items-end gap-5 basis-1/2">
-        <div class="relative w-full">
-          <img src="/images/features-circle.png"
-            class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="" />
-          <img
-            class="anim-up object-cover relative w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
-            src="/images/percent.png" />
-        </div>
-      </div>
-    </section>
-  </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
-import GetStartedBtn from "./GetStartedBtn.vue";
 import StripeHeading from "./StripeHeading.vue";
-
-const stripeSection = ref(null);
-const stripePulse = ref(null);
 
 const listItems = [
   {
@@ -154,34 +108,6 @@ const listItems = [
     summ: "+ $132.00",
   },
 ];
-
-const bullets = [
-  "Detailed financial reports",
-  "Automatic processing",
-  "Stripe fees apply separately",
-];
-
-const seatsBullets = [
-  "Customizable seat maps",
-  "Simple seat management",
-  "Add new seat maps within one business day",
-];
-
-// onMounted(() => {
-  // stripeSection.value.addEventListener('mousemove', (event) => {
-    // const { clientX, clientY } = event;
-
-    // Получаем размеры элемента
-    // const rect = stripePulse.value.getBoundingClientRect();
-
-    // Определяем координаты курсора относительно элемента
-    // const offsetX = ((clientX - rect.left) / rect.width - 0.1) * 5; // От -15 до 15 градусов
-    // const offsetY = ((clientY - rect.top) / rect.height - 0.1) * 2; // От -15 до 15 градусов
-
-    // Применяем изменения к transform
-//     stripePulse.value.style.transform = `skew(${offsetX}deg, ${offsetY}deg)`;
-//   });
-// })
 </script>
 
 <style scoped>
@@ -218,87 +144,24 @@ li::before {
   min-height: 18px;
 }
 
-/* Основные стили страницы */
 .body {
   margin: 0;
   padding: 0;
-  /* background: #0a0a0a; */
   overflow: hidden;
   height: 100%;
-  /* cursor: pointer; */
 }
 
-/* Стили для фоновой картинки */
 .pulse-background {
   position: absolute;
   left: -30px;
   width: 100vw;
   height: 100%;
   background-image: url('/images/Neon.png');
-  /* Градиентное изображение */
   background-repeat: no-repeat;
   background-size: auto 100%;
   object-fit: cover;
-
-  /* filter: blur(30px) brightness(1.2) contrast(1.1); */
   z-index: 2;
 }
-
-.visible .pulse-background {
-  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
-}
-
-/* Наложение динамического слоя */
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  /* background: radial-gradient(circle at 70% 80%, rgba(0, 255, 0, 0.8), rgba(0, 0, 255, 0.5)); */
-  /* mix-blend-mode: overlay; */
-  /* Накладываем эффект */
-
-  /* Увеличиваем время анимации */
-  z-index: 3;
-}
-
-.visible .gradient-overlay {
-  /* animation: gradientFlow1 5s ease-in infinite; */
-}
-
-/* Анимация для фона */
-/* @keyframes skewAnimation {
-  0% {
-    background-size: 30% 100%;
-  }
-
-  100% {
-    background-size: 40% 100%;
-  }
-}
-
-@keyframes gradientFlow1 {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  75% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0;
-  }
-} */
 
 @media (min-width:640px) {
   .pulse-background {

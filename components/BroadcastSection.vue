@@ -4,7 +4,6 @@
       <div class="body">
         <div class="pulse-background"></div>
         <div class="circle"></div>
-        <!-- <div class="gradient-overlay"></div> -->
       </div>
     </div>
 
@@ -52,28 +51,17 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   cursor: pointer;
 }
 
-/* Стили для контейнера с фоном */
 .pulse-background {
   position: absolute;
   left: 40%;
   top: 20%;
   width: 110vw;
-  /* Ширина контейнера */
   height: 100%;
-  /* Высота контейнера */
   background-image: url('./img/new.png');
-  /* Устанавливаем картинку как фон */
   background-repeat: no-repeat;
-  /* Отключаем повторение фона */
   background-size: 50% 80%;
-  /* Начальный размер фона */
-  
   filter: blur(5px) brightness(1) contrast(1);
   -webkit-filter: blur(5px) brightness(1) contrast(1);
-}
-
-.visible .pulse-background {
-  /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
 }
 
 .pulse-background::after {
@@ -92,7 +80,6 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   position: absolute;
   top: 15%;
   left: -350px;
-  /* transform: translate((-50%, -50%)); */
   width: 70vh;
   max-width: 700px;
   height: 70vh;
@@ -100,63 +87,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   border-radius: 50%;
   background: linear-gradient(117.5deg, rgba(49, 51, 64, 0.4) 0.16%, rgba(49, 51, 64, 0) 100%);
   backdrop-filter: blur(70px);
-  /* Поверх всех элементов */
   pointer-events: none;
-}
-
-/* Анимация искажения правого края */
-@keyframes skewAnimation {
-  0% {
-    background-size: 50% 80%;
-    /* Начальный размер фона */
-  }
-
-  50% {
-    background-size: 52% 80%;
-    /* Конечный размер фона */
-  }
-
-  100% {
-    background-size: 55% 80%;
-    /* Конечный размер фона */
-  }
-}
-
-.gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  background: radial-gradient(circle at 10% 10%, rgb(153, 0, 255), rgb(0, 4, 255, 0.4));
-  mix-blend-mode: overlay;
-  z-index: 2;
-}
-
-.visible .gradient-overlay {
-  /* animation: gradientFlow1 5s ease-in infinite; */
-}
-
-@keyframes gradientFlow1 {
-  0% {
-    opacity: 0;
-  }
-
-  25% {
-    opacity: 0.25;
-  }
-
-  50% {
-    opacity: 0.8;
-  }
-
-  75% {
-    opacity: 0.25;
-  }
-
-  100% {
-    opacity: 0;
-  }
 }
 
 @media (min-width: 640px) {
@@ -165,6 +96,5 @@ import GetStartedBtn from "./GetStartedBtn.vue";
     height: 90vh;
     left: -45vh;
   }
-
 }
 </style>

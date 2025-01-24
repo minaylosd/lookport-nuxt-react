@@ -46,7 +46,7 @@
 
       <div class="relative flex justify-center w-full">
         <img src="/images/phone.png"
-          class="absolute object-cover sm:min-w-[700px] sm:w-[700px] w-full min-w-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 " />
+          class="absolute object-cover sm:min-w-[700px] sm:w-[700px] w-full min-w-[500px] -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" />
         <div class="relative w-[275px]">
           <img src="/images/iphone-frame.png" class="object-cover w-full h-auto anim-up" alt="">
           <div class="anim-up absolute inset-0 w-full h-full z-20 flex flex-col pt-[60px] px-7">
@@ -118,84 +118,11 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
 import Badge from "./Badge.vue";
-import gsap from "gsap";
-
-const blur = ref(null);
-const header = ref(null);
-const msgOne = ref(null);
-const msgTwo = ref(null);
-const msgThree = ref(null);
-const msgFour = ref(null);
-const type = ref(null);
-const input = ref(null);
-
-let tl;
-let timeout;
-
-// const animate = () => {
-//   tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
-//   tl.to('.appear', { opacity: 1, delay: 1 });
-//   tl.to(msgThree.value, { display: 'flex', opacity: 1, delay: 0.2 })
-//   tl.to(msgFour.value, { display: 'flex', opacity: 1, delay: 0.2 })
-// };
-// defineExpose({ animate });
 </script>
-
-<style scoped>
-.body {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  height: 100%;
-  width: 100%;
-  /* cursor: pointer; */
-}
-
-/* Стили для контейнера с фоном */
-.pulse-background {
-  /* left: 45%; */
-  /* width: 100vw; */
-  /* Ширина контейнера */
-  /* height: 100%; */
-  /* Высота контейнера */
-  background-image: url('/images/phone.png');
-  /* Устанавливаем картинку как фон */
-  background-repeat: no-repeat;
-  /* Отключаем повторение фона */
-  background-size: 120% 120%;
-  /* Начальный размер фона */
-
-}
-
-@media (min-width: 640px) {
-  .pulse-background {
-    position: absolute;
-    /* left: 45%; */
-    /* top: 15%; */
-    /* width: 100vw; */
-    /* Ширина контейнера */
-    /* height: 100%; */
-    /* Высота контейнера */
-    background-image: url('/images/phone.png');
-    /* Устанавливаем картинку как фон */
-    background-repeat: no-repeat;
-    /* Отключаем повторение фона */
-    background-size: 120% 120%;
-    /* Начальный размер фона */
-
-  }
-
-  .visible .pulse-background {
-    /* animation: skewAnimation 5s cubic-bezier(0.42, 0, 0.58, 1) infinite alternate; */
-  }
-}
-</style>
