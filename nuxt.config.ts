@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Lookport LTD' },
         { property: 'og:title', content: 'Lookport Ticketing – AI-Driven Event Ticketing System' },
         { property: 'og:description', content: 'Sell more tickets with Lookport: AI-powered marketing, detailed analytics, and automated payments. A smarter way to manage event ticketing.' },
-        { property: 'og:image', content: '/Ticketing preview.jpg' },
+        { property: 'og:image', content: '/preview.jpg' },
         { property: 'og:image:width', content: '1500' },
         { property: 'og:image:height', content: '844' },
         { property: 'og:url', content: 'https://ticketing.lookport.live/' },
