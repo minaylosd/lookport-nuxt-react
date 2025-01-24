@@ -59,9 +59,19 @@ export default defineNuxtConfig({
                 --font-ag: "AG Letterica";
             }
             .anim-up {
-              opacity: 0;
+              transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+              -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out;
               will-change: transform;
-              transform: translate3d(0, 0, 0);
+            }
+            .section.animated .anim-up {
+              opacity: 1;
+              transform: translateY(0);
+              -webkit-transform: translateY(0);
+            }
+            .section:not(.animated) .anim-up {
+              opacity: 0;
+              transform: translateY(100px);
+              -webkit-transform: translateY(100px);
             }
           `,
         }
