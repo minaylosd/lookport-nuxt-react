@@ -6,13 +6,13 @@
       <AISection />
       <FeaturesSection />
       <PricingSection />
-      <div class="w-full mb-20 h-svh max-h-[1000px] section three">
+      <!-- <div class="w-full mb-20 h-svh max-h-[1000px] section three">
         <ClientOnly v-if="loaded">
           <div id="logo" class="w-full mb-20 flex flex-col h-full max-h-[1000px]">
             <ThreeLogoSection class="w-full" />
           </div>
         </ClientOnly>
-      </div>
+      </div> -->
       <Seats />
       <NotificationSection ref="alerts" />
       <BroadcastSection />
@@ -40,10 +40,10 @@ import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
 import Seats from './components/Seats.vue';
 import PricingSection from './components/PricingSection.vue';
-import { applyPureReactInVue, applyReactInVue } from "veaury";
+// import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
 
-const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
+// const ThreeLogoSection = applyPureReactInVue(ThreeLogo);
 
 const sections = ref([]);
 
