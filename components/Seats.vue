@@ -8,9 +8,11 @@
     <section
       class="flex flex-col items-center justify-between w-full max-w-screen-lg gap-10 px-6 py-10 mx-auto md:px-10 md:py-16 md:flex-row xl:max-w-screen-xl xl:gap-20">
       <div class="relative flex flex-col items-center order-2 gap-5 anim-up basis-5/12 xl:basis-1/2 md:order-none">
-        <img class="absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%] min-w-[200%] object-cover"
-          src="/images/seats-gradient.png" alt="">
-        <img class="relative z-10 block object-cover w-full max-w-[520px] h-auto" src="/images/seats-nogradient.png" />
+        <NuxtImg format="webp"
+          class="absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%] min-w-[200%] object-cover"
+          src="/images/seats-gradient.png" alt="Background gradient" />
+        <NuxtImg format="webp" class="relative z-10 block object-cover w-full max-w-[520px] h-auto"
+          src="/images/seats-nogradient.png" alt="Seating selector" />
       </div>
 
       <div class="relative z-30 flex flex-col xl:gap-10 gap-6 pt-[18px] basis-7/12 xl:basis-1/2">

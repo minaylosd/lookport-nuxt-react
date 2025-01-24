@@ -10,15 +10,15 @@
       <div class="relative flex flex-col order-2 basis-5/12 md:-order-none">
 
         <div class="relative z-10 flex flex-col items-center w-fit gap-7">
-          <img class="anim-up absolute left-1/2 object-cover -translate-x-1/2 -bottom-1/3 max-w-[430px]"
-            src="/images/stripe-glass.png" alt="" />
+          <NuxtImg format="webp" class="anim-up absolute left-1/2 object-cover -translate-x-1/2 -bottom-1/3 max-w-[430px]"
+            src="/images/stripe-glass.png" alt="Glass" />
           <div
             class="anim-up w-[245px] flex items-center gap-3 p-2 rounded-xl border border-white/10 bg-[#333131]/100 backdrop-blur-3xl shadow-md">
-            <img src="/images/icons/stripe-logo.svg" class="overflow-hidden w-11 h-11" />
+            <NuxtImg format="webp" src="/images/icons/stripe-logo.svg" class="overflow-hidden w-11 h-11" alt="Stripe logo" />
             <div class="flex flex-col gap-1">
-              <h5 class="text-xs font-medium text-white font-geometria">
+              <p class="text-xs font-medium text-white font-geometria">
                 Find it one the
-              </h5>
+              </p>
               <p class="text-sm font-bold text-white font-geometria whitespace-nowrap">
                 Stripe App Marketplace
               </p>
@@ -30,12 +30,12 @@
               :class="index != 0 ? 'pt-5 border-t border-white/10' : ''"
               class="flex items-center justify-between pb-5 anim-up">
               <div class="flex items-center gap-2">
-                <img :src="item.img" class="overflow-hidden border rounded-full w-11 h-11 border-white/10"
+                <NuxtImg format="webp" :src="item.img" class="overflow-hidden border rounded-full w-11 h-11 border-white/10"
                   :alt="item.name" />
                 <div class="flex flex-col gap-1">
-                  <h5 class="text-sm font-medium text-white font-geometria">
+                  <p class="text-sm font-medium text-white font-geometria">
                     {{ item.name }}
-                  </h5>
+                  </p>
                   <p class="text-xs font-medium text-white/60 font-geometria">
                     {{ item.position }}
                   </p>
@@ -48,7 +48,7 @@
             <div
               class="anim-up absolute bottom-0 left-1/2 -translate-x-1/2 w-[350px] flex items-center justify-between p-[18px] rounded-[28px] border border-white/10 bg-[#333131]/100 backdrop-blur-2xl shadow-md">
               <div class="flex items-center gap-2">
-                <img src="/images/icons/stripe-avatar.svg" class="w-12 h-12 overflow-hidden rounded-full" />
+                <NuxtImg src="/images/icons/stripe-avatar.svg" class="w-12 h-12 overflow-hidden rounded-full" alt="Stripe logo" />
                 <div class="flex flex-col gap-1">
                   <h5 class="text-base font-medium text-white font-geometria">
                     This week

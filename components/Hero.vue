@@ -32,13 +32,13 @@
         <div class="min-h-[500px] tickets">
           <!-- Верхняя картинка -->
           <div ref="upperWrapper" class="wrapper wrapper-upper">
-            <img src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
+            <NuxtImg format="webp" src="/images/ticket-upper.png" alt="Interactive Image" class="interactive-image" />
             <div ref="upperGlare" class="glare"></div>
           </div>
 
           <!-- Нижняя картинка -->
           <div ref="lowerWrapper" class=" wrapper wrapper-lower">
-            <img src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
+            <NuxtImg format="webp" src="/images/ticket-lower.png" alt="Interactive Image" class="interactive-image" />
             <div ref="lowerGlare" class="glare"></div>
           </div>
         </div>

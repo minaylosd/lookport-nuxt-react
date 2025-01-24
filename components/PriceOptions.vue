@@ -24,22 +24,22 @@
       <div class="w-full md:basis-5/12">
         <div class="relative z-30 flex flex-col justify-center gap-6 mx-auto max-w-96">
           <div class="anim-up absolute z-10 -bottom-[140px] -right-56 w-full max-w-[450px] h-auto ">
-            <img src="/images/prices-glass.png" class="min-w-[450px] h-auto object-cover" alt="" />
+            <NuxtImg format="webp" src="/images/prices-glass.png" class="min-w-[450px] h-auto object-cover" alt="Glass" />
           </div>
 
           <div
-            class="anim-up relative z-30 flex flex-col justify-center md:w-full md:h-32 h-28 p-9 rounded-2xl font-geometria font-normal tracking-tighter text-white md:text-2xl text-lg border border-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-lg">
+            class="anim-up relative z-30 flex flex-col justify-center md:w-full md:h-32 h-28 p-9 rounded-2xl font-geometria font-normal tracking-tighter text-white md:text-2xl text-lg outline-[1px] outline outline-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-lg">
             Open price tickets
           </div>
           <div
-            class="relative z-30 flex flex-col justify-center overflow-hidden border anim-up max-w-96 md:h-32 h-28 md:w-full p-9 rounded-2xl border-white/5">
-            <img class="absolute inset-0 object-cover w-full h-full" src="/images/icons/ang-gradient.png" alt="" />
+            class="relative z-30 flex flex-col justify-center overflow-hidden anim-up max-w-96 md:h-32 h-28 md:w-full p-9 rounded-2xl outline-[1px] outline outline-white/5">
+            <NuxtImg format="webp" class="absolute inset-0 object-cover w-full h-full" src="/images/icons/ang-gradient.png" alt="Gradient" />
             <p class="relative z-30 text-lg font-normal tracking-tighter text-black md:text-2xl font-geometria">
               Donation<br />options
             </p>
           </div>
           <div
-            class="anim-up relative z-30 flex max-w-96 flex-col justify-center md:w-full md:h-32 h-28 p-9 rounded-2xl font-geometria font-normal tracking-tighter text-white md:text-2xl text-lg border border-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-lg">
+            class="anim-up relative z-30 flex max-w-96 flex-col justify-center md:w-full md:h-32 h-28 p-9 rounded-2xl font-geometria font-normal tracking-tighter text-white md:text-2xl text-lg outline-[1px] outline outline-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-lg">
             Price adjustments<br />based on demand
           </div>
         </div>

@@ -29,11 +29,11 @@
       </div>
 
       <div class="flex flex-col items-end gap-5 basis-1/2">
-        <img class="relative z-30 anim-up xl:max-w-[330px] max-w-72 h-auto object-cover" src="/images/icons/OpenAI.svg"
-          alt="" />
-        <img
+        <NuxtImg format="webp" class="relative z-30 anim-up xl:max-w-[330px] max-w-72 h-auto object-cover"
+          src="/images/icons/OpenAI.svg" alt="OPenAI logo" />
+        <NuxtImg format="webp"
           class="relative z-30 anim-up object-cover xl:w-[110%] w-full max-w-[732px] h-auto xl:-mr-[172px] -mr-20 mix-blend-lighten"
-          src="/images/crystall.png" />
+          src="/images/crystall.png" alt="Crystall" />
       </div>
     </div>
   </section>

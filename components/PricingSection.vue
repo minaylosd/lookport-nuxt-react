@@ -29,11 +29,11 @@
 	
 	      <div class="relative flex flex-col items-end gap-5 basis-1/2">
 	        <div class="relative w-full">
-	          <img src="/images/features-circle.png"
-	            class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="" />
-	          <img
+					<NuxtImg format="webp" src="/images/features-circle.png"
+						class="anim-up w-[200%] absolute -top-1/2 -left-1/3 h-auto max-w-[1168px]" alt="Circle" />
+					<NuxtImg format="webp"
 	            class="anim-up object-cover relative w-8/12 max-w-[449px] left-24 bottom-0 md:-bottom-24 h-auto mix-blend-lighten"
-	            src="/images/percent.png" />
+						src="/images/percent.png" alt="Percent image" />
 	        </div>
 	      </div>
 	    </section>

@@ -8,18 +8,18 @@
     </div>
 
     <div class="anim-up">
-      <img src="/images/broadcast-glass.png"
+      <NuxtImg format="webp" src="/images/broadcast-glass.png"
         class="absolute z-30 top-1/2 left-0 -translate-y-1/2 -translate-x-1/2 w-full max-w-[900px] h-auto object-cover"
-        alt="" />
+        alt="Glass circle" />
     </div>
 
     <section
       class="relative z-30 flex flex-col items-center justify-between w-full max-w-screen-lg gap-20 px-6 py-10 mx-auto md:px-10 md:py-48 md:flex-row xl:max-w-screen-xl">
       <div class="relative flex justify-center order-1 md:justify-end basis-5/12 md:order-none">
-        <img class="anim-up object-cover w-full md:w-[120%] max-w-[611px] h-auto"
-          src="/images/broadcast.png" />
-        <img class="absolute z-10 bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[200%] max-w-[1200px] object-cover"
-          src="/images/broadcast-figure.png" alt="">
+        <NuxtImg format="webp" class="anim-up object-cover w-full md:w-[120%] max-w-[611px] h-auto"
+          src="/images/broadcast.png" alt="Glass figure" />
+        <NuxtImg format="webp" class="absolute z-10 bottom-0 left-0 translate-y-1/2 -translate-x-1/3 w-[200%] max-w-[1200px] object-cover"
+          src="/images/broadcast-figure.png" alt="Gradient background" />
       </div>
 
       <div class="relative z-30 flex flex-col gap-6 basis-7/12">
@@ -57,7 +57,7 @@ import GetStartedBtn from "./GetStartedBtn.vue";
   top: 20%;
   width: 110vw;
   height: 100%;
-  background-image: url('./img/new.png');
+  background-image: url('/new.png');
   background-repeat: no-repeat;
   background-size: 50% 80%;
   filter: blur(5px) brightness(1) contrast(1);

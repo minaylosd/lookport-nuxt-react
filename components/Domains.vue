@@ -7,7 +7,7 @@
         <div class="pulse-background-right"></div>
       </div>
     </div>
-    <img src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="">
+    <NuxtImg format="webp" src="/images/domain-glass.png" class="absolute w-full max-w-[508px] bottom-0 -left-56 z-[2]" alt="Glass" />
     <div class="relative w-full h-full overflow-hidden">
 
 
