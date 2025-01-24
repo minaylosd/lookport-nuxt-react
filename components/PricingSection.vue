@@ -10,7 +10,7 @@
 	        </h1>
 	        <p
 	          class="anim-up relative z-10 md:text-2xl text-lg leading-[140%] font-normal tracking-[-0.05em] font-geometria text-[#bbbbbb]">
-	          Straightforward: a 6% commission with no hidden fees. Real-time
+	          Straightforward: a <span class="text-white">6% commission</span> with no hidden fees. Real-time
 	          service charge calculations ensure direct fund distribution to your
 	          account
 	        </p>
