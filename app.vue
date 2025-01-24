@@ -107,14 +107,16 @@ const registerObserver = () => {
 
         if (elements.length > 0) {
           gsap.fromTo(elements, { opacity: 0, y: 100 }, {
-            opacity: 1, y: 0, stagger: 0.05, force3D: false, onComplete: (() => {
+            opacity: 1, y: 0, stagger: 0.05, ease: 'expo.out', force3D: false, onComplete: (() => {
 
               if (entry.target.classList.contains('hero')) {
                 hero.value.registerAnimation();
               }
 
               if (loaded.value == false) {
-                loaded.value = true;
+                setTimeout(() => {
+                  loaded.value = true;
+                }, 500)
               }
             })
           })
