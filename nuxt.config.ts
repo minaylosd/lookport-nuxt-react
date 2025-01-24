@@ -37,7 +37,7 @@ export default defineNuxtConfig({
         { name: 'author', content: 'Lookport LTD' },
         { property: 'og:title', content: 'Lookport Ticketing – AI-Driven Event Ticketing System' },
         { property: 'og:description', content: 'Sell more tickets with Lookport: AI-powered marketing, detailed analytics, and automated payments. A smarter way to manage event ticketing.' },
-        { property: 'og:image', content: '/preview.jpg' },
+        { property: 'og:image', content: 'https://ticketing.lookport.live/preview.jpg' },
         { property: 'og:image:width', content: '1500' },
         { property: 'og:image:height', content: '844' },
         { property: 'og:url', content: 'https://ticketing.lookport.live/' },
@@ -46,7 +46,7 @@ export default defineNuxtConfig({
         { name: 'twitter:card', content: 'summary_large_image' },
         { name: 'twitter:title', content: 'Lookport Ticketing – The AI Ticketing Solution for Event Promoters' },
         { name: 'twitter:description', content: 'Use AI-driven marketing, analytics, and automation to maximize ticket sales. Lookport is built for promoters.' },
-        { name: 'twitter:image', content: 'https://ticketing.lookport.live/' },
+        { name: 'twitter:image', content: 'https://ticketing.lookport.live/preview.jpg' },
         { name: 'twitter:site', content: '@lookport' }
       ],
       style: [
@@ -82,19 +82,12 @@ export default defineNuxtConfig({
                 --font-ag: "AG Letterica";
             }
             .anim-up {
-              transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-              -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-              will-change: transform;
-            }
-            .section.animated .anim-up {
-              opacity: 1;
-              transform: translateY(0);
-              -webkit-transform: translateY(0);
-            }
-            .section:not(.animated) .anim-up {
               opacity: 0;
               transform: translateY(100px);
               -webkit-transform: translateY(100px);
+              transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+              -webkit-transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+              will-change: transform;
             }
           `,
         }
