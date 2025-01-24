@@ -216,6 +216,7 @@ onMounted(() => {
   -webkit-transform-style: preserve-3d;
   perspective: 600px;
   -webkit-perspective: 600px;
+  will-change: transform;
 }
 
 .wrapper-upper {
@@ -241,6 +242,7 @@ onMounted(() => {
   position: relative;
   filter: brightness(97%);
   -webkit-filter: brightness(97%);
+  backface-visibility: hidden;
 }
 
 .glare {
@@ -284,6 +286,13 @@ onMounted(() => {
     position: relative;
     filter: brightness(97%);
     -webkit-filter: brightness(97%);
+  }
+}
+
+@supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+  .body {
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
   }
 }
 </style>
