@@ -42,9 +42,11 @@ import Seats from './components/Seats.vue';
 import PricingSection from './components/PricingSection.vue';
 import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
+import gsap from 'gsap';
 
 useHead({
   script: [
+    // Schema.org script
     {
       type: "application/ld+json",
       innerHTML: `{
@@ -55,6 +57,27 @@ useHead({
         "logo": "/Lookport_logo.png",
         "description": "Lookport is an AI-powered ticketing system designed for event promoters. Sell tickets efficiently with automation, analytics, and smart marketing tools."
         }`
+    },
+    // Meta Pixel script
+    {
+      innerHTML: `!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '644507741360143');
+fbq('track', 'PageView');`
+    }
+  ],
+  noscript: [
+    {
+      key: 'fb-noscript',
+      innerHTML: `<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=644507741360143&ev=PageView&noscript=1"
+/>`
     }
   ]
 })
@@ -83,24 +106,20 @@ const registerObserver = () => {
         const elements = entry.target.querySelectorAll('.anim-up');
 
         if (elements.length > 0) {
-          elements.forEach((el, index) => {
-            el.style.transitionDelay = `${index * 0.05}s`;
+          gsap.fromTo(elements, { opacity: 0, y: 100 }, {
+            opacity: 1, y: 0, stagger: 0.05, force3D: false, onComplete: (() => {
+
+              if (entry.target.classList.contains('hero')) {
+                hero.value.registerAnimation();
+              }
+
+              if (loaded.value == false) {
+                loaded.value = true;
+              }
+            })
           })
         }
 
-        entry.target.classList.add('animated');
-
-        if (entry.target.classList.contains('hero')) {
-          setTimeout(() => {
-            hero.value.registerAnimation();
-          }, 500)
-        }
-
-        if (loaded.value == false) {
-          setTimeout(() => {
-            loaded.value = true;
-          }, 500)
-        }
         observer.unobserve(entry.target);
       }
     })
