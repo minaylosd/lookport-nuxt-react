@@ -1,16 +1,20 @@
 <template>
-  <button ref="button" v-if="props.big"
-    class="relative px-7 py-5 md:px-[49px] md:py-[25.5px] overflow-hidden rounded-full btn-xl before:transition-colors before:duration-500 ease-in">
-    <p
-      class="relative whitespace-nowrap z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
-      Get
-      Started</p>
-  </button>
-  <button v-else class="relative px-[31px] py-[15px] overflow-hidden rounded-full btn-sm before:transition-colors before:duration-500 ease-in">
-    <p class="relative z-10 text-lg font-normal leading-[13px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">Get Started
-    </p>
-  </button>
-
+  <a href="https://scheduler.zoom.us/alex-wolf-nwmy6d/lookport" target="_blank">
+    <button ref="button" v-if="props.big"
+      class="relative px-7 py-5 md:px-[49px] md:py-[25.5px] overflow-hidden rounded-full btn-xl before:transition-colors before:duration-500 ease-in">
+      <p
+        class="relative whitespace-nowrap z-10 md:text-[26px] text-xl font-normal leading-[18px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
+        Get
+        Started</p>
+    </button>
+    <button v-else
+      class="relative px-[31px] py-[15px] overflow-hidden rounded-full btn-sm before:transition-colors before:duration-500 ease-in">
+      <p
+        class="relative z-10 text-lg font-normal leading-[13px] -tracking-[0.04em] text-white font-geometria transition-colors duration-500 ease-in">
+        Get Started
+      </p>
+    </button>
+  </a>
 </template>
 
 <style scoped>
@@ -29,7 +33,7 @@
       rgba(255, 255, 255, 0.4) 0%,
       rgba(255, 255, 255, 1) 50%,
       rgba(255, 255, 255, 0.4) 100%);
-      opacity: 1;
+  opacity: 1;
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   mask-composite: exclude;
