@@ -20,6 +20,7 @@
       <Domains />
       <Events />
       <Contact />
+      <CookiePopup ref="popup" v-if="isShownCookieMsg" :closeCookieMsg="closeCookieMsg" />
     </main>
     <AppFooter />
   </div>
@@ -40,6 +41,7 @@ import Events from "./components/Events.vue";
 import Contact from "./components/Contact.vue";
 import Seats from './components/Seats.vue';
 import PricingSection from './components/PricingSection.vue';
+import CookiePopup from './components/CookiePopup.vue';
 import { applyPureReactInVue, applyReactInVue } from "veaury";
 import ThreeLogo from "./react_app/ThreeLogo.jsx";
 import gsap from 'gsap';
@@ -90,6 +92,13 @@ const hero = ref(null);
 const alerts = ref(null);
 const loaded = ref(false);
 
+const popup = ref(null);
+const isShownCookieMsg = ref(false);
+
+const closeCookieMsg = () => {
+    isShownCookieMsg.value = false;
+}
+
 const registerObserver = () => {
   const observerOptions = {
     root: null,
@@ -139,5 +148,8 @@ const registerObserver = () => {
 onMounted(() => {
   sections.value = document.querySelectorAll('.section');
   registerObserver();
+  setTimeout(() => {
+    isShownCookieMsg.value = true;
+  }, 3000);
 });
 </script>
