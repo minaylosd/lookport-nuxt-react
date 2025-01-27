@@ -30,13 +30,6 @@
                   class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out">
                 </div>
               </div>
-              <div
-                class="relative flex gap-2 group text-[#b6b6b6] hover:text-white transition-colors duration-500 ease-out">
-                <a class="whitespace-nowrap" href="/">Cookie Settings</a>
-                <div
-                  class="absolute bottom-0 left-0 flex w-[0%] h-[1px] bg-white group-hover:w-full transition-all duration-300 ease-out">
-                </div>
-              </div>
             </div>
           </div>
         </div>
