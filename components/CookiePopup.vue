@@ -1,5 +1,5 @@
 <template>
-    <div ref="popup" class="fixed bottom-0 right-0 z-[60] w-full p-5 popup h-fit md: max-w-[500px]">
+    <div ref="popup" class="fixed bottom-0 right-0 z-[60] w-full p-5 popup h-fit sm:max-w-[400px]">
         <div
             class="anim-up flex flex-col gap-2 justify-center md:w-full pb-4 pt-4 px-6 md:pb-3 md:pt-6 md:px-6 rounded-2xl font-geometria font-normal tracking-tighter text-white text-sm outline-[1px] outline outline-white/5 bg-[linear-gradient(68deg,_rgba(49,_52,_64,_0.8)_0%,_rgba(255,_255,_255,_0)_100%)] backdrop-blur-sm">
             <p>
